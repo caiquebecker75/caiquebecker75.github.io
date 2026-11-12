@@ -334,6 +334,7 @@
 
   /* telas Ypê MPV 2027: KV por família e peças por canal */
   abas('s-ykv',{extra:3500});
+  abas('s-bn1',{extra:3500});abas('s-bn2',{extra:4000});abas('s-bn3',{extra:4000});
   abas('s-ycn',{extra:2500,aoMudar:(k,t)=>{const L='AHSVD'[k];$$('.yc-p',t).forEach(f=>{const d=f.dataset.canais.includes(L);f.classList.toggle('dentro',d);f.classList.toggle('fora',!d);});}});
 
   /* simulador de investimento: escala P, M ou G carrega as quantidades; cada peça ajusta à mão (06/11) */
@@ -418,4 +419,5 @@
   telas.forEach(t=>t.classList.remove('ativa'));atual=n0;telas[n0].classList.add('ativa');
   atual=n0===0?1:0;aplicar(n0); // força a primeira aplicação
   telas.forEach((t,i)=>{if(i!==n0)t.classList.remove('ativa');});
+  if(modoPdf){const ab=new URLSearchParams(location.search).get('aba');if(ab!==null){const b=$$('[data-aba]',telas[n0])[+ab];if(b)b.click();}} // ?pdf=1&aba=k: abre a aba k (PDF pelo Chrome headless)
 })();
