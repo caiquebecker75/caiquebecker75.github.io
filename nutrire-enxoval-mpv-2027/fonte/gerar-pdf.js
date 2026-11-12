@@ -1,5 +1,5 @@
 // Gera o PDF do deck: cada página é a tela exata (1600x900, em 1,5x), no estado final (?pdf=1).
-// A tela de KV vira uma página por família. Também grava assets/og.jpg a partir da capa.
+// As telas de nível do enxoval (leves, intermediárias, grande impacto) viram uma página por peça. Também grava assets/og.jpg a partir da capa.
 //   python3 -m http.server 8822   (na pasta do deck)
 //   node fonte/gerar-pdf.js [endereço] [pasta-temporária]
 //   python3 fonte/juntar-pdf.py <pasta-temporária> nutrire-enxoval-mpv-2027.pdf
@@ -34,7 +34,7 @@ const PASTA = process.argv[3] || 'paginas-pdf';
       vis.forEach((i) => { i.loading = 'eager'; });
       await Promise.race([Promise.all(vis.map((i) => i.complete ? 0 : new Promise((r) => { i.onload = i.onerror = r; }))), new Promise((r) => setTimeout(r, 10000))]);
     });
-    const abas = await pg.evaluate(() => document.querySelector('.tela.ativa').classList.contains('s-ykv') ? document.querySelectorAll('.tela.ativa [data-aba]').length : 0);
+    const abas = await pg.evaluate(() => ['s-bn1','s-bn2','s-bn3'].some((c) => document.querySelector('.tela.ativa').classList.contains(c)) ? document.querySelectorAll('.tela.ativa [data-aba]').length : 0);
     if (abas) {
       for (let k = 0; k < abas; k++) {
         await pg.evaluate((k) => document.querySelectorAll('.tela.ativa [data-aba]')[k].click(), k);
