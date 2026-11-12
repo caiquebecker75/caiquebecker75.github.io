@@ -53,7 +53,7 @@
 .kv-area{position:relative;flex:1;min-height:0}
 .kv-p{position:absolute;inset:0;display:grid;grid-template-columns:1fr 380px;gap:30px;opacity:0;visibility:hidden;transition:opacity .45s ease}
 .s-ykv .kv-p[data-painel]{display:grid}
-.kv-p.on{opacity:1;visibility:visible}
+.kv-p.on{opacity:1;visibility:inherit}
 .kv-board{position:relative;overflow:hidden;background:var(--c1);color:var(--c3);box-shadow:0 30px 60px rgba(0,0,0,.45)}
 .kv-board::before{content:'';position:absolute;inset:0;background:radial-gradient(700px 420px at 72% 70%,var(--c2),transparent 70%)}
 .kv-board::after{content:'';position:absolute;right:-120px;top:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle at 40% 40%,rgba(255,255,255,.28),rgba(255,255,255,.05) 55%,transparent 70%)}
@@ -103,7 +103,7 @@
 .ycn-info{position:relative}
 .ycn-pn{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;padding:22px;background:var(--ink);color:var(--paper);opacity:0;visibility:hidden;transition:opacity .4s}
 .s-ycn .ycn-pn[data-painel]{display:flex}
-.ycn-pn.on{opacity:1;visibility:visible}
+.ycn-pn.on{opacity:1;visibility:inherit}
 .ycn-pn h3{font-size:44px;color:var(--lime);line-height:.95}
 .ycn-pn .ms{font-size:16px;line-height:1.45}
 .ycn-pn dl{display:grid;grid-template-columns:110px 1fr;gap:9px 12px;font-size:14px;line-height:1.35;border-top:1px solid var(--linha-e);padding-top:14px}
@@ -407,7 +407,7 @@
 .bn-lista button.on i,.bn-lista button.on small{opacity:.8}
 .bn-palco{position:relative;min-height:0}
 .bn-p{position:absolute;inset:0;display:grid;grid-template-rows:1fr auto;gap:14px;opacity:0;visibility:hidden;transition:opacity .45s ease}
-.bn-p.on{opacity:1;visibility:visible}
+.bn-p.on{opacity:1;visibility:inherit}
 .bn-fotos{min-height:0;display:grid;gap:12px}
 .bn-fotos.duas{grid-template-columns:1.25fr 1fr}
 .bn-fotos figure{min-height:0;background:#E2E2E4;overflow:hidden;cursor:zoom-in;display:flex;align-items:center;justify-content:center}
@@ -437,3 +437,6 @@
 .bn-ficha{min-height:0}
 .s-bniv .bn-p[data-painel]{display:grid}
 .bn-gr{height:770px}
+.bn-fotos.cobre img{object-fit:cover}
+.bn-fotos.duas.cobre{grid-template-columns:1.5fr 1fr}
+.bn-fotos figure[data-amplia*="-giro"]::after{content:"↻ 360°";position:absolute;left:14px;top:14px;z-index:2;padding:6px 10px;background:var(--lime);color:var(--ink);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em}
