@@ -5,909 +5,400 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="author" content="75LAB">
 <title>Bacio di Latte · MPVD 2027 — 75LAB</title>
-<meta name="description" content="Proposta 75LAB para a Bacio di Latte · MPVD 2027: a mesma gelateria em 12 mil lugares.">
+<meta name="description" content="A mesma gelateria em 12 mil lugares. Proposta 75LAB de PDV, enxoval, rastreamento e piloto para a Bacio di Latte, ciclo 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=DM+Sans:wght@400;600;700&display=swap">
-<style>
-*{box-sizing:border-box}
-html,body{margin:0;height:100%;background:#1E140F;overflow:hidden;-webkit-font-smoothing:antialiased}
-#stage{cursor:pointer;position:fixed;left:50%;top:50%;width:1920px;height:1080px;transform-origin:0 0}
-.slide{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
-.slide.on{opacity:1;visibility:visible}
-.slide h1,.slide h2,.slide h3,.slide p,.slide ul{margin:0}
-.slide ul{padding-left:1.1em}
-.slide li{margin:0 0 .25em}
-.slide a{color:inherit}
-.slide hr{border:0;margin:0;width:100%}
-.slide table{border-collapse:collapse;width:100%}
-.slide th,.slide td{padding:.35em .6em;border-bottom:1px solid #D9CBB5;vertical-align:top;text-align:left}
-.slide th{font-weight:700}
-.notes{display:none}
-#ui{position:fixed;right:20px;bottom:16px;display:flex;gap:8px;align-items:center;font:600 14px/1 "DM Sans",Arial,sans-serif;color:#E3D6C3;z-index:5;opacity:.75}
-#ui button{width:36px;height:36px;border-radius:50%;border:1px solid #6B5A4E;background:#2B1D16;color:#F7F1E7;font-size:18px;cursor:pointer}
-#ui button:hover{background:#4E3A2E}
-#bar{position:fixed;left:0;bottom:0;height:4px;background:#8BA65A;transition:width .3s;z-index:5}
-@media print{
-  @page{size:1920px 1080px;margin:0}
-  html,body{overflow:visible;height:auto;background:none}
-  #stage{position:static;transform:none!important;width:auto;height:auto}
-  .slide{position:relative;opacity:1;visibility:visible;page-break-after:always;break-after:page}
-  #ui,#bar{display:none}
-}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200..600;1,9..144,300..500&family=DM+Sans:opsz,wght@9..40,400..700&display=swap">
+<link rel="preload" as="image" href="imagens/kv.jpg">
+<link rel="stylesheet" href="assets/css/app.css">
 </head>
-<body>
-<div id="stage">
-<section class="slide" data-n="1" id="capa" data-transition="fade" style="background:#2B1D16;color:#F7F1E7;font-family:'DM Sans', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
-<p style="font-size:24px;letter-spacing:4px;text-transform:uppercase;color:#B9CF8C;font-weight:600">75LAB · Bacio di Latte · MPVD 2027</p>
-<div style="display:flex;gap:64px;align-items:center">
-<div style="flex:1;display:flex;flex-direction:column;gap:32px">
-<h1 style="font-family:'Playfair Display', Georgia, serif;font-size:96px;font-weight:600;line-height:1.05;color:#F7F1E7">A mesma gelateria em 12 mil lugares.</h1>
-<p style="font-size:32px;color:#E3D6C3;line-height:1.35">Um sistema de PDV que leva o padrão Bacio a cada freezer, carrinho e ponto de venda, e prova isso com dados.</p>
-</div>
-<img src="imagens/kv.jpg" alt="KV aprovado: Seu Bacio favorito, onde você estiver" style="display:block;width:800px;height:450px;object-fit:cover;border-radius:16px">
-</div>
-<div style="display:flex;gap:24px;align-items:center">
-<div style="width:96px;height:8px;background:#B9CF8C"></div>
-<p style="font-size:24px;color:#E3D6C3">Trade marketing de ponta a ponta · Estratégia → Design → Produção</p>
-</div>
-<aside class="notes">Abrir com a promessa, não com a agência. A imagem é o KV aprovado: a apresentação mostra como ele chega a cada ponto fora da loja.</aside>
+<body data-theme="dark">
+<div id="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div><div class="grid"></div><div class="grain"></div></div>
+
+<header id="hdr">
+  <div class="hdr-l"><span class="wm">Bacio <i>di</i> Latte</span><span class="hdr-x">×</span><span class="logo75" role="img" aria-label="75LAB"></span></div>
+  <span class="hdr-mid" id="hdr-chap">Abertura</span>
+  <button id="chap-btn" aria-label="Abrir capítulos"><svg width="22" height="14" viewBox="0 0 22 14" aria-hidden="true"><path d="M0 1h22M0 7h22M0 13h14" stroke="currentColor" stroke-width="1.6"/></svg>Capítulos</button>
+</header>
+
+<div id="curtain" aria-hidden="true"></div>
+
+<main id="stage">
+<section class="slide dark" data-theme="dark" data-chapter="Abertura" aria-label="Abertura">
+  <div class="cover-bg"><img src="imagens/kv.jpg" alt=""></div>
+  <div class="trailer">
+    <p class="trailer-line t1 t-h1">Mais de 200 gelaterias.<br><span class="gold">Gelato batido todo dia.</span></p>
+    <p class="trailer-line t2 t-h1">Agora, <span class="gold">12 mil</span> freezers<br>de supermercado.</p>
+    <p class="trailer-line t3 t-h1">Nenhum deles<br>tem balconista.</p>
+    <div class="trailer-line final" style="text-align:left;max-width:1050px;right:auto">
+      <p class="eyebrow" style="margin-bottom:28px">Bacio di Latte · MPVD 2027</p>
+      <h1 class="t-hero">A mesma gelateria em <span class="gold">12 mil</span> lugares.</h1>
+      <p class="t-lead" style="margin-top:32px;max-width:860px">Um sistema de PDV que leva o padrão Bacio a cada freezer, corredor e carrinho, e prova isso com dados.</p>
+    </div>
+  </div>
+  <button class="skip" aria-label="Pular abertura">Avançar ›</button>
 </section>
-<section class="slide" data-n="2" id="agenda" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:64px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">O que vamos mostrar</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Do diagnóstico ao piloto, em cinco movimentos</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#4E6B26">01</p>
-<h3 style="font-size:30px;font-weight:700">Contexto</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">A Bacio, o mercado e o premium que ficou sem dono</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#4E6B26">02</p>
-<h3 style="font-size:30px;font-weight:700">Diagnóstico</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">O que acontece com a marca fora da loja</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#4E6B26">03</p>
-<h3 style="font-size:30px;font-weight:700">Estratégia</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Um sistema, cinco pilares e um território criativo</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#4E6B26">04</p>
-<h3 style="font-size:30px;font-weight:700">Solução</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">KV, 21 peças aprovadas, planograma, ambulante, QR e dados</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#4E6B26">05</p>
-<h3 style="font-size:30px;font-weight:700">Execução</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">KPIs, riscos e um piloto com critério para escalar</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">75LAB · Bacio di Latte · MPVD 2027</p>
-<aside class="notes">A ordem importa: primeiro mostramos que entendemos o negócio, depois o problema, e só então a criação. Os seis itens pedidos aparecem no bloco 04, como partes de um sistema.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Abertura" aria-label="Agenda">
+  <p class="eyebrow" data-a="up">O que vamos discutir hoje</p>
+  <h2 class="t-h2" data-words>Sete capítulos, da tensão de mercado até um piloto medido.</h2>
+  <div class="agenda" style="grid-template-columns:repeat(7,1fr)">
+    <svg viewBox="0 0 1620 4" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M0 2H1620" stroke="#B08A3A" stroke-width="2" fill="none"/></svg>
+    <div class="ag" data-a="up" style="--d:1"><span class="dot"></span><span class="n">01</span><b>Contexto</b><span>A Bacio, o mercado e o premium sem dono</span></div>
+    <div class="ag" data-a="up" style="--d:2"><span class="dot"></span><span class="n">02</span><b>Shopper</b><span>Segundos diante do freezer</span></div>
+    <div class="ag" data-a="up" style="--d:3"><span class="dot"></span><span class="n">03</span><b>Insight</b><span>O que a escala esconde</span></div>
+    <div class="ag" data-a="up" style="--d:4"><span class="dot"></span><span class="n">04</span><b>Estratégia</b><span>Um sistema, cinco pilares</span></div>
+    <div class="ag cur" data-a="up" style="--d:5"><span class="dot"></span><span class="n">05</span><b>Solução</b><span>KV e 21 peças aprovadas</span></div>
+    <div class="ag" data-a="up" style="--d:6"><span class="dot"></span><span class="n">06</span><b>Rastreamento</b><span>One Shot e On Timing</span></div>
+    <div class="ag" data-a="up" style="--d:7"><span class="dot"></span><span class="n">07</span><b>Próximos passos</b><span>Cronograma, gate e piloto</span></div>
+  </div>
 </section>
-<section class="slide" data-n="3" id="numeros" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Contexto · Bacio di Latte hoje</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Uma gelateria que já opera como rede de varejo</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">200+</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">lojas próprias no Brasil, sem franquias, cerca de 80% em shoppings</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">~30%</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">de crescimento anual da receita desde 2023</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">R$ 1,5 bi</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">meta de faturamento para 2026, com cerca de 30 lojas nos EUA</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">12 mil</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">pontos de venda no varejo como meta, partindo de cerca de 8 mil</p>
-</div>
-</div>
-<div style="display:flex;gap:32px;align-items:center;border-left:6px solid #B5543A;padding:8px 0 8px 32px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-style:italic;line-height:1.3;color:#2B1D16;width:1500px">“Descobrimos que os canais não se canibalizam; eles se complementam.” <span style="color:#6B5A4E">— Edoardo Tonolli, fundador</span></p>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Fontes: Exame (2025); MilkPoint e Portal Mais 360 (2026). Números de metas e PDVs declarados pela empresa.</p>
-<aside class="notes">A leitura para a Bacio: a loja funciona como a vitrine de degustação que puxa o varejo. Isso é o ativo que vamos levar ao freezer. Todos os números aqui são públicos e declarados pela própria empresa; confirmar com vocês os números internos.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Leitura do desafio" aria-label="Leitura do desafio">
+  <p class="eyebrow" data-a="up">Nossa leitura do briefing</p>
+  <h2 class="t-h2" data-words>O pedido são seis entregas. O desafio é um só: o padrão Bacio fora da loja.</h2>
+  <div class="row aic" style="gap:28px;margin-top:10px">
+    <div class="node ghost" data-a="left" style="--d:2;width:360px"><b>Problema aparente</b><p>Seis entregas de PDV: KV, rastreamento, QR, planograma, ambulante e guia</p></div>
+    <svg width="90" height="20" viewBox="0 0 90 20" aria-hidden="true"><path class="draw" style="--d:3" d="M2 10H80M70 2l10 8-10 8" stroke="#B08A3A" stroke-width="2.5" fill="none"/></svg>
+    <div class="node big" data-a="scale" style="--d:4;width:470px"><b>Problema real</b><p style="font-family:var(--serif);font-size:34px;line-height:1.2">Fazer a gelateria chegar intacta a 12 mil pontos que a Bacio não controla</p></div>
+    <svg width="90" height="20" viewBox="0 0 90 20" aria-hidden="true"><path class="draw" style="--d:5" d="M2 10H80M70 2l10 8-10 8" stroke="#B08A3A" stroke-width="2.5" fill="none"/></svg>
+    <div class="g2 f1" style="gap:16px">
+      <div class="node" data-a="up" style="--d:6"><b>Marca</b><p>Não virar “mais um pote caro”</p></div>
+      <div class="node" data-a="up" style="--d:7"><b>Shopper</b><p>Achar o sabor em segundos</p></div>
+      <div class="node" data-a="up" style="--d:8"><b>Operação</b><p>Execução de terceiros e cadeia do frio</p></div>
+      <div class="node" data-a="up" style="--d:9"><b>Comercial</b><p>Ocupar o premium sem dono</p></div>
+    </div>
+  </div>
+  <div class="row aic mt-auto" data-a="up" style="--d:10;gap:16px">
+    <span class="t-small" style="letter-spacing:.16em;text-transform:uppercase">Critério de sucesso</span>
+    <span class="tag ok">Reconhecível</span><span class="tag ok">Executado igual</span><span class="tag ok">Medido</span><span class="tag ok">Escalável</span>
+  </div>
 </section>
-<section class="slide" data-n="4" id="mercado" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Contexto · Mercado</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Sorvete no Brasil: grande, pulverizado e sazonal</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">R$ 15 bi+</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">de faturamento anual do setor</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">11 mil</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">empresas, 92% delas micro ou pequenas</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">5,4 a 7,7 L</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">consumo por pessoa ao ano (ABIS e Abrasorvete, metodologias diferentes)</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;border-top:6px solid #8BA65A;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;color:#4E6B26">até +50%</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">nas vendas em picos do verão 2024/2025</p>
-</div>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#EFE5D3;border-radius:16px;padding:40px">
-<h3 style="font-size:30px;font-weight:700;color:#2B1D16">O que isso significa para o PDV de 2027</h3>
-<p style="font-size:30px;color:#5C4A3E;line-height:1.4">Um mercado pulverizado premia quem é reconhecido em segundos. A sazonalidade pede um PDV com duas marchas: alta no verão e manutenção no inverno, com o mesmo sistema.</p>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Fontes: ABIS, Retrospectiva 2025; Abrasorvete, via BHB Food.</p>
-<aside class="notes">O per capita varia por metodologia: a ABIS usa 5,4 litros; a Abrasorvete chegou a 7,7 litros com entrevistas diretas e excluindo quem não consome. Citar sempre com a fonte.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Contexto" aria-label="Contexto">
+  <p class="eyebrow" data-a="up">Contexto · a Bacio e o mercado</p>
+  <h2 class="t-h2" data-words>A Bacio cresce como rede de varejo dentro de um mercado grande e pulverizado.</h2>
+  <div class="row f1" style="gap:70px">
+    <div class="col" style="width:880px;gap:20px">
+      <span class="t-small" data-a="up" style="letter-spacing:.16em;text-transform:uppercase">Bacio di Latte</span>
+      <div class="g2" style="gap:30px 50px">
+        <div class="stat" data-a="up" style="--d:2"><span class="t-num gold" data-count="200" data-suf="+">200+</span><span class="t-body">lojas próprias, sem franquias</span></div>
+        <div class="stat" data-a="up" style="--d:3"><span class="t-num gold" data-count="30" data-pre="~" data-suf="%">~30%</span><span class="t-body">de crescimento ao ano desde 2023</span></div>
+        <div class="stat" data-a="up" style="--d:4"><span class="t-num gold" data-count="1.5" data-pre="R$ " data-suf=" bi">R$ 1,5 bi</span><span class="t-body">meta de faturamento em 2026</span></div>
+        <div class="stat" data-a="up" style="--d:5"><span class="t-num gold" data-count="12" data-suf=" mil">12 mil</span><span class="t-body">PDVs como meta, partindo de ≈ 8 mil</span><div class="bar"><i style="--w:66.6%;--d:6"></i></div></div>
+      </div>
+    </div>
+    <div class="panel col f1" data-a="right" style="--d:4;gap:26px">
+      <span class="t-small" style="letter-spacing:.16em;text-transform:uppercase">Sorvete no Brasil</span>
+      <div class="row aic" style="gap:22px"><span class="t-num" data-count="15" data-pre="R$ " data-suf=" bi+" style="font-size:76px">R$ 15 bi+</span><span class="t-body">faturamento anual do setor</span></div>
+      <div class="row aic" style="gap:22px">
+        <svg width="120" height="120" viewBox="0 0 150 150" aria-label="92% das empresas são micro ou pequenas"><circle cx="75" cy="75" r="62" stroke="rgba(80,44,29,.12)" stroke-width="14" fill="none"/><circle class="draw" style="--len:390;--d:5;stroke-dasharray:358 390" cx="75" cy="75" r="62" stroke="#B08A3A" stroke-width="14" fill="none" transform="rotate(-90 75 75)" stroke-linecap="round"/></svg>
+        <span class="t-body"><b style="font-size:34px;font-family:var(--serif)">11 mil</b> empresas<br><b class="gold">92%</b> micro ou pequenas</span>
+      </div>
+      <div class="row aic" style="gap:22px"><span class="t-num gold" style="font-size:76px">+50%</span><span class="t-body">nas vendas em picos do verão 2024/2025</span></div>
+    </div>
+  </div>
+  <p class="src">Fontes: Exame (2025); MilkPoint e Portal Mais 360 (2026); ABIS, Retrospectiva 2025. Metas e PDVs declarados pela empresa.</p>
 </section>
-<section class="slide" data-n="5" id="haagen" data-transition="fade" style="background:#8BA65A;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#2B1D16;font-weight:700">Contexto · Agosto de 2026</p>
-<h1 style="font-family:'Playfair Display', Georgia, serif;font-size:120px;font-weight:600;line-height:1.05;color:#2B1D16;width:1500px">O premium do freezer ficou sem dono.</h1>
-<p style="font-size:40px;line-height:1.35;color:#2B1D16;width:1450px">A General Mills encerrou a distribuição da Häagen-Dazs no Brasil após quase 30 anos. Analistas citam a Bacio di Latte entre as marcas com loja própria que podem ocupar esse espaço.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#2B1D16">Fontes: Bloomberg Línea (2026); Forbes Brasil (ago/2026).</p>
-<aside class="notes">Este é o fato de mercado mais importante para 2027. Não é só espaço de freezer vago: é um shopper fiel ao premium procurando uma nova referência nos próximos verões. Quem organizar melhor o freezer agora tende a ficar com ele.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Contexto" aria-label="Concorrência">
+  <p class="eyebrow" data-a="up">Concorrência · mapa de posicionamento</p>
+  <h2 class="t-h2" data-words>O premium ficou sem dono, e ninguém une escala e gelateria no freezer.</h2>
+  <div class="row" style="gap:90px">
+    <div class="quad" data-a="blur" style="--d:2;height:560px" aria-label="Mapa: escala no PDV × experiência de gelateria">
+      <div class="qline" style="left:50%;top:0;bottom:0;width:1px"></div><div class="qline" style="top:50%;left:0;right:0;height:1px"></div>
+      <div class="free">espaço livre</div>
+      <span class="ax" style="left:0;bottom:-40px">menos escala no PDV</span><span class="ax" style="right:0;bottom:-40px">mais escala no PDV →</span>
+      <span class="ax" style="left:-40px;bottom:0;transform:rotate(-90deg);transform-origin:left bottom">experiência de gelateria →</span>
+      <svg style="position:absolute;inset:0;width:100%;height:100%;overflow:visible" viewBox="0 0 860 560" aria-hidden="true"><path class="draw" style="--d:6" d="M350 112 C 480 50, 600 60, 690 86" stroke="#A9B864" stroke-width="3" fill="none"/></svg>
+      <div class="pt" data-a="scale" style="--d:3;left:85%;top:70%"><i></i><span>Magnum / Kibon</span></div>
+      <div class="pt" data-a="scale" style="--d:3;left:74%;top:87%"><i></i><span>Froneri</span></div>
+      <div class="pt" data-a="scale" style="--d:4;left:36%;top:78%"><i></i><span>Premium de supermercado</span></div>
+      <div class="pt" data-a="scale" style="--d:4;left:16%;top:34%"><i></i><span>Gelaterias com loja</span></div>
+      <div class="pt ghost" data-a="scale" style="--d:5;left:62%;top:58%"><i></i><span>Häagen-Dazs (saiu em 2026)</span></div>
+      <div class="pt bacio" data-a="scale" style="--d:5;left:40%;top:20%"><i></i><span>Bacio hoje</span></div>
+      <div class="pt target" data-a="scale" style="--d:7;left:82%;top:15%"><i></i><span>Bacio 2027</span></div>
+    </div>
+    <div class="col f1" style="gap:24px;padding-top:6px">
+      <div class="col" data-a="right" style="--d:4;gap:6px"><b class="t-h3">Häagen-Dazs saiu do Brasil</b><p class="t-body">Agosto de 2026, após quase 30 anos. Fica um shopper premium sem referência.</p></div>
+      <div class="rule"></div>
+      <div class="col" data-a="right" style="--d:5;gap:6px"><b class="t-h3">Magnum é dona do sistema</b><p class="t-body">LED no freezer, IA por foto para pedido, expansão para farmácias.</p></div>
+      <div class="rule"></div>
+      <div class="col" data-a="right" style="--d:6;gap:6px"><b class="t-h3 gold">A Bacio pode ter os dois</b><p class="t-body">É a única com 200+ lojas para provar que o produto existe fora do freezer.</p></div>
+    </div>
+  </div>
+  <p class="src">Leitura qualitativa 75LAB. Fontes: Bloomberg Línea e Forbes Brasil (2026); Mundo do Marketing (2026); Mercado&amp;Consumo (set/2026).</p>
 </section>
-<section class="slide" data-n="6" id="concorrencia" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Contexto · Concorrência</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">No freezer, todos mostram a embalagem</h2>
-</div>
-<table style="font-size:24px;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif">
-<tr style="background:#EFE5D3"><th style="width:26%;text-align:left">Player</th><th style="width:40%;text-align:left">Como atua no PDV</th><th style="width:34%;text-align:left">Leitura</th></tr>
-<tr><td>Magnum / Kibon</td><td>Freezers em massa, painéis de LED, IA por foto para pedido sugerido, expansão para farmácias</td><td>Dona do sistema de execução e dos dados</td></tr>
-<tr><td>Häagen-Dazs</td><td>Saiu do Brasil em 2026</td><td>Deixa espaço e shopper premium sem marca</td></tr>
-<tr><td>Gelaterias com loja (Borelli, La Basque, Havanna)</td><td>Loja própria, varejo pontual</td><td>Mesmo território, menos escala no freezer</td></tr>
-<tr><td>Premium de supermercado</td><td>Potes em freezer compartilhado</td><td>Mesmo preço, menos marca</td></tr>
-<tr><td>Chocolates e doces premium</td><td>Checkout e corredor de doces</td><td>Disputam o mesmo “pequeno luxo”</td></tr>
-</table>
-<div style="display:flex;gap:24px;align-items:center;background:#2B1D16;border-radius:16px;padding:32px 40px">
-<p style="font-size:30px;color:#F7F1E7;line-height:1.35"><b>Espaço livre:</b> ninguém leva a gelateria para dentro do freezer. Só a Bacio tem 200+ lojas para provar que o produto existe fora dele.</p>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Fontes: Mundo do Marketing (2026); Mercado&amp;Consumo (set/2026); Bloomberg Línea (2026).</p>
-<aside class="notes">A Magnum já transformou o freezer em mídia mensurável: LED, conversão por freezer e reconhecimento por foto. A Bacio não ganha copiando escala; ganha com o que a Magnum não tem: uma gelateria real para mostrar e para onde levar o shopper.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Shopper" aria-label="Jornada do shopper">
+  <p class="eyebrow" data-a="up">Shopper · jornada no freezer</p>
+  <h2 class="t-h2" data-words>A decisão acontece em segundos, com a porta aberta e o frio no rosto.</h2>
+  <div class="journey" data-a="blur" style="--d:2">
+    <svg viewBox="0 0 1620 560" preserveAspectRatio="none" aria-hidden="true"><path class="draw" d="M30 178 C 230 110, 330 250, 520 178 S 830 110, 1040 178 S 1350 250, 1590 178" stroke="#B08A3A" stroke-width="3" fill="none" stroke-dasharray="2 0"/></svg>
+    <div class="stop" style="left:5%;top:120px"><span class="pin">1</span><b>Estímulo</b><span class="bar-x">Freezers todos iguais</span><span class="ans">Freezer-vitrine</span></div>
+    <div class="stop" style="left:20%;top:150px"><span class="pin">2</span><b>Interesse</b><span class="bar-x">Sabores misturados</span><span class="ans">Coluna por sabor</span></div>
+    <div class="stop" style="left:35%;top:130px"><span class="pin">3</span><b>Interação</b><span class="bar-x">Porta aberta, pouco tempo</span><span class="ans">QR na régua</span></div>
+    <div class="stop" style="left:50%;top:120px"><span class="pin">4</span><b>Decisão</b><span class="bar-x">Preço sem contexto</span><span class="ans">Picolé como porta de entrada</span></div>
+    <div class="stop" style="left:65%;top:150px"><span class="pin">5</span><b>Ação</b><span class="bar-x">Ruptura do sabor</span><span class="ans">Foto e reposição guiada</span></div>
+    <div class="stop" style="left:80%;top:130px"><span class="pin">6</span><b>Experiência</b><span class="bar-x">Gelo após choque térmico</span><span class="ans">Selo −18 °C e sensor</span></div>
+    <div class="stop" style="left:95%;top:120px"><span class="pin">7</span><b>Recompra</b><span class="bar-x">A marca some</span><span class="ans">QR leva à loja</span></div>
+  </div>
+  <div class="row aic" data-a="up" style="--d:6;gap:30px"><span class="t-small"><b style="color:#9B4E3A">●</b> barreira</span><span class="t-small"><b class="pist">●</b> resposta do sistema</span></div>
+  <p class="src">Análise 75LAB. Jornada simplificada do shopper de supermercado.</p>
 </section>
-<section class="slide" data-n="7" id="tensao" data-transition="fade" style="background:#EFE5D3;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Diagnóstico · A tensão central</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Escala × padrão</h2>
-</div>
-<div style="display:flex;gap:40px;align-items:center">
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border-radius:16px;padding:48px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">O consumidor espera</p>
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;line-height:1.3">encontrar a mesma gelateria em todo lugar.</p>
-</div>
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:120px;color:#B5543A">×</p>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#2B1D16;border-radius:16px;padding:48px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:600">A realidade</p>
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;line-height:1.3;color:#F7F1E7">fora da loja, a Bacio depende de pessoas, equipamentos e temperaturas que não vê.</p>
-</div>
-</div>
-<p style="font-size:30px;color:#5C4A3E;line-height:1.4">Ela contém as outras duas tensões que mapeamos: <b>artesanal × industrial</b> (gelato fresco × cadeia do frio) e <b>premium × acesso</b> (novos canais × preço percebido).</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Análise 75LAB.</p>
-<aside class="notes">Escolhemos escala × padrão porque explica por que planograma, guia e rastreamento não são extras: são a resposta. Cada ponto novo aumenta a receita e o risco de a marca chegar como “mais um pote caro”.</aside>
+
+<section class="slide dark" data-theme="dark" data-chapter="Insight" aria-label="Insight central">
+  <div class="row aic f1" style="gap:100px">
+    <div class="thermo" data-a="scale" style="--d:1" aria-label="Termômetro oscilando"><div class="tube"></div><div class="liq"></div><div class="bulb"></div></div>
+    <div class="col f1" style="gap:30px">
+      <p class="eyebrow" data-a="up">A tensão: escala × padrão · o insight</p>
+      <h2 class="t-h1" data-a="up" style="--d:1">No supermercado, a Bacio é julgada pelo <em class="hl">freezer que ela não controla.</em></h2>
+      <div class="row aic" data-a="up" style="--d:4;gap:20px;flex-wrap:wrap">
+        <span class="tag">choque térmico</span><span class="gold" style="font-size:30px">→</span><span class="tag">cristais de gelo</span><span class="gold" style="font-size:30px">→</span><span class="tag">a culpa é da marca</span>
+      </div>
+      <div class="g3" style="gap:36px;margin-top:20px">
+        <div class="stat" data-a="up" style="--d:5"><span class="t-h3" style="font-size:30px">A loja vende a promessa; o freezer cobra o preço.</span><span class="t-small">Picolé de 70 g a R$ 23,99–24,99 no varejo.</span></div>
+        <div class="stat" data-a="up" style="--d:6"><span class="t-h3" style="font-size:30px">O shopper escolhe sabor, não formato.</span><span class="t-small">No balcão: “pistache ou doce de leite?”</span></div>
+        <div class="stat" data-a="up" style="--d:7"><span class="t-h3" style="font-size:30px">O lançamento é evento na loja e mudo no freezer.</span><span class="t-small">5 mil Ciocchinos grátis na estreia.</span></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">Leitura 75LAB, a validar com dados de qualidade e SAC da Bacio. Preços: Angeloni, Prado, Zona Sul (nov/2026); Exame (2025).</p>
 </section>
-<section class="slide" data-n="8" id="insight" data-transition="fade" style="background:#2B1D16;color:#F7F1E7;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:center;gap:48px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:600">Diagnóstico · Insight central</p>
-<h1 style="font-family:'Playfair Display', Georgia, serif;font-size:96px;font-weight:600;line-height:1.1;color:#F7F1E7;width:1600px">No supermercado, a Bacio é julgada pelo freezer que ela não controla.</h1>
-<p style="font-size:40px;line-height:1.35;color:#E3D6C3;width:1450px">Um gelato que sofreu choque térmico chega com cristais de gelo, e o consumidor culpa a marca, não o mercado. Temperatura é experiência de marca.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#C9B9A3">Leitura 75LAB a partir da natureza do produto. A validar com os dados de qualidade e de reclamações da Bacio.</p>
-<aside class="notes">Este insight muda o papel da tecnologia: o sensor de temperatura deixa de ser controle de ativo e passa a ser garantia de qualidade, algo que pode até virar argumento para o consumidor. Pedir à Bacio dados de SAC sobre textura para confirmar.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Estratégia" aria-label="Estratégia">
+  <p class="eyebrow" data-a="up">Estratégia · como podemos…</p>
+  <h2 class="t-h2" data-a="up" style="--d:1;max-width:1600px">…fazer cada freezer e carrinho ser <em class="hl">reconhecido, executado e medido</em> como uma gelateria Bacio?</h2>
+  <div class="row aic" style="gap:20px">
+    <div class="col f1" data-a="up" style="--d:2;gap:10px"><span class="t-small" style="letter-spacing:.2em;text-transform:uppercase">De</span><p class="t-h3" style="color:var(--txt-2)">Um pote caro entre outros, com execução variável</p></div>
+    <svg width="120" height="24" viewBox="0 0 120 24" aria-hidden="true"><path class="draw" style="--d:3" d="M2 12H108M96 3l12 9-12 9" stroke="#B08A3A" stroke-width="2.5" fill="none"/></svg>
+    <div class="col f1" data-a="up" style="--d:4;gap:10px"><span class="t-small" style="letter-spacing:.2em;text-transform:uppercase">Para</span><p class="t-h3">Gelaterias de bolso, por sabor e auditáveis</p></div>
+    <svg width="120" height="24" viewBox="0 0 120 24" aria-hidden="true"><path class="draw" style="--d:5" d="M2 12H108M96 3l12 9-12 9" stroke="#B08A3A" stroke-width="2.5" fill="none"/></svg>
+    <div class="col f1 panel" data-a="scale" style="--d:6;gap:10px;background:var(--cafe);color:var(--creme);border:0;padding:30px"><span class="t-small" style="letter-spacing:.2em;text-transform:uppercase;color:var(--ouro-l)">Através de</span><p class="t-h3">Um sistema em torno do freezer-vitrine conectado</p></div>
+  </div>
+  <div class="g5 mt-auto">
+    <div class="pil" data-a="up" style="--d:7"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><g class="blink"><path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24z"/><circle cx="24" cy="24" r="6"/></g></svg><b>01 Reconhecer</b><span>KV e enxoval</span></div>
+    <div class="pil" data-a="up" style="--d:8"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="8" width="8" height="32" rx="2"/><rect x="20" y="8" width="8" height="32" rx="2"/><rect x="32" y="8" width="8" height="32" rx="2"/><path class="slidex" d="M6 24h36"/></svg><b>02 Escolher</b><span>Planograma e mix</span></div>
+    <div class="pil" data-a="up" style="--d:9"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path class="draw" d="M17 24l5 5 9-10"/></svg><b>03 Garantir</b><span>Guia e rastreamento</span></div>
+    <div class="pil" data-a="up" style="--d:10"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="10" cy="24" r="5"/><circle cx="38" cy="12" r="5"/><circle cx="38" cy="36" r="5"/><path class="dash" d="M15 22l18-8M15 26l18 8"/></svg><b>04 Conectar</b><span>QR e páginas</span></div>
+    <div class="pil" data-a="up" style="--d:11"><svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h36"/><rect class="grow" x="10" y="26" width="6" height="16" rx="1"/><rect class="grow g2" x="21" y="18" width="6" height="24" rx="1"/><rect class="grow g3" x="32" y="10" width="6" height="32" rx="1"/></svg><b>05 Aprender</b><span>Painel de dados</span></div>
+  </div>
 </section>
-<section class="slide" data-n="9" id="insights-shopper" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Diagnóstico · Insights de shopper</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">O que muda quando o balcão vira freezer</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:20px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;font-weight:700;color:#B5543A">01</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2">A loja vende a promessa; o freezer cobra o preço.</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Evidência:</b> picolé de 70 g a R$ 23,99–24,99 em redes regionais; multipack de 4 a R$ 51,99. Sem o ritual do balcão, o preço é o argumento mais visível.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:20px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;font-weight:700;color:#B5543A">02</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2">Quem compra Bacio no mercado já foi à loja.</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Evidência:</b> a própria empresa descreve as lojas como o “outdoor de degustação” que impulsiona o varejo. O freezer não apresenta a marca: precisa ser reconhecido.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:20px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;font-weight:700;color:#B5543A">03</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2">O shopper escolhe sabor, não formato.</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Observação:</b> no balcão, a decisão é “pistache ou chocolate”. Um freezer organizado por formato contradiz o hábito que a marca ensinou.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Fontes: preços em Angeloni, Prado Supermercados e Zona Sul (consulta nov/2026); Exame (2025). Insight 03: observação 75LAB, a testar no piloto.</p>
-<aside class="notes">Preços consultados em sites de varejo, sem data na página; podem ter mudado. O insight 03 é hipótese: por isso o planograma propõe um teste A/B entre organização por sabor e por formato.</aside>
+
+<section class="slide dark" data-theme="dark" data-chapter="Estratégia" aria-label="Território criativo">
+  <div class="ph kenburns" style="position:absolute;top:0;bottom:0;right:0;left:40%;border-radius:0;opacity:.9"><img src="imagens/kv.jpg" alt="" style="object-position:75% 50%"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,#24140D 40%,rgba(36,20,13,.5) 62%,rgba(36,20,13,0) 85%)"></div>
+  <div class="col center f1" style="position:relative;gap:30px;max-width:1100px;justify-content:center">
+    <p class="eyebrow" data-a="up">Território criativo</p>
+    <h2 class="t-hero" data-words>A vitrine vai até você.</h2>
+    <p class="t-lead" data-a="up" style="--d:6">Todo freezer Bacio é uma vitrine de gelateria, não um armário de potes. A cor da coluna faz o papel da cuba.</p>
+    <div class="row aic" data-a="up" style="--d:8;gap:18px"><span class="tag">Camada de prova</span><span class="t-body">Battuto Ogni Giorno, materializada no selo −18 °C</span></div>
+  </div>
 </section>
-<section class="slide" data-n="10" id="insights-escala" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Diagnóstico · Insights de escala</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">O que muda quando 8 mil pontos viram 12 mil</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:20px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;font-weight:700;color:#B5543A">04</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2">O lançamento é evento na loja e mudo no freezer.</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Evidência:</b> mais de 5 mil Ciocchinos distribuídos no lançamento do Pistacchio (2025) e pré-lançamento no Baile da Vogue (2026). No varejo, o novo sabor entra sem sinalização.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:20px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;font-weight:700;color:#B5543A">05</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2">Escala sem auditoria vira diluição.</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Evidência:</b> a meta de 12 mil PDVs será executada por repositores do varejo e distribuidores. Sem padrão e sem foto, a marca aparece de 12 mil jeitos.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:20px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;font-weight:700;color:#B5543A">06</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2">O carrinho é a loja que anda.</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Evidência:</b> as lojas de picolé personalizável (2025) vendem a partir de R$ 16,90. Um ambulante com cara de isopor adesivado derruba o preço percebido da marca inteira.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Fontes: Exame (2025); ABC da Comunicação (2026); Alpha FM e Mercado&amp;Consumo (2025).</p>
-<aside class="notes">Os insights 01, 02 e 05 são os que mais orientam a estratégia: explicam por que o pitch não é um catálogo de peças, e sim um sistema de execução.</aside>
+
+<section class="slide dark" data-theme="dark" data-chapter="Solução" aria-label="O freezer vira vitrine">
+  <div class="row aic f1" style="gap:80px">
+    <div class="col" style="width:700px;gap:26px">
+      <p class="eyebrow" data-a="up">A solução · enxoval aprovado</p>
+      <h2 class="t-hero" data-words>O freezer vira vitrine.</h2>
+      <div class="row aie" data-a="up" style="--d:5;gap:24px"><span class="t-big gold" data-count="21" data-delay="900">21</span><span class="t-lead" style="padding-bottom:18px">peças aprovadas, do painel do freezer ao guarda-sol</span></div>
+      <div class="g4" data-a="up" style="--d:7;gap:18px">
+        <div class="stat"><span class="t-num gold" style="font-size:54px">6</span><span class="t-small">freezer vertical</span></div>
+        <div class="stat"><span class="t-num gold" style="font-size:54px">8</span><span class="t-small">horizontal e ilha</span></div>
+        <div class="stat"><span class="t-num gold" style="font-size:54px">5</span><span class="t-small">corredor</span></div>
+        <div class="stat"><span class="t-num gold" style="font-size:54px">2</span><span class="t-small">praia</span></div>
+      </div>
+    </div>
+    <div class="ph sweep f1" data-zoom="PDV-1 · Freezer-vitrine VF50 (hero)" data-a="blur" style="--d:2;height:780px;box-shadow:0 40px 90px rgba(0,0,0,.45)"><img src="imagens/PDV-1.jpg" alt="Freezer-vitrine VF50 com o enxoval aprovado"></div>
+  </div>
+  <p class="src">Imagens aprovadas em 12/nov/2026. Lote 5 (wobbler de lançamento e versão condomínio) suspenso pelo cliente.</p>
 </section>
-<section class="slide" data-n="11" id="jornada" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Diagnóstico · Jornada do shopper</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Sete momentos, sete barreiras, uma resposta para cada</h2>
-</div>
-<table style="font-size:24px;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif">
-<tr style="background:#EFE5D3"><th style="width:16%;text-align:left">Momento</th><th style="width:40%;text-align:left">Barreira</th><th style="width:44%;text-align:left">Resposta do sistema</th></tr>
-<tr><td>Estímulo</td><td>Corredor frio, freezers todos iguais</td><td>Freezer-vitrine com os códigos da gelateria</td></tr>
-<tr><td>Interesse</td><td>Sabores misturados por formato</td><td>Planograma por sabor e régua de cores</td></tr>
-<tr><td>Interação</td><td>Pouco tempo com a porta aberta</td><td>QR na porta e na régua, conteúdo fora do freezer</td></tr>
-<tr><td>Decisão</td><td>Preço alto sem contexto</td><td>Picolé como porta de entrada, multipack como valor</td></tr>
-<tr><td>Ação</td><td>Ruptura do sabor preferido</td><td>Foto de execução e pedido guiado por dados</td></tr>
-<tr><td>Experiência</td><td>Textura com gelo após choque térmico</td><td>Sensor de temperatura e alerta</td></tr>
-<tr><td>Recompra</td><td>A marca some até a próxima ida ao mercado</td><td>QR leva ao lançamento e à loja mais próxima</td></tr>
-</table>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Análise 75LAB. Jornada simplificada: contexto → estímulo → interesse → interação → decisão → ação → experiência → recompra.</p>
-<aside class="notes">A jornada mostra que o problema não termina na compra: a experiência em casa depende da cadeia do frio, e a recompra depende de um laço entre varejo e loja. Por isso o sistema vai além da peça de PDV.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Solução" aria-label="As 21 peças">
+  <p class="eyebrow" data-a="up">01 Reconhecer · KV e enxoval</p>
+  <h2 class="t-h2" data-words>Um KV, 21 peças, cada uma com medida e lugar.</h2>
+  <div class="gal-lb" data-a="up" style="--d:2"><span><i style="background:var(--cafe)"></i>Freezer vertical VF50</span><span><i style="background:var(--ouro)"></i>Horizontal e ilha</span><span><i style="background:var(--pist-d)"></i>Corredor e praia</span><span style="margin-left:auto">Clique para ampliar e navegar</span></div>
+  <div class="gal">
+    <div class="ph" data-zoom="P01 · Painel iluminado · 64 × 23 cm" data-a="scale" style="--d:2;box-shadow:inset 0 -6px 0 var(--cafe)"><img src="imagens/P01.jpg" alt="P01 Painel iluminado" loading="lazy"><span class="code">P01</span><div class="cap"><b>Painel iluminado</b><span>64 × 23 cm</span></div></div>
+    <div class="ph" data-zoom="P02 · Envelopamento lateral · 78 × 190 cm" data-a="scale" style="--d:2;box-shadow:inset 0 -6px 0 var(--cafe)"><img src="imagens/P02.jpg" alt="P02 Envelopamento lateral" loading="lazy"><span class="code">P02</span><div class="cap"><b>Envelopamento lateral</b><span>78 × 190 cm</span></div></div>
+    <div class="ph" data-zoom="P03 · Moldura com selo · perfil 5 cm" data-a="scale" style="--d:2;box-shadow:inset 0 -6px 0 var(--cafe)"><img src="imagens/P03.jpg" alt="P03 Moldura com selo" loading="lazy"><span class="code">P03</span><div class="cap"><b>Moldura com selo</b><span>perfil 5 cm</span></div></div>
+    <div class="ph" data-zoom="P04 · Régua de sabores · 54 × 4 cm" data-a="scale" style="--d:2;box-shadow:inset 0 -6px 0 var(--cafe)"><img src="imagens/P04.jpg" alt="P04 Régua de sabores" loading="lazy"><span class="code">P04</span><div class="cap"><b>Régua de sabores</b><span>54 × 4 cm</span></div></div>
+    <div class="ph" data-zoom="P05 · Wobbler de batente · ø 14 cm" data-a="scale" style="--d:3;box-shadow:inset 0 -6px 0 var(--cafe)"><img src="imagens/P05.jpg" alt="P05 Wobbler de batente" loading="lazy"><span class="code">P05</span><div class="cap"><b>Wobbler de batente</b><span>ø 14 cm</span></div></div>
+    <div class="ph" data-zoom="PDV-1 · Freezer-vitrine · hero" data-a="scale" style="--d:3;box-shadow:inset 0 -6px 0 var(--cafe)"><img src="imagens/PDV-1.jpg" alt="PDV-1 Freezer-vitrine" loading="lazy"><span class="code">PDV-1</span><div class="cap"><b>Freezer-vitrine</b><span>hero</span></div></div>
+    <div class="ph" data-zoom="P06 · Testeira NF20 · 78 × 38 cm" data-a="scale" style="--d:3;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/P06.jpg" alt="P06 Testeira NF20" loading="lazy"><span class="code">P06</span><div class="cap"><b>Testeira NF20</b><span>78 × 38 cm</span></div></div>
+    <div class="ph" data-zoom="P07 · Testeira NF40 · 138 × 40 cm" data-a="scale" style="--d:3;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/P07.jpg" alt="P07 Testeira NF40" loading="lazy"><span class="code">P07</span><div class="cap"><b>Testeira NF40</b><span>138 × 40 cm</span></div></div>
+    <div class="ph" data-zoom="P08 · Frente NF40 · 138 × 45 cm" data-a="scale" style="--d:4;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/P08.jpg" alt="P08 Frente NF40" loading="lazy"><span class="code">P08</span><div class="cap"><b>Frente NF40</b><span>138 × 45 cm</span></div></div>
+    <div class="ph" data-zoom="P09 · Moldura das tampas · PETG 1,5 mm" data-a="scale" style="--d:4;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/P09.jpg" alt="P09 Moldura das tampas" loading="lazy"><span class="code">P09</span><div class="cap"><b>Moldura das tampas</b><span>PETG 1,5 mm</span></div></div>
+    <div class="ph" data-zoom="P10 · Divisórias por sabor · 50 × 18 cm" data-a="scale" style="--d:4;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/P10.jpg" alt="P10 Divisórias por sabor" loading="lazy"><span class="code">P10</span><div class="cap"><b>Divisórias por sabor</b><span>50 × 18 cm</span></div></div>
+    <div class="ph" data-zoom="P11 · Ilha de verão · 185 × 87 × 85 cm" data-a="scale" style="--d:4;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/P11.jpg" alt="P11 Ilha de verão" loading="lazy"><span class="code">P11</span><div class="cap"><b>Ilha de verão</b><span>185 × 87 × 85 cm</span></div></div>
+    <div class="ph" data-zoom="PDV-2 · NF40 aplicado · P07 a P10" data-a="scale" style="--d:5;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/PDV-2.jpg" alt="PDV-2 NF40 aplicado" loading="lazy"><span class="code">PDV-2</span><div class="cap"><b>NF40 aplicado</b><span>P07 a P10</span></div></div>
+    <div class="ph" data-zoom="PDV-3 · Kit Cluster C · régua, divisórias, faixa" data-a="scale" style="--d:5;box-shadow:inset 0 -6px 0 var(--ouro)"><img src="imagens/PDV-3.jpg" alt="PDV-3 Kit Cluster C" loading="lazy"><span class="code">PDV-3</span><div class="cap"><b>Kit Cluster C</b><span>régua, divisórias, faixa</span></div></div>
+    <div class="ph" data-zoom="P13 · Stopper em arco · proporção 1:2" data-a="scale" style="--d:5;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/P13.jpg" alt="P13 Stopper em arco" loading="lazy"><span class="code">P13</span><div class="cap"><b>Stopper em arco</b><span>proporção 1:2</span></div></div>
+    <div class="ph" data-zoom="P15 · Faixa de gôndola · 93 × 4 cm" data-a="scale" style="--d:5;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/P15.jpg" alt="P15 Faixa de gôndola" loading="lazy"><span class="code">P15</span><div class="cap"><b>Faixa de gôndola</b><span>93 × 4 cm</span></div></div>
+    <div class="ph" data-zoom="P16 · Adesivo de piso · ø 60 cm" data-a="scale" style="--d:6;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/P16-aplicado.jpg" alt="P16 Adesivo de piso" loading="lazy"><span class="code">P16</span><div class="cap"><b>Adesivo de piso</b><span>ø 60 cm</span></div></div>
+    <div class="ph" data-zoom="P17 · Marcador de formato · 12 × 5 cm" data-a="scale" style="--d:6;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/P17.jpg" alt="P17 Marcador de formato" loading="lazy"><span class="code">P17</span><div class="cap"><b>Marcador de formato</b><span>12 × 5 cm</span></div></div>
+    <div class="ph" data-zoom="PDV-4 · Corredor aplicado · VF50 + NF40" data-a="scale" style="--d:6;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/PDV-4.jpg" alt="PDV-4 Corredor aplicado" loading="lazy"><span class="code">PDV-4</span><div class="cap"><b>Corredor aplicado</b><span>VF50 + NF40</span></div></div>
+    <div class="ph" data-zoom="PDV-5 · Carrinho de praia · 80 × 50 × 60 cm" data-a="scale" style="--d:6;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/PDV-5.jpg" alt="PDV-5 Carrinho de praia" loading="lazy"><span class="code">PDV-5</span><div class="cap"><b>Carrinho de praia</b><span>80 × 50 × 60 cm</span></div></div>
+    <div class="ph" data-zoom="P19 · Guarda-sol e cardápio · ø 180 · 30 × 40 cm" data-a="scale" style="--d:7;box-shadow:inset 0 -6px 0 var(--pist-d)"><img src="imagens/P19.jpg" alt="P19 Guarda-sol e cardápio" loading="lazy"><span class="code">P19</span><div class="cap"><b>Guarda-sol e cardápio</b><span>ø 180 · 30 × 40 cm</span></div></div>
+  </div>
+  <p class="src">KV aprovado (arquivo KV-Baccio-2). Medidas marcadas “a confirmar” dependem de medição de campo.</p>
 </section>
-<section class="slide" data-n="12" id="oportunidade" data-transition="fade" style="background:#EFE5D3;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;justify-content:space-between;gap:48px">
-<div style="display:flex;flex-direction:column;gap:24px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Estratégia · A oportunidade</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.15;color:#2B1D16;width:1600px">Transformar cada freezer e cada carrinho em uma extensão visível, auditável e conectada da gelateria.</h2>
-<p style="font-size:30px;color:#5C4A3E;line-height:1.4;width:1500px">Porque a Bacio já tem a prova (200+ lojas) e o desejo. Falta o sistema que leva esse padrão a 12 mil pontos, justamente quando o premium do freezer ficou sem dono.</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#2B1D16;border-radius:16px;padding:48px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:600">Como podemos…</p>
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;line-height:1.3;color:#F7F1E7">…fazer com que qualquer freezer ou carrinho Bacio, em qualquer lugar, seja reconhecido, executado e medido como uma gelateria Bacio?</p>
-</div>
-<aside class="notes">A oportunidade junta problema (execução de terceiros), comportamento (o shopper já conhece a loja), negócio (12 mil PDVs e o espaço da Häagen-Dazs) e marca (a vitrine). A pergunta orienta todo o resto da apresentação.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Solução" aria-label="Planograma e clusters">
+  <p class="eyebrow" data-a="up">02 Escolher · planograma e clusters</p>
+  <h2 class="t-h2" data-words>No freezer, a escolha volta a ser por sabor, em três tamanhos de kit.</h2>
+  <div class="row" style="gap:50px">
+    <div class="ph" data-zoom="P03 · Freezer VF50 com planograma por sabor" data-a="mask" style="--d:2;width:420px;height:560px"><img src="imagens/P03.jpg" alt="Freezer com planograma por sabor"></div>
+    <div class="col" style="width:560px;gap:10px">
+      <div class="row aic" data-a="up" style="--d:2;gap:8px;flex-wrap:wrap"><span class="tag" style="background:#C8D0A0">Pistacchio</span><span class="tag" style="background:#D9B98F">Doce de Leite</span><span class="tag" style="background:#E3B4B1">Morango</span><span class="tag" style="background:#EADCC4">Caramello</span></div>
+      <div class="panel row aic" data-a="left" style="--d:3;padding:16px 22px;gap:18px"><span class="t-num gold" style="font-size:44px;width:40px">1</span><span class="t-body"><b>Topo</b> · quatro sabores em bloco</span></div>
+      <div class="panel row aic" data-a="left" style="--d:4;padding:16px 22px;gap:18px;background:var(--cafe);color:var(--creme);border:0"><span class="t-num" style="font-size:44px;width:40px;color:var(--ouro-l)">2</span><span class="t-body" style="color:#E6D5BF"><b>Olhos</b> · lançamento e potes-herói</span></div>
+      <div class="panel row aic" data-a="left" style="--d:5;padding:16px 22px;gap:18px"><span class="t-num gold" style="font-size:44px;width:40px">3</span><span class="t-body"><b>Mãos</b> · picolés de 70 g</span></div>
+      <div class="panel row aic" data-a="left" style="--d:6;padding:16px 22px;gap:18px"><span class="t-num gold" style="font-size:44px;width:40px">4</span><span class="t-body"><b>Meio-baixo</b> · potes clássicos</span></div>
+      <div class="panel row aic" data-a="left" style="--d:7;padding:16px 22px;gap:18px"><span class="t-num gold" style="font-size:44px;width:40px">5</span><span class="t-body"><b>Base</b> · estoque contra ruptura</span></div>
+    </div>
+    <div class="col f1" style="gap:22px">
+      <div class="mini" data-a="right" style="--d:4"><div class="ph" data-zoom="Cluster A · Ilha de verão P11"><img src="imagens/P11.jpg" alt="Cluster A"></div><div><span class="tag" style="background:var(--cafe);color:var(--creme)">A · Flagship</span><p class="t-small" style="margin-top:8px">Freezer-vitrine + ilha P11 + stopper e piso</p></div></div>
+      <div class="mini" data-a="right" style="--d:5"><div class="ph" data-zoom="Cluster B · Freezer-vitrine VF50"><img src="imagens/PDV-1.jpg" alt="Cluster B"></div><div><span class="tag">B · Intermediário</span><p class="t-small" style="margin-top:8px">VF50 com P01 a P05 + testeira P06</p></div></div>
+      <div class="mini" data-a="right" style="--d:6"><div class="ph" data-zoom="Cluster C · Kit compartilhado PDV-3"><img src="imagens/PDV-3.jpg" alt="Cluster C"></div><div><span class="tag">C · Compacto</span><p class="t-small" style="margin-top:8px">Régua, divisórias, faixa e selo, sem freezer próprio</p></div></div>
+      <p class="t-small" data-a="up" style="--d:8">Funciona em 1 loja ou em 12 mil: muda o kit, não o padrão.</p>
+    </div>
+  </div>
+  <p class="src">Planograma para VF50 de 1 porta; no piloto, teste A/B “por sabor” × “por formato”. Clusters finais a partir do inventário de freezers.</p>
 </section>
-<section class="slide" data-n="13" id="estrategia" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Estratégia</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Um sistema que se vê, se executa e se mede</h2>
-</div>
-<div style="display:flex;gap:24px;align-items:center">
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B5543A;font-weight:700">De</p>
-<p style="font-size:30px;line-height:1.4">Freezers com execução variável, exibindo um pote caro entre outros</p>
-</div>
-<svg class="arrow" viewBox="0 0 64 32" width="64" height="32" style="flex:none;align-self:center" aria-hidden="true"><path d="M0 10h38V0l26 16-26 16V22H0z" fill="#8BA65A"/></svg>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B5543A;font-weight:700">Para</p>
-<p style="font-size:30px;line-height:1.4">Uma rede de “gelaterias de bolso” reconhecíveis, organizadas por sabor e com padrão auditável</p>
-</div>
-<svg class="arrow" viewBox="0 0 64 32" width="64" height="32" style="flex:none;align-self:center" aria-hidden="true"><path d="M0 10h38V0l26 16-26 16V22H0z" fill="#8BA65A"/></svg>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#2B1D16;border-radius:16px;padding:40px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:700">Através de</p>
-<p style="font-size:30px;line-height:1.4;color:#F7F1E7">KV + enxoval modular + planograma + guia online + rastreamento + QR, ligando o freezer à loja</p>
-</div>
-</div>
-<p style="font-size:30px;color:#5C4A3E;line-height:1.4">Em vez de seis serviços avulsos, uma única história: <b>a mesma gelateria em 12 mil lugares</b>. Cada item pedido é uma peça necessária dela.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Estratégia 75LAB.</p>
-<aside class="notes">Se a Bacio cortar uma peça do sistema, a promessa enfraquece: sem guia não há padrão; sem rastreamento não há prova; sem QR não há laço com a loja.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Solução" aria-label="Ambulante e QR">
+  <p class="eyebrow" data-a="up">Ambulante e QR Code</p>
+  <h2 class="t-h2" data-words>Fora do freezer, a gelateria continua: na areia e no celular.</h2>
+  <div class="row" style="gap:56px">
+    <div class="col" style="width:880px;gap:20px">
+      <div class="ph kenburns" data-zoom="PDV-5 · Carrinho de praia" data-a="blur" style="--d:2;height:440px"><img src="imagens/PDV-5.jpg" alt="Carrinho de praia"></div>
+      <div class="row aic" data-a="up" style="--d:4;gap:30px">
+        <div class="row" style="gap:8px;align-items:flex-end;flex:none"><img src="imagens/sku-5.png" alt="Picolé Pistacchio" style="height:96px"><img src="imagens/sku-6.png" alt="Picolé Doce de Leite" style="height:96px"><img src="imagens/sku-7.png" alt="Picolé Fragola" style="height:96px"><img src="imagens/sku-8.png" alt="Picolé Caramello Salgado" style="height:96px"></div>
+        <p class="t-body"><b>Preço igual ao da loja</b>, visual de vitrine e só ocasiões premium. Carrinho, guarda-sol, avental e cardápio com QR aprovados.</p>
+      </div>
+    </div>
+    <div class="row f1" style="gap:40px">
+      <div class="phone" data-a="scale" style="--d:3;width:250px;height:500px;padding:12px;border-radius:42px" aria-label="Simulação das páginas do QR">
+        <div class="scr">
+          <div class="sc"><span class="t-small">Vitrine do dia</span><h4>Os sabores deste freezer</h4><div class="chip"><i style="background:#C8D0A0"></i>Pistacchio</div><div class="chip"><i style="background:#D9B98F"></i>Doce de Leite</div><div class="chip"><i style="background:#E3B4B1"></i>Morango</div><span class="btn">Ver o lançamento</span></div>
+          <div class="sc"><span class="t-small">Pergunta rápida</span><h4>Como chegou o seu gelato?</h4><div class="face"><span>Cremoso</span><span>Com gelo</span></div><p class="t-small">Vai para o painel de qualidade deste ponto.</p></div>
+          <div class="sc"><span class="t-small">Perto de você</span><h4>Prove o lançamento na loja</h4><div class="chip"><i style="background:var(--ouro)"></i>Bacio di Latte · 1,2 km</div><span class="btn">Abrir no mapa</span></div>
+        </div>
+      </div>
+      <div class="col f1" style="gap:22px;justify-content:center">
+        <div data-a="right" style="--d:5"><b class="t-h3" style="font-size:30px">QR dinâmico por ponto</b><p class="t-small">Cada leitura identifica PDV, freezer e peça</p></div>
+        <div data-a="right" style="--d:6"><b class="t-h3" style="font-size:30px">O consumidor vira auditor</b><p class="t-small">“Como chegou o seu gelato?” em um toque</p></div>
+        <div data-a="right" style="--d:7"><b class="t-h3" style="font-size:30px">Volta ao balcão</b><p class="t-small">Loja mais próxima e convite para provar</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">Modelo do canal ambulante (próprio, revenda ou evento) a definir com a Bacio. Telas do QR: simulação de interface.</p>
 </section>
-<section class="slide" data-n="14" id="pilares" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Estratégia · Pilares</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Cinco pilares, cada um com uma entrega e uma medida</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(5, 1fr);gap:20px">
-<div style="display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-top:8px solid #8BA65A;border-radius:12px;padding:32px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">01</p>
-<h3 style="font-size:30px;font-weight:700;letter-spacing:1px">RECONHECER</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">A gelateria está aqui: códigos da loja no corredor frio.</p>
-<p style="font-size:24px;color:#2B1D16;line-height:1.4"><b>Entrega:</b> KV e enxoval</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-top:8px solid #8BA65A;border-radius:12px;padding:32px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">02</p>
-<h3 style="font-size:30px;font-weight:700;letter-spacing:1px">ESCOLHER</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Como no balcão: por sabor, com o novo no ponto quente.</p>
-<p style="font-size:24px;color:#2B1D16;line-height:1.4"><b>Entrega:</b> planograma e mix do ambulante</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-top:8px solid #8BA65A;border-radius:12px;padding:32px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">03</p>
-<h3 style="font-size:30px;font-weight:700;letter-spacing:1px">GARANTIR</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Padrão em cada ponto e qualidade do produto protegida.</p>
-<p style="font-size:24px;color:#2B1D16;line-height:1.4"><b>Entrega:</b> guia online e rastreamento</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-top:8px solid #8BA65A;border-radius:12px;padding:32px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">04</p>
-<h3 style="font-size:30px;font-weight:700;letter-spacing:1px">CONECTAR</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Do freezer para a loja e de volta: sabor, novidade, visita.</p>
-<p style="font-size:24px;color:#2B1D16;line-height:1.4"><b>Entrega:</b> QR Code e páginas interativas</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#2B1D16;border-top:8px solid #B9CF8C;border-radius:12px;padding:32px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#B9CF8C">05</p>
-<h3 style="font-size:30px;font-weight:700;letter-spacing:1px;color:#F7F1E7">APRENDER</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.4">Cada ponto gera dado para decidir a próxima verba.</p>
-<p style="font-size:24px;color:#F7F1E7;line-height:1.4"><b>Entrega:</b> painel de execução e qualidade</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Os seis itens do briefing distribuídos nos pilares 01 a 04; o pilar 05 amarra tudo em dados.</p>
-<aside class="notes">A apresentação de solução segue esta ordem. Cada pilar responde a um insight: Reconhecer ao 02, Escolher ao 03, Garantir ao central e ao 05, Conectar ao 04, Aprender à falta de baseline de execução.</aside>
+
+<section class="slide dark" data-theme="dark" data-chapter="Rastreamento" aria-label="Plano de Rastreamento 75LAB">
+  <p class="eyebrow" data-a="up">Plano de Rastreamento 75LAB</p>
+  <h2 class="t-h2" data-words>Duas leituras do mesmo PDV: o dia da implantação e todos os dias depois.</h2>
+  <div class="g2" style="gap:36px">
+    <div class="panel col" data-a="left" style="--d:2;gap:12px;padding:28px 34px">
+      <div class="row aic jcb"><b class="t-h3" style="font-size:46px">One Shot</b><svg class="ic" viewBox="0 0 48 48" style="width:56px;height:56px" aria-hidden="true"><path d="M6 16h8l3-5h14l3 5h8v24H6z"/><circle cx="24" cy="27" r="7"/><circle class="pulse" cx="24" cy="27" r="3"/></svg></div>
+      <p class="t-body">Implantação conferida: foto georreferenciada, planograma por imagem, ID por peça e relatório por PDV.</p>
+    </div>
+    <div class="panel col" data-a="right" style="--d:3;gap:12px;padding:28px 34px;border-color:rgba(217,183,110,.45)">
+      <div class="row aic jcb"><b class="t-h3 gold" style="font-size:46px">On Timing</b><svg class="ic" viewBox="0 0 48 48" style="width:56px;height:56px" aria-hidden="true"><circle class="fill" cx="24" cy="34" r="3"/><path class="wave" d="M17 27a10 10 0 0 1 14 0"/><path class="wave w2" d="M12 22a17 17 0 0 1 24 0"/><path class="wave w3" d="M7 17a24 24 0 0 1 34 0"/></svg></div>
+      <p class="t-body">Todos os dias: temperatura e porta (IoT), GPS de freezer e carrinho, ruptura por foto, QR e alertas.</p>
+    </div>
+  </div>
+  <div class="flow mt-auto" style="align-items:flex-start">
+    <div class="fl" data-a="up" style="--d:3"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><rect x="12" y="4" width="24" height="40" rx="2"/><path d="M12 16h24M12 28h24"/><path class="bob" d="M31 9v3"/></svg></span><b>Display</b><span>Freezer, ilha, carrinho</span></div>
+    <span class="link" style="--d:1;margin-top:50px"></span>
+    <div class="fl" data-a="up" style="--d:4"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><path d="M6 16h8l3-5h14l3 5h8v24H6z"/><circle cx="24" cy="27" r="7"/></svg></span><b>Captação</b><span>Sensor, foto, QR</span></div>
+    <span class="link" style="--d:2;margin-top:50px"></span>
+    <div class="fl" data-a="up" style="--d:5"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><circle class="fill" cx="24" cy="34" r="3"/><path class="wave" d="M17 27a10 10 0 0 1 14 0"/><path class="wave w2" d="M12 22a17 17 0 0 1 24 0"/></svg></span><b>Transmissão</b><span>Rede móvel</span></div>
+    <span class="link" style="--d:3;margin-top:50px"></span>
+    <div class="fl" data-a="up" style="--d:6"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><rect x="6" y="8" width="36" height="26" rx="3"/><path d="M18 42h12M24 34v8"/><path class="grow" d="M14 28v-6M22 28v-10M30 28v-4"/></svg></span><b>Plataforma</b><span>Painel 75LAB</span></div>
+    <span class="link" style="--d:4;margin-top:50px"></span>
+    <div class="fl" data-a="up" style="--d:7"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><circle class="dash" cx="24" cy="24" r="16"/><circle class="fill" cx="24" cy="24" r="4"/></svg></span><b>Dados</b><span>Temperatura, execução</span></div>
+    <span class="link" style="--d:5;margin-top:50px"></span>
+    <div class="fl" data-a="up" style="--d:8"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><path d="M24 6a12 12 0 0 1 7 22v6H17v-6A12 12 0 0 1 24 6z"/><path d="M18 40h12"/><circle class="pulse" cx="24" cy="18" r="3"/></svg></span><b>Insights</b><span>Onde falha, o que vende</span></div>
+    <span class="link" style="--d:6;margin-top:50px"></span>
+    <div class="fl" data-a="up" style="--d:9"><span class="ring" style="width:100px;height:100px"><svg class="ic" viewBox="0 0 48 48" style="width:52px;height:52px"><circle cx="24" cy="24" r="18"/><path class="draw" d="M15 24l6 6 12-12"/></svg></span><b>Decisão</b><span>Reposição, verba, escala</span></div>
+  </div>
+  <p class="src">Sensores e reconhecimento de imagem com parceiros especializados, validados no piloto antes de escalar.</p>
 </section>
-<section class="slide" data-n="15" id="territorio" data-transition="fade" style="background:#2B1D16;color:#F7F1E7;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:600">Estratégia · Território criativo</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:96px;font-weight:600;line-height:1.05;color:#F7F1E7">A Vitrine Vai Até Você</h2>
-<p style="font-size:40px;color:#E3D6C3;line-height:1.3">Todo freezer Bacio é uma vitrine de gelateria, não um armário de potes.</p>
-</div>
-<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:32px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<h3 style="font-size:30px;font-weight:700;color:#B9CF8C">Como ganha vida</h3>
-<ul style="font-size:24px;color:#F7F1E7;line-height:1.5">
-<li>Envelopamento que reproduz a vitrine em escala real</li>
-<li>Porta do freezer como o vidro do balcão</li>
-<li>Régua de sabores com a cor de cada gelato</li>
-<li>O lançamento como a “cuba nova” da vitrine</li>
-<li>Carrinho como vitrine móvel; QR abre a “vitrine do dia”</li>
-</ul>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;background:#3A2A21;border-radius:16px;padding:40px">
-<h3 style="font-size:30px;font-weight:700;color:#B9CF8C">Camada de prova: Battuto Ogni Giorno</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.5">O gelato é batido todo dia, e mostramos como cuidamos dele até o seu freezer. Já materializada no selo −18 °C aprovado, presente na moldura da porta, nas tampas e na faixa de gôndola.</p>
-<p style="font-size:24px;color:#C9B9A3;line-height:1.5">Claims de frescor e temperatura só com validação jurídica e de qualidade.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#C9B9A3">Por que este: usa o ativo que só uma gelateria com 200+ lojas tem. Alternativas exploradas: Un Bacio per Tutti; Il Gusto del Mese.</p>
-<aside class="notes">Território escolhido porque responde aos insights 02 e 03: o shopper já conhece a loja e escolhe por sabor. A vitrine é o código visual mais reconhecível da marca e se modula bem por cluster. Un Bacio per Tutti é forte em afeto, mas fraco para organizar o freezer; Il Gusto del Mese depende de um calendário de lançamentos que alimente o varejo.</aside>
+
+<section class="slide" data-theme="light" data-chapter="Próximos passos" aria-label="Cronograma">
+  <p class="eyebrow" data-a="up">Cronograma e mensuração</p>
+  <h2 class="t-h2" data-words>Imagens aprovadas. Agora medida, 3D, produção e um piloto com gate.</h2>
+  <div class="row" style="gap:50px">
+    <div class="gantt f1" data-a="up" style="--d:1">
+      <div style="position:absolute;left:304px;right:0;top:-34px;bottom:0;pointer-events:none"><div style="position:absolute;left:24%;top:0;bottom:0;width:2px;background:var(--pist-d)"></div><span class="tag ok" style="position:absolute;left:24%;top:-12px;transform:translateX(-50%)">hoje</span></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">Planejamento e KV</span><div class="track"><span class="seg done" style="--d:1;left:0;width:13%">feito</span></div></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">21 peças<small>aprovadas 12/nov</small></span><div class="track"><span class="seg done" style="--d:2;left:11%;width:13%">feito</span></div></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">Medidas de campo</span><div class="track"><span class="seg" style="--d:3;left:24%;width:13%">medição</span></div></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">3D, executivo, artes</span><div class="track"><span class="seg" style="--d:4;left:33%;width:22%">3D + executivo + PSD</span></div></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">Produção e kitting</span><div class="track"><span class="seg" style="--d:5;left:53%;width:15%">produção</span></div></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">Piloto 20–50 PDVs</span><div class="track"><span class="seg" style="--d:6;left:64%;width:16%">piloto</span></div></div>
+      <div class="gr" style="grid-template-columns:280px 1fr"><span class="lb">Gate e escala</span><div class="track"><span class="seg gate" style="--d:7;left:76%;width:10%">gate</span><span class="seg soft" style="--d:8;left:87%;width:13%">escala</span></div></div>
+    </div>
+    <div class="panel col" data-a="right" style="--d:5;width:440px;gap:12px;padding:28px">
+      <b class="eyebrow">O gate mede</b>
+      <div class="row aic" style="gap:14px"><svg class="ic" viewBox="0 0 48 48" style="width:44px;height:44px" aria-hidden="true"><path d="M6 42h36"/><rect class="grow" x="10" y="26" width="6" height="16" rx="1"/><rect class="grow g2" x="21" y="18" width="6" height="24" rx="1"/><rect class="grow g3" x="32" y="10" width="6" height="32" rx="1"/></svg><span class="t-body"><b>Negócio</b> · sell-out por freezer</span></div>
+      <div class="row aic" style="gap:14px"><svg class="ic" viewBox="0 0 48 48" style="width:44px;height:44px" aria-hidden="true"><path d="M6 18l4-10h28l4 10M8 18v24h32V18M6 18h36"/></svg><span class="t-body"><b>Trade</b> · kits e planograma</span></div>
+      <div class="row aic" style="gap:14px"><svg class="ic" viewBox="0 0 48 48" style="width:44px;height:44px" aria-hidden="true"><path d="M20 30V8a4 4 0 0 1 8 0v22a8 8 0 1 1-8 0z"/><rect class="fill temp" x="22.5" y="13" width="3" height="19" rx="1.5"/></svg><span class="t-body"><b>Qualidade</b> · horas fora de −18 °C</span></div>
+      <div class="row aic" style="gap:14px"><svg class="ic" viewBox="0 0 48 48" style="width:44px;height:44px" aria-hidden="true"><rect x="14" y="4" width="20" height="40" rx="4"/><path class="wave" d="M38 14a6 6 0 0 1 0 8"/></svg><span class="t-body"><b>Digital</b> · QR e textura</span></div>
+      <p class="t-small">Resultado esperado, não real: metas após a linha de base, com lojas-controle.</p>
+    </div>
+  </div>
+  <p class="src">Sequência e dependências propostas. Durações e datas a definir com a Bacio conforme início e verba do MPVD 2027.</p>
 </section>
-<section class="slide" data-n="16" id="kv" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 01 Reconhecer · O KV aprovado</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Um KV que toda peça respeita</h2>
-</div>
-<div style="display:flex;gap:48px;align-items:start">
-<img src="imagens/kv.jpg" alt="KV aprovado: faixa de gelato de pistache com pegador dourado, chamada e embalagens oficiais" style="display:block;width:1000px;height:563px;object-fit:cover;border-radius:16px">
-<div style="flex:1;display:flex;flex-direction:column;gap:28px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;line-height:1.2;color:#2B1D16">“Seu Bacio favorito, onde você estiver.”</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Chamada, faixa de pistache, gravura de Capri e logo saem intactos do arquivo aprovado. Embalagens sempre na medida e na cor reais. Nenhuma peça cobre o preço do varejo.</p>
-<div style="display:flex;gap:16px">
-<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="height:56px;background:#FCF4E9;border:1px solid #D9CBB5;border-radius:8px"></div><p style="font-size:24px;color:#5C4A3E">Creme</p></div>
-<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="height:56px;background:#502C1D;border-radius:8px"></div><p style="font-size:24px;color:#5C4A3E">Café</p></div>
-<div style="flex:1;display:flex;flex-direction:column;gap:8px"><div style="height:56px;background:#B08A3A;border-radius:8px"></div><p style="font-size:24px;color:#5C4A3E">Dourado</p></div>
-</div>
-<div style="display:flex;gap:12px;align-items:end">
-<img src="imagens/selo.png" alt="Selo −18 °C: temperatura perfeita para um Bacio" style="display:block;width:120px;height:115px;object-fit:contain">
-<img src="imagens/sku-1.png" alt="Pote Pistacchio 490 ml" style="display:block;width:88px;height:97px;object-fit:contain">
-<img src="imagens/sku-2.png" alt="Pote Doce de Leite 490 ml" style="display:block;width:88px;height:97px;object-fit:contain">
-<img src="imagens/sku-3.png" alt="Pote Creme de Morango 490 ml" style="display:block;width:88px;height:97px;object-fit:contain">
-<img src="imagens/sku-4.png" alt="Pote Caramello Salgado 490 ml" style="display:block;width:88px;height:97px;object-fit:contain">
-</div>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">KV aprovado (arquivo KV-Baccio-2) e selo −18 °C criado pela Bacio. Embalagens oficiais de 490 ml.</p>
-<aside class="notes">O selo −18 °C é a materialização da camada de prova “Battuto Ogni Giorno”: entra na moldura da porta, na moldura das tampas e no kit do Cluster C.</aside>
+
+<section class="slide dark inst" data-theme="dark" data-chapter="Próximos passos" aria-label="Encerramento e contatos">
+  <div class="ph" style="position:absolute;inset:0;border-radius:0;opacity:.28"><img src="imagens/PDV-4.jpg" alt=""></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,20,13,.75),rgba(36,20,13,.96) 70%)"></div>
+  <div class="col f1" style="position:relative;gap:20px">
+    <h2 class="t-hero" data-words style="font-size:112px">A mesma gelateria em 12 mil lugares.</h2>
+    <p class="t-h1 gold" data-a="mask" style="--d:6;font-size:68px">Começando pelos primeiros 50.</p>
+    <div class="g3 mt-auto" style="gap:60px">
+      <div class="col" data-a="up" style="--d:8;gap:12px">
+        <span class="logo75" style="width:120px;height:62px;color:var(--creme)" role="img" aria-label="75LAB"></span>
+        <p class="t-small"><a href="https://75lab.com.br">75lab.com.br</a> · <a href="mailto:contato@75lab.com.br">contato@75lab.com.br</a> · <a href="https://www.instagram.com/setecincolab/">@setecincolab</a></p>
+        <p class="t-small">Razão social, CNPJ, endereço e telefone: <span class="fill-me">[a preencher]</span></p>
+      </div>
+      <div class="col" data-a="up" style="--d:9;gap:8px">
+        <p class="t-h3" style="font-size:30px">Caique Becker</p><p class="t-small">Diretor de Operação e Trade Marketing · <a href="mailto:caique.becker@75lab.com.br">caique.becker@75lab.com.br</a></p>
+        <p class="t-h3" style="font-size:30px;margin-top:8px">Eduardo Figueiredo</p><p class="t-small">Diretor de Arte · <a href="mailto:eduardo.figueiredo@75lab.com.br">eduardo.figueiredo@75lab.com.br</a></p>
+      </div>
+      <div class="col" data-a="up" style="--d:10;gap:10px">
+        <span class="wm" style="font-size:34px">Bacio <i>di</i> Latte</span>
+        <p class="t-small">MPVD 2027 · KV e enxoval aprovados em 12/nov/2026. Fontes completas no README do projeto.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<section class="slide" data-n="17" id="enxoval" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 01 Reconhecer · Enxoval</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Do KV ao PDV: 21 peças aprovadas em 4 frentes</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:12px">
-<img src="imagens/PDV-1.jpg" alt="Freezer-vitrine VF50 aplicado" style="display:block;width:100%;height:400px;object-fit:cover;border-radius:12px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">6</p>
-<h3 style="font-size:30px;font-weight:700">Freezer vertical</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">VF50: 5 peças e o hero</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px">
-<img src="imagens/PDV-2.jpg" alt="NF40 aplicado no supermercado" style="display:block;width:100%;height:400px;object-fit:cover;border-radius:12px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">8</p>
-<h3 style="font-size:30px;font-weight:700">Horizontal e ilha</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">NF20, NF40, ilha de verão e kit C</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px">
-<img src="imagens/PDV-4.jpg" alt="Corredor de congelados com as peças aplicadas" style="display:block;width:100%;height:400px;object-fit:cover;border-radius:12px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">5</p>
-<h3 style="font-size:30px;font-weight:700">Corredor e gôndola</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">4 peças e a cena aplicada</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px">
-<img src="imagens/PDV-5.jpg" alt="Carrinho de praia" style="display:block;width:100%;height:400px;object-fit:cover;border-radius:12px">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;color:#4E6B26">2</p>
-<h3 style="font-size:30px;font-weight:700">Praia</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Carrinho e kit do ambulante</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Imagens aprovadas em 12/nov/2026. Lote 5 (wobbler de lançamento e versão condomínio) suspenso pelo cliente.</p>
-<aside class="notes">Cada frente tem o seu slide a seguir, peça a peça, com medida e material. Fora das imagens: sensor, páginas de QR e painel de rastreamento.</aside>
-</section>
-<section class="slide" data-n="18" id="frente-vf50" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · Frente 01 · Freezer vertical Metalfrio VF50</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Freezer vertical: cinco peças e o hero</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P01.jpg" alt="P01 · Painel superior iluminado" style="display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P01</span> · Painel superior iluminado</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">64 × 23 cm · PVC 3 mm, UV fosco</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P02.jpg" alt="P02 · Envelopamento lateral" style="display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P02</span> · Envelopamento lateral</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">78 × 190 cm · vinil, laminação fosca</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P03.jpg" alt="P03 · Moldura da porta com selo" style="display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P03</span> · Moldura da porta com selo</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">perfil de 5 cm · nunca no vidro</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P04.jpg" alt="P04 · Régua de sabores com QR" style="display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P04</span> · Régua de sabores com QR</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">54 × 4 cm · PS 2 mm, 1 por prateleira</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P05.jpg" alt="P05 · Wobbler de batente" style="display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P05</span> · Wobbler de batente</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">ø 14 cm · PETG 1 mm, frente e verso</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/PDV-1.jpg" alt="PDV-1 · Freezer-vitrine VF50 (hero)" style="display:block;width:100%;height:220px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">PDV-1</span> · Freezer-vitrine VF50 (hero)</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">67,5 × 79,5 × 205,7 cm · Clusters A e B</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Peças aprovadas em 12/nov/2026. Medidas do painel, da lateral e do perfil da porta a confirmar no equipamento.</p>
-<aside class="notes">Cada peça tem ficha com medida, material e local de instalação. As medidas marcadas como a confirmar dependem de medição de campo antes do executivo.</aside>
-</section>
-<section class="slide" data-n="19" id="frente-nf" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · Frente 02 · Freezers horizontais NF20 e NF40 e ilha</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Freezer horizontal e ilha: oito peças</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P06.jpg" alt="P06 · Testeira NF20" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P06</span> · Testeira NF20</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">78 × 38 cm · PVC 5 mm</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P07.jpg" alt="P07 · Testeira NF40" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P07</span> · Testeira NF40</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">138 × 40 cm · PVC 5 mm</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P08.jpg" alt="P08 · Frente envelopada NF40" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P08</span> · Frente envelopada NF40</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">138 × 45 cm · vinil</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P09.jpg" alt="P09 · Moldura das tampas com selo" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P09</span> · Moldura das tampas com selo</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">PETG 1,5 mm · encaixe em C</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P10.jpg" alt="P10 · Divisórias de cor por sabor" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P10</span> · Divisórias de cor por sabor</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">50 × 18 cm · PETG 2 mm</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P11.jpg" alt="P11 · Ilha de verão Cluster A" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P11</span> · Ilha de verão Cluster A</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">185 × 87 × 85 cm · vinil 360°</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/PDV-2.jpg" alt="PDV-2 · NF40 no supermercado" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">PDV-2</span> · NF40 no supermercado</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">aplicação de P07 a P10</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/PDV-3.jpg" alt="PDV-3 · Kit Cluster C compartilhado" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">PDV-3</span> · Kit Cluster C compartilhado</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">régua, divisórias, faixa e selo</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Peças aprovadas em 12/nov/2026. Quadro frontal e moldura das tampas do NF40 a medir; ilha a confirmar com o equipamento escolhido.</p>
-<aside class="notes">Cada peça tem ficha com medida, material e local de instalação. As medidas marcadas como a confirmar dependem de medição de campo antes do executivo.</aside>
-</section>
-<section class="slide" data-n="20" id="frente-corredor" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:32px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · Frentes 03 e 04 · Corredor, gôndola e praia</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Do corredor até a areia</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P13.jpg" alt="P13 · Stopper em arco" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P13</span> · Stopper em arco</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">proporção 1:2 · PS 2 mm</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P15.jpg" alt="P15 · Faixa de gôndola" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P15</span> · Faixa de gôndola</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">93 × 4 cm · logo, QR e selo</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P16-aplicado.jpg" alt="P16 · Adesivo de piso" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P16</span> · Adesivo de piso</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">ø 60 cm · antiderrapante R10</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P17.jpg" alt="P17 · Marcador de preço por formato" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P17</span> · Marcador de preço por formato</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">12 × 5 cm · ao lado da etiqueta</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/PDV-4.jpg" alt="PDV-4 · Corredor aplicado" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">PDV-4</span> · Corredor aplicado</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">VF50 e NF40 com o enxoval</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/PDV-5.jpg" alt="PDV-5 · Carrinho de praia" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">PDV-5</span> · Carrinho de praia</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">80 × 50 × 60 cm · rodas para areia</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:10px">
-<img src="imagens/P19.jpg" alt="P19 · Guarda-sol, avental e cardápio" style="display:block;width:100%;height:190px;object-fit:cover;border-radius:12px;background:#E4E2DE">
-<p style="font-size:24px;font-weight:700;line-height:1.3"><span style="color:#4E6B26">P19</span> · Guarda-sol, avental e cardápio</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.3">ø 180 cm · 70 × 90 · 30 × 40 cm</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#2B1D16;border-radius:12px;padding:28px">
-<p style="font-size:24px;font-weight:700;color:#B9CF8C">Fora das imagens</p>
-<p style="font-size:24px;color:#F7F1E7;line-height:1.4">Sensor, páginas de QR e painel de rastreamento entram na fase digital.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Peças aprovadas em 12/nov/2026. Medida final do stopper e painéis do carrinho a definir com o fornecedor.</p>
-<aside class="notes">Cada peça tem ficha com medida, material e local de instalação. As medidas marcadas como a confirmar dependem de medição de campo antes do executivo.</aside>
-</section>
-<section class="slide" data-n="21" id="clusters" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · Escala por cluster</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Um sistema, três tamanhos de kit</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:14px;background:#2B1D16;border-radius:16px;padding:24px 24px 32px 24px">
-<img src="imagens/P11.jpg" alt="Ilha de verão do Cluster A" style="display:block;width:100%;height:260px;object-fit:cover;border-radius:10px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:700">Cluster A · Flagship</p>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.4">Redes premium e alto fluxo, freezer próprio e espaço extra</p>
-<p style="font-size:24px;color:#F7F1E7;line-height:1.4"><b>Kit:</b> freezer-vitrine + ilha de verão P11 + stopper P13 + adesivo de piso P16 + sensor</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:24px 24px 32px 24px">
-<img src="imagens/PDV-1.jpg" alt="Freezer-vitrine VF50 do Cluster B" style="display:block;width:100%;height:260px;object-fit:cover;border-radius:10px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:700">Cluster B · Intermediário</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Supermercado de bairro com freezer próprio de 1 porta</p>
-<p style="font-size:24px;color:#2B1D16;line-height:1.4"><b>Kit:</b> freezer-vitrine VF50 com P01 a P05 + testeira NF20 P06 + sensor</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:14px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:24px 24px 32px 24px">
-<img src="imagens/PDV-3.jpg" alt="Kit do Cluster C em freezer compartilhado" style="display:block;width:100%;height:260px;object-fit:cover;border-radius:10px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:700">Cluster C · Compacto</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Freezer compartilhado, conveniência, condomínio</p>
-<p style="font-size:24px;color:#2B1D16;line-height:1.4"><b>Kit:</b> régua P04 + divisórias P10 + faixa P15 + selo −18 °C, sem equipamento próprio</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Funciona em 1 loja ou em 12 mil: muda o tamanho do kit, não o padrão. Clusterização final a partir do inventário de freezers da Bacio.</p>
-<aside class="notes">Clusters definidos por espaço, fluxo e propriedade do equipamento. O C é o mais importante para escala: pegada mínima, aceito por qualquer varejista, e ainda assim reconhecível.</aside>
-</section>
-<section class="slide" data-n="22" id="planograma" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 02 Escolher · Planograma de freezer</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Colunas por sabor, faixas por formato</h2>
-</div>
-<div style="display:flex;gap:48px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:12px;width:420px">
-<img src="imagens/P03.jpg" alt="Freezer VF50 de frente com planograma por sabor, régua e selo" style="display:block;width:420px;height:520px;object-fit:cover;border-radius:16px">
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Colunas: Pistacchio, Doce de Leite, Morango, Caramello Salgado.</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:24px">
-<table style="font-size:24px;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif">
-<tr style="background:#EFE5D3"><th style="width:26%;text-align:left">Faixa</th><th style="width:74%;text-align:left">O que vai e por quê</th></tr>
-<tr><td>1 Topo</td><td>Os quatro sabores em bloco de marca; visível de longe</td></tr>
-<tr><td>2 Olhos</td><td>Ponto quente de lançamento e potes dos sabores-herói</td></tr>
-<tr><td>3 Mãos</td><td>Picolés de 70 g: porta de entrada de preço e impulso</td></tr>
-<tr><td>4 Meio-baixo</td><td>Potes clássicos: reposição de quem já sabe o que quer</td></tr>
-<tr><td>5 Base</td><td>Estoque de segurança: menos ruptura entre visitas</td></tr>
-</table>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">A régua de sabores com QR (P04) amarra coluna e faixa: cada sabor tem seu lugar, sua cor e seu nome, do topo até a prateleira.</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>No piloto:</b> teste A/B “por sabor” × “por formato” em lojas do mesmo cluster.</p>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Proposta para freezer vertical de 1 porta (VF50). Freezer horizontal: divisórias de cor por sabor (P10).</p>
-<aside class="notes">O princípio vem do insight 03: no balcão a escolha é por sabor. A cor da coluna faz o papel da cuba. Como é hipótese, propomos medir no piloto antes de escalar.</aside>
-</section>
-<section class="slide" data-n="23" id="ambulante" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 02 Escolher · Sorveteiro ambulante</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">O carrinho é uma loja que anda</h2>
-</div>
-<div style="display:flex;gap:40px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:16px;width:820px">
-<img src="imagens/PDV-5.jpg" alt="Carrinho de praia aprovado no calçadão" style="display:block;width:820px;height:458px;object-fit:cover;border-radius:16px">
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Carrinho 80 × 50 × 60 cm com rodas para areia, guarda-sol, avental e cardápio com QR (PDV-5 e P19).</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:20px">
-<div style="display:flex;flex-direction:column;gap:12px;background:#2B1D16;border-radius:16px;padding:32px">
-<h3 style="font-size:30px;font-weight:700;color:#B9CF8C">Regras de marca</h3>
-<ul style="font-size:24px;color:#F7F1E7;line-height:1.45">
-<li>Preço igual ao da loja de picolé, nunca abaixo</li>
-<li>Visual de vitrine, nunca de isopor adesivado</li>
-<li>Ocasiões premium: praia urbana, parque, clube, evento</li>
-</ul>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:32px">
-<h3 style="font-size:30px;font-weight:700">Mix e operação</h3>
-<ul style="font-size:24px;color:#5C4A3E;line-height:1.45">
-<li>Picolés: Pistacchio, Doce de Leite, Fragola, Caramello Salgado</li>
-<li>Caixa térmica com placas eutéticas, registro de temperatura e GPS</li>
-</ul>
-</div>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Modelo do canal (próprio, revenda ou evento) a definir com a Bacio. Painéis do carrinho a medir com o fornecedor.</p>
-<aside class="notes">Não encontramos operação ambulante pública da Bacio; tratamos como canal novo. O maior risco é o preço percebido: por isso as regras de marca vêm antes do mix.</aside>
-</section>
-<section class="slide" data-n="24" id="qr" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 04 Conectar · QR Code para o consumidor</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Um QR por ponto, que leva do freezer à loja</h2>
-</div>
-<div style="display:flex;gap:32px">
-<div style="flex:3;display:grid;grid-template-columns:repeat(2, 1fr);gap:20px">
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:32px">
-<h3 style="font-size:30px;font-weight:700">Vitrine do dia</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Sabores disponíveis e o lançamento em destaque</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:32px">
-<h3 style="font-size:30px;font-weight:700">Ficha do sabor</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Ingredientes, origem e harmonizações</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:32px">
-<h3 style="font-size:30px;font-weight:700">Qual é o seu sabor?</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Quiz rápido que indica um sabor do freezer</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:32px">
-<h3 style="font-size:30px;font-weight:700">Loja mais próxima</h3>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4">Convite para provar o lançamento no balcão</p>
-</div>
-</div>
-<div style="flex:2;display:flex;flex-direction:column;gap:16px;background:#2B1D16;border-radius:16px;padding:40px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:700">O diferencial</p>
-<h3 style="font-family:'Playfair Display', Georgia, serif;font-size:40px;font-weight:600;line-height:1.2;color:#F7F1E7">“Como chegou o seu gelato?”</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.5">Um toque: textura boa ou com gelo. O consumidor vira auditor de qualidade, e o dado volta ao painel por ponto de venda.</p>
-</div>
-</div>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Já previsto nas peças aprovadas:</b> régua de sabores (P04), moldura da porta (P03), faixa de gôndola (P15) e cardápio da praia (P19). Na embalagem, só depois.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Proposta 75LAB. QR dinâmico: cada leitura identifica o ponto, o freezer e a peça.</p>
-<aside class="notes">A promessa do QR precisa ser clara (“veja o sabor do mês”, “ganhe uma prova na loja”), nunca “saiba mais”. A avaliação de textura é a primeira métrica de qualidade percebida por PDV, algo que hoje a Bacio não tem.</aside>
-</section>
-<section class="slide" data-n="25" id="rastreamento" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 03 Garantir · Tecnologias de rastreamento</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Cada tecnologia responde a uma pergunta</h2>
-</div>
-<table style="font-size:24px;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif">
-<tr style="background:#EFE5D3"><th style="width:34%;text-align:left">Pergunta</th><th style="width:33%;text-align:left">Tecnologia</th><th style="width:33%;text-align:left">Dado gerado</th></tr>
-<tr><td>O freezer está na temperatura certa?</td><td>Sensor IoT de temperatura e porta</td><td>Curva e alerta de choque térmico</td></tr>
-<tr><td>Onde está cada freezer e carrinho?</td><td>GPS no equipamento</td><td>Mapa de ativos, equipamento desviado</td></tr>
-<tr><td>O material foi instalado?</td><td>ID único (QR/NFC) em cada peça</td><td>% de enxoval instalado por PDV</td></tr>
-<tr><td>O planograma está sendo cumprido?</td><td>Foto + reconhecimento de imagem</td><td>% de cumprimento, ruptura por SKU</td></tr>
-<tr><td>O consumidor interage?</td><td>QR dinâmico</td><td>Leituras por PDV, avaliação de textura</td></tr>
-</table>
-<div style="display:flex;gap:24px;align-items:center;background:#2B1D16;border-radius:16px;padding:32px 40px">
-<p style="font-size:30px;color:#F7F1E7;line-height:1.35">Não é tecnologia como efeito: a Magnum já usa foto e IA para gerar pedido. A diferença da Bacio é usar a temperatura como <b>garantia de qualidade</b>.</p>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Fonte do benchmark: Mundo do Marketing (2026). A 75LAB orquestra; sensores e reconhecimento de imagem com parceiros especializados.</p>
-<aside class="notes">Começar com 20 a 50 freezers no piloto e só escalar o que gerar decisão. Sensor sem alguém olhando o alerta vira custo.</aside>
-</section>
-<section class="slide" data-n="26" id="guia" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Solução · 03 Garantir + 05 Aprender · Guia online e painel</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">O guia termina em uma foto; a foto vira dado</h2>
-</div>
-<div style="display:flex;gap:24px;align-items:stretch">
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#FFFBF4;border:1px solid #E3D6C3;border-radius:16px;padding:40px">
-<h3 style="font-size:30px;font-weight:700">Guia de execução online</h3>
-<ul style="font-size:24px;color:#5C4A3E;line-height:1.5">
-<li>Web app no celular, sem instalação</li>
-<li>Versão por cluster e por modelo de freezer</li>
-<li>Até 5 passos por kit, com foto de referência</li>
-<li>Vídeos de montagem de até 60 s</li>
-<li>Calendário de campanhas e lançamentos</li>
-<li>Funciona com sinal fraco no corredor</li>
-</ul>
-</div>
-<svg class="arrow" viewBox="0 0 64 32" width="64" height="32" style="flex:none;align-self:center" aria-hidden="true"><path d="M0 10h38V0l26 16-26 16V22H0z" fill="#8BA65A"/></svg>
-<div style="flex:1;display:flex;flex-direction:column;gap:16px;background:#2B1D16;border-radius:16px;padding:40px">
-<h3 style="font-size:30px;font-weight:700;color:#B9CF8C">Painel Bacio</h3>
-<ul style="font-size:24px;color:#F7F1E7;line-height:1.5">
-<li>% de kits instalados e de planograma cumprido</li>
-<li>Ruptura por SKU e por região</li>
-<li>Horas fora da temperatura por freezer</li>
-<li>Leituras de QR e avaliação de textura</li>
-<li>Comparativo por cluster, rede e região</li>
-</ul>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Proposta 75LAB. O painel também serve de argumento na negociação de espaço com o comprador do varejo.</p>
-<aside class="notes">O ponto-chave do guia é a última etapa obrigatória: a foto do freezer pronto. Ela fecha o ciclo entre execução e auditoria sem precisar de um auditor em cada loja.</aside>
-</section>
-<section class="slide" data-n="27" id="kpis" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Execução · KPIs</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">O que vamos medir, e como</h2>
-</div>
-<table style="font-size:24px;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif">
-<tr style="background:#EFE5D3"><th style="width:16%;text-align:left">Dimensão</th><th style="width:50%;text-align:left">Indicadores</th><th style="width:34%;text-align:left">Como medir</th></tr>
-<tr><td>Negócio</td><td>Sell-out por freezer; ticket médio; peso do lançamento nas vendas</td><td>Dados do varejo, teste × controle</td></tr>
-<tr><td>Trade</td><td>Kits instalados; planograma cumprido; ruptura por SKU</td><td>Check-in do guia + foto + IA</td></tr>
-<tr><td>Qualidade</td><td>Horas fora da temperatura; avaliações de textura</td><td>Sensor IoT + QR</td></tr>
-<tr><td>Digital</td><td>Leituras de QR; cliques em “loja mais próxima”; convites resgatados</td><td>Analytics + código de resgate</td></tr>
-<tr><td>Operação</td><td>Tempo de montagem; avarias; vida útil no frio</td><td>Guia online + manutenção</td></tr>
-<tr><td>Ambulante</td><td>Vendas por turno; perda por derretimento</td><td>Registro de temperatura + fechamento</td></tr>
-</table>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.4"><b>Sem metas inventadas:</b> como ainda não há linha de base de execução, o piloto mede antes e depois em lojas-teste contra lojas-controle do mesmo cluster.</p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Proposta 75LAB. Metas definidas com a Bacio após a medição de linha de base.</p>
-<aside class="notes">Os indicadores de qualidade são os que a Bacio não tem hoje e os que mais diferenciam o projeto. Sell-out continua sendo o critério de decisão para escalar.</aside>
-</section>
-<section class="slide" data-n="28" id="riscos" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Execução · Pré-mortem</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Se falhasse, seria por isto, e já está endereçado</h2>
-</div>
-<table style="font-size:24px;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif">
-<tr style="background:#EFE5D3"><th style="width:42%;text-align:left">Risco</th><th style="width:58%;text-align:left">Como reduzimos</th></tr>
-<tr><td>Peças descolam ou embaçam no frio</td><td>Teste em câmara fria; adesivos para baixa temperatura</td></tr>
-<tr><td>O varejo não aceita as peças</td><td>Kit C de pegada mínima; painel como argumento de negociação</td></tr>
-<tr><td>O promotor não segue o guia</td><td>Até 5 passos por kit, foto obrigatória, treino de 10 minutos</td></tr>
-<tr><td>Tecnologia vira custo sem uso</td><td>Piloto em 20 a 50 freezers; só escala o que gera decisão</td></tr>
-<tr><td>Claim de frescor gera risco</td><td>Validação jurídica e de qualidade antes de comunicar</td></tr>
-<tr><td>Ambulante baixa o preço percebido</td><td>Preço igual ao da loja; carrinho-vitrine; locais selecionados</td></tr>
-<tr><td>Produto derrete no carrinho</td><td>Placas eutéticas ou gelo seco; capacidade por turno</td></tr>
-</table>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Análise 75LAB.</p>
-<aside class="notes">O pré-mortem mostra que a 75LAB pensa produção e operação desde o começo, não só a criação. É também o que justifica começar por um piloto.</aside>
-</section>
-<section class="slide" data-n="29" id="roadmap" data-transition="fade" style="background:#EFE5D3;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Execução · Roadmap</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Começar pequeno, medir e só então escalar</h2>
-</div>
-<div style="display:flex;gap:12px;align-items:stretch">
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#4E6B26">01</p>
-<p style="font-size:24px;font-weight:700">Descoberta</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Manual, vendas, freezers, visitas</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#4E6B26">02</p>
-<p style="font-size:24px;font-weight:700">Estratégia</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Clusters e território</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#4E6B26">03</p>
-<p style="font-size:24px;font-weight:700">Criação</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">KV, enxoval, QR, guia</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#4E6B26">04</p>
-<p style="font-size:24px;font-weight:700">Protótipo</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Freezer real e teste no frio</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#2B1D16;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#B9CF8C">05</p>
-<p style="font-size:24px;font-weight:700;color:#F7F1E7">Piloto</p>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.35">20 a 50 PDVs + controle</p>
-</div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#4E6B26">06</p>
-<p style="font-size:24px;font-weight:700">Aprendizado</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Vendas, execução, qualidade</p>
-</div>
-<div style="width:8px;background:#B5543A;border-radius:4px"></div>
-<div style="flex:1;display:flex;flex-direction:column;gap:12px;background:#FFFBF4;border-radius:12px;padding:24px">
-<p style="font-size:24px;font-weight:700;color:#4E6B26">07</p>
-<p style="font-size:24px;font-weight:700">Escala</p>
-<p style="font-size:24px;color:#5C4A3E;line-height:1.35">Rollout por cluster antes do verão</p>
-</div>
-</div>
-<div style="display:flex;gap:24px;align-items:center;border-left:8px solid #B5543A;padding:8px 0 8px 32px">
-<p style="font-size:30px;line-height:1.4;color:#2B1D16"><b>Gate antes da escala:</b> o piloto precisa mostrar ganho de sell-out ou de execução contra as lojas-controle.</p>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Prazos a definir com a Bacio, conforme data de início e verba do MPVD 2027.</p>
-<aside class="notes">O piloto é a proposta de entrada: escopo pequeno, medido e com critério claro, o que reduz o risco de decisão para a Bacio. A linha vermelha marca o gate antes da escala.</aside>
-</section>
-<section class="slide" data-n="30" id="proximos" data-transition="fade" style="background:#2B1D16;color:#F7F1E7;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#B9CF8C;font-weight:600">Próximos passos</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#F7F1E7">Imagens aprovadas; agora medida, 3D e piloto</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:24px">
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #B9CF8C;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#B9CF8C">1</p>
-<h3 style="font-size:30px;font-weight:700;color:#F7F1E7">Medidas de campo</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.4">Painel, lateral e perfil da porta do VF50; frente e tampas do NF40; carrinho e stopper</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #B9CF8C;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#B9CF8C">2</p>
-<h3 style="font-size:30px;font-weight:700;color:#F7F1E7">3D e executivo</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.4">3D de cada peça em escala real e projeto executivo com cotas, materiais e acabamentos</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #B9CF8C;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#B9CF8C">3</p>
-<h3 style="font-size:30px;font-weight:700;color:#F7F1E7">Artes finais</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.4">PSD na medida de cada face, a partir do KV aprovado</p>
-</div>
-<div style="display:flex;flex-direction:column;gap:16px;border-top:6px solid #B9CF8C;padding:32px 0 0 0">
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:64px;color:#B9CF8C">4</p>
-<h3 style="font-size:30px;font-weight:700;color:#F7F1E7">Piloto</h3>
-<p style="font-size:24px;color:#E3D6C3;line-height:1.4">20 a 50 PDVs com lojas-controle, sensor e QR ativos, e critério claro para escalar</p>
-</div>
-</div>
-<p style="font-family:'Playfair Display', Georgia, serif;font-size:40px;line-height:1.3;color:#F7F1E7">A mesma gelateria em 12 mil lugares. <span style="color:#B9CF8C">Vamos começar pelos primeiros 50.</span></p>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#C9B9A3">Situação em 12/nov/2026: 21 peças com imagem aprovada. Lote 5 suspenso pelo cliente.</p>
-<aside class="notes">Sem as medidas de campo, o executivo não fecha. O piloto continua sendo a porta de entrada para escalar com dados.</aside>
-</section>
-<section class="slide" data-n="31" id="fontes" data-transition="fade" style="background:#F7F1E7;color:#2B1D16;font-family:'DM Sans', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
-<div style="display:flex;flex-direction:column;gap:16px">
-<p style="font-size:24px;letter-spacing:3px;text-transform:uppercase;color:#4E6B26;font-weight:600">Referências</p>
-<h2 style="font-family:'Playfair Display', Georgia, serif;font-size:64px;font-weight:600;line-height:1.1;color:#2B1D16">Fontes</h2>
-</div>
-<div style="display:grid;grid-template-columns:repeat(2, 1fr);gap:48px">
-<div style="display:flex;flex-direction:column;gap:12px">
-<h3 style="font-size:24px;font-weight:700;color:#4E6B26">Bacio di Latte</h3>
-<ul style="font-size:24px;color:#2B1D16;line-height:1.45">
-<li><a href="https://exame.com/negocios/o-plano-da-bacio-di-latte-para-faturar-r-12-bilhao-em-2025/">Exame: plano para R$ 1,2 bi em 2025</a></li>
-<li><a href="https://www.milkpoint.com.br/noticias-e-mercado/giro-noticias/exclusivo-bacio-di-latte-desembarca-em-nova-york-e-mira-receita-de-r-15-bilhao-este-e-um-trecho-240964/">MilkPoint: Nova York e R$ 1,5 bi (2026)</a></li>
-<li><a href="https://portalmais360.com.br/economia/2026/10/17/bacio-di-latte-faturamento-expansao-estados-unidos-2026.html">Portal Mais 360: projeção 2026 (out/2026)</a></li>
-<li><a href="https://www.moneytimes.com.br/bacio-di-latte-faz-10-anos-com-delivery-e-freezer-em-supermercado/">Money Times: freezer em supermercado</a></li>
-<li><a href="https://mercadoeconsumo.com.br/24/07/2025/foodservice/bacio-di-latte-inaugura-loja-de-picoles-no-endereco-onde-nasceu/">Mercado&amp;Consumo: loja de picolés (2025)</a></li>
-<li><a href="https://exame.com/marketing/bacio-di-latte-distribui-sorvete-de-graca-no-lancamento-do-ciocchino-pistacchio/">Exame: lançamento do Ciocchino Pistacchio</a></li>
-<li><a href="https://www.abcdacomunicacao.com.br/bacio-di-latte-leva-pre-lancamento-do-ciocchino-caramello-salgado-ao-baile-da-vogue-2026/">ABC da Comunicação: Baile da Vogue 2026</a></li>
-<li>Preços: Angeloni, Prado Supermercados, Zona Sul</li>
-<li>KV e enxoval aprovados: 75LAB, 12/nov/2026</li>
-</ul>
-</div>
-<div style="display:flex;flex-direction:column;gap:12px">
-<h3 style="font-size:24px;font-weight:700;color:#4E6B26">Mercado e concorrência</h3>
-<ul style="font-size:24px;color:#2B1D16;line-height:1.45">
-<li><a href="https://abis.com.br/retrospectiva-abis-2025-lideranca-inovacao-e-sustentabilidade-no-setor-de-sorvetes/">ABIS: Retrospectiva 2025</a></li>
-<li><a href="https://bhbfood.com/noticias/consumo-de-sorvete-no-brasil-atinge-77-litros-por-ano/">BHB Food: 7,7 litros por ano (Abrasorvete)</a></li>
-<li><a href="https://www.bloomberglinea.com.br/negocios/haagen-dazs-sai-do-brasil-e-abre-espaco-para-concorrentes-em-sorvete-premium/">Bloomberg Línea: saída da Häagen-Dazs</a></li>
-<li><a href="https://forbes.com.br/forbes-money/2026/08/haagen-dazs-sai-do-brasil/">Forbes Brasil: Häagen-Dazs deixa o Brasil</a></li>
-<li><a href="https://mundodomarketing.com.br/the-magnum-ice-cream-company-transforma-ia-em-copiloto-de-vendas-e-freezers-em-retail-media">Mundo do Marketing: Magnum, IA e freezers</a></li>
-<li><a href="https://mercadoeconsumo.com.br/11/09/2026/noticias-varejo/magnum-aposta-em-inovacao-e-expansao-de-canais-de-conveniencias-a-farmacias/">Mercado&amp;Consumo: Magnum em farmácias</a></li>
-</ul>
-</div>
-</div>
-<p style="position:absolute;left:128px;bottom:64px;width:1664px;font-size:24px;color:#6B5A4E">Consulta em novembro de 2026. Metas, share e número de PDVs são dados declarados pela empresa à imprensa.</p>
-<aside class="notes">Antes de apresentar, abrir cada link e conferir os números citados; preços de varejo mudam com frequência.</aside>
-</section>
-</div>
-<div id="ui"><button id="prev" aria-label="Slide anterior">‹</button><span id="pos">1 / 31</span><button id="next" aria-label="Próximo slide">›</button></div>
-<div id="bar"></div>
-<script>
-(function(){
-  var s=[].slice.call(document.querySelectorAll('.slide')),n=s.length,i=0,st=document.getElementById('stage');
-  function fit(){var k=Math.min(innerWidth/1920,innerHeight/1080);st.style.transform='scale('+k+') translate(-50%,-50%)';st.style.transformOrigin='0 0';st.style.left='50%';st.style.top='50%';st.style.transform='translate(-50%,-50%) scale('+k+')';st.style.transformOrigin='center center';}
-  function go(k){i=Math.max(0,Math.min(n-1,k));s.forEach(function(e,j){e.classList.toggle('on',j===i)});document.getElementById('pos').textContent=(i+1)+' / '+n;document.getElementById('bar').style.width=((i+1)/n*100)+'%';history.replaceState(null,'','#s'+(i+1));}
-  addEventListener('resize',fit);fit();
-  function fromHash(){var m=/^#s(\d+)$/.exec(location.hash);go(m?+m[1]-1:0)}fromHash();addEventListener('hashchange',fromHash);
-  addEventListener('keydown',function(e){var k=e.key;if(['ArrowRight','ArrowDown','PageDown',' '].indexOf(k)>-1){e.preventDefault();go(i+1)}else if(['ArrowLeft','ArrowUp','PageUp'].indexOf(k)>-1){e.preventDefault();go(i-1)}else if(k==='Home')go(0);else if(k==='End')go(n-1);});
-  document.getElementById('next').onclick=function(){go(i+1)};document.getElementById('prev').onclick=function(){go(i-1)};
-  document.addEventListener('click',function(e){if(e.target.closest('a,button'))return;var t=window.getSelection&&String(window.getSelection());if(t)return;go(i+(e.clientX>=innerWidth/2?1:-1));});
-  var x0=null;addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(i+(dx<0?1:-1));x0=null});
-})();
-</script>
+
+</main>
+
+<footer id="ftr">
+  <span class="pos" id="pos" aria-live="polite">01</span>
+  <div class="nav-btns">
+    <button class="nb" id="nb-prev" aria-label="Slide anterior"><svg viewBox="0 0 16 16"><path d="M10 2L4 8l6 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+    <button class="nb" id="nb-next" aria-label="Próximo slide"><svg viewBox="0 0 16 16"><path d="M6 2l6 6-6 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+  </div>
+  <div id="prog"></div>
+</footer>
+
+<nav id="chaps" aria-label="Capítulos"><button class="x">Fechar ✕</button><ol></ol></nav>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="Imagem ampliada">
+  <button class="lbx" aria-label="Fechar imagem">Fechar ✕</button>
+  <button class="lbb lbp" aria-label="Imagem anterior"><svg width="18" height="18" viewBox="0 0 16 16"><path d="M10 2L4 8l6 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+  <figure><img src="" alt=""><figcaption></figcaption></figure>
+  <button class="lbb lbn" aria-label="Próxima imagem"><svg width="18" height="18" viewBox="0 0 16 16"><path d="M6 2l6 6-6 6" stroke="currentColor" stroke-width="1.6" fill="none"/></svg></button>
+</div>
+
+<div id="cur" aria-hidden="true"></div><div id="cur-r" aria-hidden="true"><span>AMPLIAR</span></div>
+
+<script src="assets/js/app.js"></script>
 </body>
 </html>
