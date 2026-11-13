@@ -15,7 +15,7 @@ Os slides com dados trazem a fonte no rodapé; o último slide lista os links. A
 
 ## Navegação
 
-Cada tela é um palco 16:9 de 1920 × 1080 que escala para caber na janela. Avança com → ↓ PageDown espaço, volta com ← ↑ PageUp, Home/End vão ao início e ao fim; também pelos botões no canto inferior direito ou deslizando o dedo. Deep link: `#s5`. Imprimir (Ctrl+P) gera uma tela por página.
+Cada tela é um palco 16:9 de 1920 × 1080 que escala para caber na janela. Avança com → ↓ PageDown espaço, volta com ← ↑ PageUp, Home/End vão ao início e ao fim; clicar na metade direita da tela avança e na metade esquerda volta; também pelos botões no canto inferior direito ou deslizando o dedo. Deep link: `#s5`. Imprimir (Ctrl+P) gera uma tela por página.
 
 ## Estrutura
 
