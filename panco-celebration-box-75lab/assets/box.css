@@ -65,3 +65,10 @@
 .bx-facas .b1 .quadro img,.bx-facas .b2 .quadro img{transform:none;height:auto;max-height:100%;max-width:100%;width:auto}
 .bx-facas{grid-template-columns:.9fr 1.1fr .7fr}
 .bx-facas .quadro{height:430px}
+
+/* capa no padrão da Celebration Origami, com o KV limpo (só produto, appeal e estrelas) */
+.s-bxcapa .pk-bg{background:#9e091c url(img/kv-limpo.webp) center/cover no-repeat}
+.s-bxcapa .pk-bg::before{content:none}
+.s-bxcapa .pk-bg::after{background:linear-gradient(90deg,rgba(90,4,14,.55) 0%,rgba(90,4,14,.25) 30%,rgba(90,4,14,0) 44%)}
+.s-capa.s-bxcapa h1{font-size:112px}
+.s-bxcapa .texto{width:470px}

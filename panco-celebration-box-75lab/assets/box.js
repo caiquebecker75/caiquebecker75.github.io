@@ -44,6 +44,16 @@ let anterior = telas.findIndex(t => t.classList.contains('ativa'));
 new MutationObserver(() => {
   const i = telas.findIndex(t => t.classList.contains('ativa')); if (i === anterior || i < 0) return;
   const e = estados.get(telas[i].id); if (e) { e.i = i > anterior ? 0 : e.n - 1; e.ir(e.i); }
+  pararAuto(); const t = telas[i]; if (t.dataset.auto && i > anterior && e) iniciarAuto(t, e);
   anterior = i;
 }).observe($('#stage'), { subtree: true, attributes: true, attributeFilter: ['class'] });
+
+/* telas com data-auto: ao chegar avançando, a sequência roda sozinha; qualquer clique ou tecla assume o controle */
+let auto = null;
+function pararAuto() { if (auto) { clearInterval(auto); auto = null; } }
+function iniciarAuto(t, e) {
+  auto = setInterval(() => { if (e.i >= e.n - 1) return pararAuto(); e.i++; e.ir(e.i); }, +t.dataset.auto);
+}
+['pointerdown', 'keydown'].forEach(ev => addEventListener(ev, pararAuto, true));
+{ const t = ativa(); if (t && t.dataset.auto && estados.has(t.id)) iniciarAuto(t, estados.get(t.id)); }
 window.__box = { estados };
