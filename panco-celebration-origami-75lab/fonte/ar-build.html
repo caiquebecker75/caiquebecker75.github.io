@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Panco · gerar AR</title>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.170.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.170.0/examples/jsm/"}}</script>
+</head><body style="background:#222;color:#eee;font:14px monospace"><pre id="log">gerando…</pre>
+<script type="module">
+/* Gera o AR da caixa montada (p = 1) a partir do mesmo modelo da apresentação:
+   GLB (Android/computador) e USDZ (iPhone). Unidades em metros, Y para cima, origem no chão. */
+import * as THREE from 'three';
+import { GLTFExporter } from 'three/addons/exporters/GLTFExporter.js';
+import { USDZExporter } from 'three/addons/exporters/USDZExporter.js';
+import { loadBox, loadSkin, PancoBox } from '../assets/panco3d.js';
+const log = t => document.getElementById('log').textContent += '\n' + t;
+const sabor = new URLSearchParams(location.search).get('sabor') || 'brownie';
+const meta = await loadBox('../assets/3d/');
+const skin = loadSkin(sabor);
+await Promise.all(Object.values(skin).map(t => new Promise(r => { if (t.image) r(); else t.onUpdate = r; const i = setInterval(() => { if (t.image && t.image.complete) { clearInterval(i); r(); } }, 100); })));
+const box = new PancoBox(meta, skin, null); box.setProgress(1);
+// material de exportação: a arte por fora; o miolo do cartão vira uma malha própria, virada para dentro e recuada 0,3 mm
+const art = new THREE.MeshStandardMaterial({ map: skin.map, roughnessMap: skin.orm, metalnessMap: skin.orm, roughness: 1, metalness: 1, name: 'arte' });
+const miolo = new THREE.MeshStandardMaterial({ color: 0xe9e2d4, roughness: .92, metalness: 0, name: 'cartao' });
+const raiz = new THREE.Group(); raiz.name = 'panco_' + sabor;
+const corpo = new THREE.Group(); corpo.position.copy(box.group.position); raiz.add(corpo);
+let k = 0;
+box.group.children.forEach(m => {
+  if (m.material.side !== THREE.FrontSide) return;           // uma vez por geometria
+  if (m.geometry === box.glue.g) return;                       // a aba de cola fica escondida por dentro e, no AR, aparecia como um filete na frente
+  const g = m.geometry.clone(); g.computeVertexNormals();
+  const a = new THREE.Mesh(g, art); a.name = 'arte_' + k; corpo.add(a);
+  const gi = g.clone(), P = gi.attributes.position, N = gi.attributes.normal;
+  for (let i = 0; i < P.count; i++) P.setXYZ(i, P.getX(i) - N.getX(i)*.3, P.getY(i) - N.getY(i)*.3, P.getZ(i) - N.getZ(i)*.3);
+  const idx = gi.index.array; for (let i = 0; i < idx.length; i += 3) { const t = idx[i+1]; idx[i+1] = idx[i+2]; idx[i+2] = t; }
+  gi.index.needsUpdate = true; gi.computeVertexNormals();
+  const b = new THREE.Mesh(gi, miolo); b.name = 'cartao_' + k; corpo.add(b); k++;
+});
+const cena = new THREE.Group(); const yup = new THREE.Group(); yup.rotation.x = -Math.PI/2; yup.scale.setScalar(.001); yup.add(raiz); cena.add(yup);
+cena.updateMatrixWorld(true);
+const bb = new THREE.Box3().setFromObject(cena); log('caixa (m): ' + bb.getSize(new THREE.Vector3()).toArray().map(v => v.toFixed(3)).join(' × ') + ' · y mín ' + bb.min.y.toFixed(4));
+const envia = async (nome, buf) => { const b64 = await new Promise(r => { const f = new FileReader(); f.onload = () => r(f.result); f.readAsDataURL(new Blob([buf])); });
+  return (await fetch('http://127.0.0.1:8845/' + nome, { method: 'POST', body: b64 })).status; };
+const glb = await new GLTFExporter().parseAsync(cena, { binary: true, maxTextureSize: 2048 });
+log('glb ' + (glb.byteLength/1e6).toFixed(2) + ' MB → ' + await envia('panco-' + sabor + '.glb', glb));
+const usdz = await new USDZExporter().parseAsync(cena, { quickLookCompatible: true, maxTextureSize: 2048, includeAnchoringProperties: true, ar: { anchoring: { type: 'plane' }, planeAnchoring: { alignment: 'horizontal' } } });
+log('usdz ' + (usdz.byteLength/1e6).toFixed(2) + ' MB → ' + await envia('panco-' + sabor + '.usdz', usdz));
+window.pronto = true; log('pronto');
+</script></body></html>

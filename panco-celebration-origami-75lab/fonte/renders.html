@@ -1,0 +1,55 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Panco renders</title>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.170.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.170.0/examples/jsm/"}}</script>
+<style>html,body{margin:0;background:#888}</style></head><body><div id="v" style="width:2400px;height:1500px"></div>
+<script type="module">
+/* Imagens estáticas da apresentação, geradas do mesmo modelo:
+   ?tipo=tecnico → caixa em cartão cinza com as linhas de vinco e corte aparentes (fundo transparente)
+   ?tipo=macro   → close do dourado da lâmina com luz rasante (fundo transparente) */
+import * as THREE from 'three';
+import { loadBox, loadSkin, PancoBox, Palco } from '../assets/panco3d.js';
+const q = new URLSearchParams(location.search), tipo = q.get('tipo') || 'tecnico';
+const el = document.getElementById('v'); el.style.width = (q.get('w')||2400)+'px'; el.style.height = (q.get('h')||1500)+'px';
+const pal = new Palco(el, { sombra: tipo === 'tecnico' ? .09 : .3 });
+pal.r.setPixelRatio(1); pal.resize();
+const meta = await loadBox('../assets/3d/');
+const box = new PancoBox(meta, loadSkin('brownie', pal.r), pal.scene.environment);
+box.setProgress(+(q.get('p') || 1)); pal.scene.add(box.group);
+if (tipo === 'tecnico') {
+  const cinza = new THREE.MeshStandardMaterial({ color: 0xd9d8d3, roughness: .78, metalness: 0, side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 });
+  const linha = new THREE.LineBasicMaterial({ color: 0x4a4a4a, transparent: true, opacity: .9 });
+  const linhaV = new THREE.LineDashedMaterial({ color: 0x6b6b6b, dashSize: 4, gapSize: 3, transparent: true, opacity: .8 });
+  const vistos = new Set();
+  box.group.children.slice().forEach(m => {
+    m.material = cinza;
+    if (vistos.has(m.geometry)) return; vistos.add(m.geometry);
+    const e = new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry, 35), linha); box.group.add(e);
+  });
+  pal.scene.environmentIntensity = .7;
+  pal.setPose(Palco.pose(+(q.get('az')||-62), +(q.get('el')||24), +(q.get('d')||640), [0, 0, +(q.get('tz')||95)]));
+} else {
+  // luz rasante: o foil acende e o relevo aparece
+  const k = new THREE.DirectionalLight(0xfff0dc, 3.2); k.position.set(-500, -900, 380); pal.scene.add(k);
+  const k2 = new THREE.SpotLight(0xffe2b8, 6, 0, .5, .8, 0); k2.position.set(260, -420, 360); k2.target.position.set(0, -60, 70); pal.scene.add(k2, k2.target);
+  pal.scene.traverse(o => { if (o.isHemisphereLight) o.intensity = +(q.get('hemi')||.35); else if (o.isDirectionalLight && o !== k && o.intensity > .01) o.intensity *= +(q.get('dirs')||.3); });
+  k.intensity = +(q.get('key')||2.4); k2.intensity = +(q.get('spot')||5);
+  pal.r.toneMappingExposure = Math.pow(2, +(q.get('exp')||-0.7));
+  // ambiente de estúdio escuro com duas softboxes: o metal reflete faixas de luz em vez de um branco chapado
+  const est = new THREE.Scene(); est.background = new THREE.Color(0x120604);
+  const sb = (w, h, pos, cor, int) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(cor).multiplyScalar(int), side: THREE.DoubleSide }));
+    m.position.set(...pos); m.lookAt(0, 0, 0); est.add(m); };
+  sb(6, 2.2, [-6, -7, 3], 0xfff1d8, +(q.get('sb1')||5));
+  sb(4.5, 3.2, [7.6, -3.4, 3.4], 0xffe2b8, +(q.get('sb2')||3));
+  sb(1.2, 7, [5.5, -6.5, 1], 0xfff4e0, +(q.get('sb4')||4));
+  sb(10, 10, [0, 0, 12], 0xffffff, +(q.get('sb3')||.6));
+  // rebatedor baixo: a lâmina inclina para fora no topo, então reflete o que está abaixo da câmera
+  sb(7, 3.2, [7.2, -2.6, -4.6], 0xffe6c0, +(q.get('sb5')||3.2));
+  const envE = new THREE.PMREMGenerator(pal.r).fromScene(est, .02).texture;
+  box.mat.art.envMap = envE; box.mat.art.envMapIntensity = +(q.get('envm')||1.6); box.mat.art.needsUpdate = true;
+  pal.setPose(Palco.pose(+(q.get('az')||-40), +(q.get('el')||10), +(q.get('d')||300), [0, +(q.get('ty')||-40), +(q.get('tz')||64)]));
+  pal.cam.fov = 24; pal.cam.updateProjectionMatrix();
+}
+pal.ctl.update(); pal.r.render(pal.scene, pal.cam);
+window.snap = async (nome) => { pal.ctl.update(); pal.r.render(pal.scene, pal.cam);
+  return (await fetch('http://127.0.0.1:8845/' + nome, { method: 'POST', body: pal.r.domElement.toDataURL('image/png') })).status; };
+window.pal = pal; window.box = box; window.Palco = Palco; window.pronto = true;
+</script></body></html>

@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panco Celebration Origami × 75 LAB</title>
+<meta name="description" content="Apresentação da 75 LAB para a Panco: embalagem de panettone em antiprisma com vincos curvos, hot stamping dourado, montagem 3D interativa e AR.">
+<meta name="robots" content="noindex">
+<meta name="versao" content="20261116192227">
+<link rel="icon" href="../ype-mpv-2027-75lab/assets/75lab-lime.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../ype-mpv-2027-75lab/assets/deck.css?v=20261116192227">
+<link rel="stylesheet" href="../ype-mpv-2027-75lab/assets/telas.css?v=20261116192227">
+<link rel="stylesheet" href="assets/panco.css?v=20261116192227">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.170.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.170.0/examples/jsm/"}}</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-pincel" viewBox="0 0 48 48"><path d="M30 6l12 12-20 20H10V26zM25 11l12 12M10 38l-4 4"/></symbol>
+  <symbol id="i-fabrica" viewBox="0 0 48 48"><path d="M6 42V20l10 6v-6l10 6v-6l10 6V8h6v34zM13 35h5M23 35h5M33 35h5"/></symbol>
+  <symbol id="i-caminhao" viewBox="0 0 48 48"><path d="M4 11h24v21H4zM28 18h9l7 8v6H28z"/><circle cx="12" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></symbol>
+  <symbol id="i-rede" viewBox="0 0 48 48"><rect x="19" y="19" width="10" height="10"/><rect x="5" y="5" width="8" height="8"/><rect x="35" y="5" width="8" height="8"/><rect x="5" y="35" width="8" height="8"/><rect x="35" y="35" width="8" height="8"/><path d="M13 13l6 6M35 13l-6 6M13 35l6-6M35 35l-6-6"/></symbol>
+  <symbol id="i-relogio" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M24 13v11l8 5"/></symbol>
+  <symbol id="i-escudo" viewBox="0 0 48 48"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></symbol>
+  <symbol id="i-olho" viewBox="0 0 48 48"><path d="M4 24s7-13 20-13 20 13 20 13-7 13-20 13S4 24 4 24z"/><circle cx="24" cy="24" r="6"/></symbol>
+  <symbol id="i-cadeado" viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="20"/><path d="M16 22v-6a8 8 0 0 1 16 0v6M24 30v5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 48 48"><path d="M9 25l9 9 21-21"/></symbol>
+  <symbol id="i-x" viewBox="0 0 48 48"><path d="M12 12l24 24M36 12L12 36"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 64 64"><rect x="8" y="8" width="18" height="18"/><rect x="38" y="8" width="18" height="18"/><rect x="8" y="38" width="18" height="18"/><path d="M14 14h6v6h-6zM44 14h6v6h-6zM14 44h6v6h-6zM38 38h6v6h-6zM50 50h6M50 38v6M38 50h6M44 44h6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 48 48"><path d="M24 44s14-13 14-24a14 14 0 0 0-28 0c0 11 14 24 14 24z"/><circle cx="24" cy="20" r="5"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 48 48"><path d="M6 15h36v25H6zM17 15l3-6h8l3 6"/><circle cx="24" cy="27" r="7"/></symbol>
+  <symbol id="i-calendario" viewBox="0 0 48 48"><path d="M6 10h36v32H6zM6 19h36M16 5v9M32 5v9M13 27h5M22 27h5M31 27h5M13 34h5M22 34h5"/></symbol>
+  <symbol id="i-grafico" viewBox="0 0 48 48"><path d="M7 7v34h35M13 33l9-10 6 6 12-14"/></symbol>
+  <symbol id="i-alvo" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="2"/></symbol>
+  <symbol id="i-pessoas" viewBox="0 0 48 48"><circle cx="17" cy="16" r="6"/><circle cx="33" cy="18" r="5"/><path d="M5 40c0-8 5-13 12-13s12 5 12 13M29 28c7 0 13 4 13 12"/></symbol>
+  <symbol id="i-raio" viewBox="0 0 48 48"><path d="M27 4L10 27h12l-3 17 19-25H26z"/></symbol>
+  <symbol id="i-loja" viewBox="0 0 48 48"><path d="M6 18l4-10h28l4 10zM8 18v24h32V18M20 42V30h8v12"/></symbol>
+  <symbol id="i-caixa" viewBox="0 0 48 48"><path d="M6 14l18-8 18 8v20l-18 8-18-8zM6 14l18 8 18-8M24 22v20"/></symbol>
+  <symbol id="i-arquivo" viewBox="0 0 48 48"><path d="M11 4h18l9 9v31H11zM28 4v10h10M17 25h14M17 32h14"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 48 48"><path d="M24 6l20 36H4zM24 19v11M24 35v2"/></symbol>
+  <symbol id="i-moeda" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M29 17h-7a4 4 0 0 0 0 8h4a4 4 0 0 1 0 8h-8M24 13v4M24 33v3"/></symbol>
+  <symbol id="i-cubo" viewBox="0 0 48 48"><path d="M24 4l18 10v20L24 44 6 34V14zM6 14l18 10 18-10M24 24v20"/></symbol>
+  <symbol id="i-sinal" viewBox="0 0 48 48"><circle cx="24" cy="30" r="3"/><path d="M16 22a11 11 0 0 1 16 0M10 16a19 19 0 0 1 28 0M24 33v10"/></symbol>
+  <symbol id="i-lupa" viewBox="0 0 48 48"><circle cx="20" cy="20" r="13"/><path d="M30 30l13 13"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 48 48"><path d="M6 6h18l18 18-18 18L6 24z"/><circle cx="15" cy="15" r="3"/></symbol>
+  <symbol id="i-pasta" viewBox="0 0 48 48"><path d="M5 10h14l4 5h20v25H5z"/></symbol>
+  <symbol id="i-versao" viewBox="0 0 48 48"><circle cx="12" cy="10" r="5"/><circle cx="12" cy="38" r="5"/><circle cx="36" cy="18" r="5"/><path d="M12 15v18M36 23c0 9-12 6-21 13"/></symbol>
+  <symbol id="i-nota" viewBox="0 0 48 48"><path d="M10 4h28v40l-5-4-5 4-4-4-5 4-4-4-5 4zM17 16h14M17 24h14M17 32h8"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 48 48"><path d="M7 24h32M29 14l10 10-10 10"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 48 48"><path d="M6 8h36v24H20l-9 8v-8H6z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 48 48"><path d="M5 10h38v28H5zM5 10l19 16 19-16"/></symbol>
+  <symbol id="i-fone" viewBox="0 0 48 48"><path d="M10 6h8l4 10-5 4c2 5 6 9 11 11l4-5 10 4v8c0 2-2 4-4 4C20 42 6 28 6 10c0-2 2-4 4-4z"/></symbol>
+  <symbol id="i-clique" viewBox="0 0 48 48"><path d="M19 26V9a4 4 0 0 1 8 0v13l9 2c3 .7 5 3.6 4.4 6.6L39 39c-.5 3-3 5-6 5H24c-2 0-3.8-1-5-2.6L11 31c-1.4-2 0-4.8 2.4-4.8 1 0 2 .4 2.7 1.2L19 30"/><path d="M8 12l4 2M10 4l3 4M18 1v4"/></symbol>
+  <symbol id="i-funil" viewBox="0 0 48 48"><path d="M5 7h38L28 25v15l-8 4V25z"/></symbol>
+</svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="p-ponta" viewBox="0 0 48 48"><path d="M10 44V12h28v32M8 12l4-7h24l4 7M10 22h28M10 32h28M6 44h36"/></symbol>
+  <symbol id="p-ilha" viewBox="0 0 48 48"><path d="M4 40h40v5H4zM8 40V26h32v14M13 26V14h22v12M18 14V6h12v8"/></symbol>
+  <symbol id="p-chao" viewBox="0 0 48 48"><path d="M14 44V4h20v40M14 15h20M14 25h20M14 35h20M10 44h28"/></symbol>
+  <symbol id="p-totem" viewBox="0 0 48 48"><path d="M17 44V4h14v40M12 44h24M21 10h6v6h-6zM21 22h6"/></symbol>
+  <symbol id="p-cubo" viewBox="0 0 48 48"><path d="M24 4l18 10v20L24 44 6 34V14zM6 14l18 10 18-10M24 24v20"/></symbol>
+  <symbol id="p-testeira" viewBox="0 0 48 48"><path d="M4 6h40v12H4zM9 18v26M39 18v26M9 30h30"/></symbol>
+  <symbol id="p-faixa" viewBox="0 0 48 48"><path d="M4 12h40M4 28h40M4 28h40v7H4zM10 12V6h8v6M24 12V6h8v6"/></symbol>
+  <symbol id="p-balcao" viewBox="0 0 48 48"><path d="M6 44h36M10 44V30h28v14M14 30l3-16h14l3 16M18 22h12"/></symbol>
+  <symbol id="p-clip" viewBox="0 0 48 48"><path d="M24 3v42M18 6h12M17 13h14v6H17zM17 25h14v6H17zM17 37h14v6H17z"/></symbol>
+  <symbol id="p-wobbler" viewBox="0 0 48 48"><path d="M4 8h22M15 8v10"/><circle cx="24" cy="30" r="12"/><path d="M19 30h10"/></symbol>
+  <symbol id="p-stopper" viewBox="0 0 48 48"><path d="M4 8v32M4 24h10"/><path d="M14 10h30v28H14z"/><path d="M20 20h18M20 28h12"/></symbol>
+  <symbol id="p-preco" viewBox="0 0 48 48"><path d="M6 8h36v26H6zM12 16h10M12 24h6"/><path d="M28 28V16h8M28 22h6"/><path d="M24 34v10"/></symbol>
+  <symbol id="p-mobile" viewBox="0 0 48 48"><path d="M24 2v8M8 10h32M12 10v8M36 10v8M6 18h12v18H6zM30 18h12v18H30z"/></symbol>
+  <symbol id="p-adesivo" viewBox="0 0 48 48"><ellipse cx="24" cy="34" rx="20" ry="9"/><path d="M24 6v18M17 17l7 7 7-7"/></symbol>
+  <symbol id="p-digital" viewBox="0 0 48 48"><path d="M4 8h40v26H4zM16 42h16M24 34v8M10 26l8-8 6 6 8-10 6 6"/></symbol>
+</svg>
+
+<div id="wrap"><div id="stage" class="t-foto capa">
+
+  <!-- ===================================================== capa (a arte final da capa entra aqui) -->
+  <section id="capa" class="tela s-capa s-pkcapa ativa" data-tema="foto" data-titulo="Capa" data-cap="">
+    <div class="pk-bg sangra"></div>
+    <div class="texto">
+      <span class="eyebrow anima"><b>(PAN003)</b> Embalagem Panco Celebration Origami</span>
+      <h1 class="anima d1"><span>O Natal</span><span>ganhou</span><span class="ouro">forma</span></h1>
+      <p class="lead anima d2">Uma embalagem-escultura:<br>design que vira presente,<br>engenharia que vira economia</p>
+      <div class="acoes anima d3">
+        <button class="botao cheio seta" data-ir="cap-desafio" data-cursor="Ir">Começar</button>
+      </div>
+    </div>
+    <span class="rot sangra anima d4">75 LAB · Aceleradora de Trade Marketing</span>
+    <div class="marquee sangra"><div><span>O Natal ganhou forma</span><span>Brownie</span><span>Banoffee</span><span>Tiramissu</span><span>Fermentação natural</span><span>Hot stamping dourado</span><span>Uma peça, um ponto de cola</span><span>O Natal ganhou forma</span><span>Brownie</span><span>Banoffee</span><span>Tiramissu</span><span>Fermentação natural</span><span>Hot stamping dourado</span><span>Uma peça, um ponto de cola</span></div></div>
+  </section>
+
+  <!-- ===================================================== capítulo 01 -->
+  <section id="cap-desafio" class="tela s-cap" data-tema="escuro" data-titulo="Capítulo 01 · O desafio" data-cap="(01) O desafio" data-capitulo="01">
+    <span class="num-cap sangra">01</span>
+    <div class="texto"><span class="eyebrow anima"><b>Capítulo 01</b> de 05</span><h2 class="anima d1">O desafio</h2><p class="lead anima d2">Uma caixa de panetone que precisa ser presente<br>na gôndola e simples na fábrica.</p></div>
+    <ol class="dentro anima d3"><li><i>01</i>Ponto de partida</li><li><i>02</i>Seis metas, seis respostas</li></ol>
+    <div class="trilha-cap anima d4" data-atual="01"><span data-c="01">01<b>O desafio</b></span><span data-c="02">02<b>Design</b></span><span data-c="03">03<b>Engenharia</b></span><span data-c="04">04<b>Próximos passos</b></span><span data-c="05">05<b>Por que a 75 LAB</b></span></div>
+  </section>
+
+  <section id="partida" class="tela n" data-tema="escuro" data-titulo="Ponto de partida" data-cap="(01) O desafio">
+    <div class="pk"><div class="dupla r">
+      <div>
+        <span class="eyebrow anima"><b>Hoje</b> · Panettone Panco 550 g</span>
+        <h2 class="anima d1">Na gôndola de Natal, <span class="t-ouro">toda caixa é igual.</span></h2>
+        <p class="lead anima d2">A caixa atual é um prisma octogonal com tampa plana, o formato de quase toda a categoria. Bonita de perto, mas some na pilha ao lado das concorrentes.</p>
+        <ul class="itens anima d3">
+          <li><i>01</i><span><b>Produto</b>Panetone de 550 g em forminha, cerca de 16 cm de diâmetro <span class="est">EST.</span></span></li>
+          <li><i>02</i><span><b>Caixa atual</b>Prisma de 8 faces, 4 largas e 4 chanfros, cerca de 18 × 18 × 19 cm <span class="est">EST.</span></span></li>
+          <li><i>03</i><span><b>O que precisamos</b>Uma forma própria da Panco, que a pessoa reconheça de longe e queira dar de presente.</span></li>
+        </ul>
+      </div>
+      <div class="pk-atual anima d2">
+        <figure class="g"><img src="assets/img/atual-brownie.webp" alt="Caixa atual do Panettone Panco Brownie 550 g"></figure>
+        <figure><img src="assets/img/atual-banoffee.webp" alt="Caixa atual do Banoffee 550 g"></figure>
+        <figure><img src="assets/img/atual-tiramissu.webp" alt="Caixa atual do Tiramissu 550 g"></figure>
+        <span class="leg">Linha atual 550 g · Brownie, Banoffee e Tiramissu</span>
+      </div>
+    </div></div>
+    <p class="fonte">EST. = estimativa a partir das fotos e de medidas publicadas da linha. Medidas reais a validar com a Panco e com uma caixa física.</p>
+  </section>
+
+  <section id="metas" class="tela n" data-tema="claro" data-titulo="Seis metas, seis respostas" data-cap="(01) O desafio">
+    <div class="pk">
+      <span class="eyebrow anima"><b>O briefing</b> em seis metas</span>
+      <h2 class="anima d1">Seis metas, <span style="color:var(--vermelho)">seis respostas.</span></h2>
+      <div class="pk-metas">
+        <article class="anima d1"><span>01</span><b>Estrutura diferenciada</b><p>Cortes, dobras e encaixes que viram assinatura de marca.</p><em>Antiprisma com vincos curvos</em></article>
+        <article class="anima d2"><span>02</span><b>Mínimo de cola</b><p>Menos etapas na coladeira e menos material.</p><em>Um único ponto de cola</em></article>
+        <article class="anima d3"><span>03</span><b>Faca otimizada</b><p>Uma peça só, sem peças soltas nem berço.</p><em>Faca de 769 × 468 mm</em></article>
+        <article class="anima d1"><span>04</span><b>Empilhamento estável</b><p>A pilha precisa ficar em pé e bonita na gôndola.</p><em>Pilha contínua girando 45°</em></article>
+        <article class="anima d2"><span>05</span><b>Montagem simples</b><p>Fecha sem ferramenta e sem cola na loja.</p><em>Fundo 1-2-3 e tampa com lingueta</em></article>
+        <article class="anima d3"><span>06</span><b>Impacto com custo baixo</b><p>Premium onde o olho vê, econômico onde não vê.</p><em>Dourado só em 13% da área</em></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== capítulo 02 -->
+  <section id="cap-design" class="tela s-cap" data-tema="escuro" data-titulo="Capítulo 02 · Design" data-cap="(02) Design" data-capitulo="02">
+    <span class="num-cap sangra">02</span>
+    <div class="texto"><span class="eyebrow anima"><b>Capítulo 02</b> de 05</span><h2 class="anima d1">Design</h2><p class="lead anima d2">Uma forma que ninguém tem na gôndola<br>e uma comunicação que conta o Natal da Panco.</p></div>
+    <ol class="dentro anima d3"><li><i>01</i>A forma</li><li><i>02</i>A embalagem em 3D</li><li><i>03</i>A comunicação</li><li><i>04</i>O acabamento</li><li><i>05</i>Três sabores</li><li><i>06</i>Na gôndola</li></ol>
+    <div class="trilha-cap anima d4" data-atual="02"><span data-c="01">01<b>O desafio</b></span><span data-c="02">02<b>Design</b></span><span data-c="03">03<b>Engenharia</b></span><span data-c="04">04<b>Próximos passos</b></span><span data-c="05">05<b>Por que a 75 LAB</b></span></div>
+  </section>
+
+  <section id="forma" class="tela s-pkplanta n" data-tema="claro" data-titulo="A forma" data-cap="(02) Design">
+    <div class="planta sangra"></div>
+    <div class="pk"><div class="dupla l">
+      <figure class="tecnico anima d2"><img src="assets/img/caixa-tecnica.png" alt="Embalagem em cartão cinza com as dobras e encaixes aparentes"><span class="cota" style="left:21%;top:24%"><i></i><b>Tampa 17 × 17 cm</b><em>com lingueta de fecho</em></span><span class="cota" style="left:33%;top:37%"><i></i><b>Contrapós</b><em>seguram a tampa fechada</em></span><span class="cota" style="left:21%;top:51%"><i></i><b>Base do topo</b><em>quadrado girado 45°</em></span><span class="cota" style="left:15%;top:73%"><i></i><b>Escudo</b><em>face do sabor, abaulada</em></span><span class="cota" style="left:33%;top:80%"><i></i><b>Vinco curvo</b><em>flecha de 12 mm</em></span><span class="cota" style="left:47%;top:68%"><i></i><b>Lâmina</b><em>face da árvore dourada</em></span>
+        <figcaption>PAN003 · Celebration Origami · estrutura R0 · antiprisma escudo · tampa aberta</figcaption></figure>
+      <div>
+        <span class="eyebrow anima"><b>A forma</b> · antiprisma escudo</span>
+        <h2 class="anima d1">Um quadrado <span class="t-verm">girado 45°</span> vira escultura.</h2>
+        <p class="lead anima d2">A base e a tampa são quadrados de 17 × 17 cm, girados 45° um sobre o outro. Entre eles, oito faces triangulares se alternam.</p>
+        <ul class="itens anima d3">
+          <li><i>01</i><span><b>4 escudos</b>As faces de comunicação: marca, sabor e produto, sempre de frente.</span></li>
+          <li><i>02</i><span><b>4 lâminas</b>As faces que desenham a silhueta e levam a árvore dourada.</span></li>
+          <li><i>03</i><span><b>Vinco curvo de 12 mm</b>Abaúla o escudo para fora: mais personalidade e mais espaço para o panetone.</span></li>
+        </ul>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- tela com ESTADOS: o Avançar percorre os enquadramentos antes de seguir -->
+  <section id="design-3d" class="tela s-pk3d" data-tema="escuro" data-titulo="A embalagem em 3D" data-cap="(02) Design">
+    <div class="pk-3d sangra" data-cursor="Girar"></div>
+    <div class="pk-hud"><span class="eyebrow"><b>A embalagem</b> em 3D</span><h2>Explore a <span class="t-ouro">embalagem</span></h2></div>
+    <div class="pk-passos"></div>
+    <div class="pk-callout"></div>
+    <div class="pk-sabores"></div>
+    <span class="pk-dica">Avançar percorre os enquadramentos · arraste para girar</span>
+    <script type="application/json">[
+      {"k":"Visão geral","b":"Design que valoriza o produto","p":"Um antiprisma: a tampa quadrada gira 45° sobre a base. Oito faces, nenhuma igual à categoria."},
+      {"k":"Zoom no appeal","b":"Comunicação de alto impacto","p":"O escudo abaulado é a vitrine: o panetone aberto, o recheio e o sabor escrito à mão em dourado."},
+      {"k":"Vista superior","b":"Estrutura inteligente","p":"Tampa de 17 × 17 cm com lingueta e dois contrapós: fecha sem cola e abre sem rasgar."},
+      {"k":"Detalhe lateral","b":"A história no verso","p":"Fermentação natural de até 48 horas: o diferencial da Panco ganha uma face inteira, com o selo em dourado."}
+    ]</script>
+  </section>
+
+  <section id="comunicacao" class="tela s-pkcirc n" data-tema="claro" data-titulo="A comunicação" data-cap="(02) Design">
+    <div class="pk"><div class="dupla r">
+      <div>
+        <span class="eyebrow anima"><b>A comunicação</b> · o Natal em círculos</span>
+        <h2 class="anima d1">Os círculos da Panco <span class="t-verm">viraram Natal.</span></h2>
+        <p class="lead anima d2">A comunicação da Panco sempre foi feita dos seus clássicos círculos coloridos. No Natal, eles ganham estampas em dourado e viram bolas, fogos e celebração.</p>
+        <ul class="itens anima d3">
+          <li><i>01</i><span><b>Os círculos de sempre</b>Vermelho, azul e amarelo: a marca que a pessoa reconhece em qualquer gôndola.</span></li>
+          <li><i>02</i><span><b>Estampas em dourado</b>Estrelas, raios e listras transformam cada círculo em bola de Natal e fogos de fim de ano.</span></li>
+          <li><i>03</i><span><b>Letra feita à mão</b>O nome do sabor escrito à mão traz o cuidado da fermentação natural.</span></li>
+        </ul>
+      </div>
+      <div class="circ-quadro anima d2">
+        <div class="linha">
+          <span class="rot">A marca</span>
+          <img class="logo" src="assets/img/logo-panco-bolas.png" alt="Logo Panco com os círculos coloridos">
+          <i class="c v" style="--s:150px"></i><i class="c a" style="--s:108px"></i><i class="c y" style="--s:70px"></i>
+        </div>
+        <div class="seta">↓ <span>no Natal</span></div>
+        <div class="linha natal">
+          <span class="rot">A embalagem</span>
+          <img class="c" style="--s:170px" src="assets/img/circ-0.png" alt="Círculo com estrela dourada">
+          <img class="c" style="--s:130px" src="assets/img/circ-1.png" alt="Círculo com listras douradas">
+          <img class="c" style="--s:100px" src="assets/img/circ-2.png" alt="Círculo com estrela pequena dourada">
+          <img class="c" style="--s:74px" src="assets/img/circ-3.png" alt="Círculo listrado dourado">
+        </div>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="acabamento" class="tela s-pkmacro" data-tema="foto" data-titulo="O acabamento" data-cap="(02) Design">
+    <div class="macro sangra amplia" data-amplia="assets/img/macro-dourado.webp" data-legenda="Hot stamping dourado com relevo na lâmina da árvore" data-cursor="Ampliar"></div>
+    <div class="texto-m">
+      <span class="eyebrow anima"><b>O acabamento</b> · hot stamping com relevo</span>
+      <h2 class="anima d1">Dourado <span class="t-ouro">onde o olho para.</span></h2>
+      <p class="lead anima d2">O foil dourado com relevo seco entra só onde conta: selo, nome do sabor, árvores e círculos. O vermelho chapado faz o ouro brilhar, e o brilho muda com a luz da loja.</p>
+      <div class="pk-num anima d3" style="grid-template-columns:repeat(2,1fr)">
+        <div><b>13%</b><span>da área impressa em dourado com relevo</span></div>
+        <div><b>1</b><span>cor especial: o vermelho Panco faz o resto</span></div>
+      </div>
+    </div>
+    <p class="fonte">Área dourada medida na arte final de cada sabor. Foil, relevo e registro a confirmar com a gráfica (recuo de cerca de 1 mm dos vincos).</p>
+  </section>
+
+  <section id="sabores" class="tela s-pksab" data-tema="foto" data-titulo="Uma estrutura, muitos sabores" data-cap="(02) Design">
+    <div class="pk-bg sangra"></div>
+    <div class="topo-t"><span class="eyebrow anima"><b style="color:var(--ouro)">A linha</b> · 550 g</span><h2 class="anima d1" style="font-family:var(--titulo);font-weight:900;font-size:66px;text-transform:uppercase;margin:10px 0 0;line-height:.92">Uma estrutura, <span class="t-ouro">todos os sabores.</span></h2>
+      <p class="lead anima d2" style="max-width:640px;margin-top:16px;font-size:16px;color:rgba(242,241,233,.86)">Uma estrutura única, pensada para otimizar a produção e valorizar toda a linha. O design mantém a unidade visual, enquanto cada sabor ganha seu próprio destaque.</p></div>
+    <div class="rodape-t anima d3">
+      <div><b>Banoffee</b><span>Doce de leite e banana</span></div>
+      <div><b>Brownie</b><span>Doce de leite e castanha-do-pará</span></div>
+      <div><b>Tiramissu</b><span>Recheio de chocolate</span></div>
+    </div>
+  </section>
+
+  <section id="gondola" class="tela n" data-tema="escuro" data-titulo="Na gôndola" data-cap="(02) Design">
+    <div class="pk">
+      <span class="eyebrow anima"><b>Na gôndola</b> · pilha contínua</span>
+      <h2 class="anima d1">Uma caixa sobre a outra <span class="t-ouro">vira coluna.</span></h2>
+      <p class="lead anima d2" style="max-width:900px">Cada caixa gira 45° sobre a de baixo e encaixa na tampa. A pilha vira uma coluna facetada, com o sabor sempre de frente.</p>
+      <div class="pk-trio pk-giro anima d3">
+        <figure data-sabor="banoffee"><div class="cena" data-cursor="Girar"></div><button class="amp" data-cursor="Ampliar">Ampliar ⤢</button><figcaption>Banoffee</figcaption></figure>
+        <figure data-sabor="brownie"><div class="cena" data-cursor="Girar"></div><button class="amp" data-cursor="Ampliar">Ampliar ⤢</button><figcaption>Brownie</figcaption></figure>
+        <figure data-sabor="tiramissu"><div class="cena" data-cursor="Girar"></div><button class="amp" data-cursor="Ampliar">Ampliar ⤢</button><figcaption>Tiramissu</figcaption></figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================== capítulo 03 -->
+  <section id="cap-eng" class="tela s-cap" data-tema="escuro" data-titulo="Capítulo 03 · Engenharia" data-cap="(03) Engenharia" data-capitulo="03">
+    <span class="num-cap sangra">03</span>
+    <div class="texto"><span class="eyebrow anima"><b>Capítulo 03</b> de 05</span><h2 class="anima d1">Engenharia</h2><p class="lead anima d2">Uma peça só, um ponto de cola, montagem sem ferramenta.</p></div>
+    <ol class="dentro anima d3"><li><i>01</i>Montagem interativa</li><li><i>02</i>A faca</li><li><i>03</i>Menos cola, mais eficiência</li><li><i>04</i>A embalagem em AR</li></ol>
+    <div class="trilha-cap anima d4" data-atual="03"><span data-c="01">01<b>O desafio</b></span><span data-c="02">02<b>Design</b></span><span data-c="03">03<b>Engenharia</b></span><span data-c="04">04<b>Próximos passos</b></span><span data-c="05">05<b>Por que a 75 LAB</b></span></div>
+  </section>
+
+  <section id="montagem" class="tela s-pkeng" data-tema="escuro" data-titulo="Montagem interativa" data-cap="(03) Engenharia">
+    <div class="pk-3d sangra" data-cursor="Girar"></div>
+    <div class="pk-hud"><span class="eyebrow"><b>Engenharia</b> · montagem</span><h2>Da faca <span class="t-ouro">à caixa</span></h2></div>
+    <div class="pk-pct">100%<small>Progresso da montagem</small></div>
+    <div class="pk-callout" style="bottom:200px"></div>
+    <div class="pk-sabores" style="top:280px;bottom:auto"></div>
+    <div class="pk-ctrl" data-cursor="Usar">
+      <div class="pk-btns">
+        <button data-a="abrir">Abrir embalagem</button><button data-a="planificar">Planificar faca</button>
+        <button data-a="montar">Montar embalagem</button><button data-a="reiniciar">Reiniciar</button><button data-a="auto">▶ Reprodução automática</button>
+      </div>
+      <div class="pk-slider"><div class="pk-marcas"></div><input type="range" min="0" max="1000" value="1000" aria-label="Progresso da montagem"></div>
+    </div>
+  </section>
+
+  <section id="faca" class="tela n" data-tema="claro" data-titulo="A faca" data-cap="(03) Engenharia">
+    <div class="pk"><div class="dupla l">
+      <div class="anima d2"><div class="pk-faca"><img src="assets/img/faca-r0.svg" alt="Faca R0 do antiprisma escudo"></div>
+        <div class="pk-leg"><span class="c">Corte</span><span class="v">Vinco</span><span class="g">Cola</span></div></div>
+      <div>
+        <span class="eyebrow anima"><b style="color:var(--vermelho)">A faca</b> · R0</span>
+        <h2 class="anima d1">Uma peça, <span style="color:var(--vermelho)">tudo nela.</span></h2>
+        <ul class="itens anima d2">
+          <li><i>01</i><span><b>769 × 468 mm</b>Área total da faca planificada, com tampa, fundo e abas.</span></li>
+          <li><i>02</i><span><b>8 vincos curvos</b>Flecha de 12 mm: é o vinco que dá a forma, não a arte.</span></li>
+          <li><i>03</i><span><b>Aba de cola de 15 mm</b>O único ponto de cola, na lateral, feito na coladeira.</span></li>
+          <li><i>04</i><span><b>Fundo 1-2-3</b>Quatro abas que travam entre si, sem cola.</span></li>
+          <li><i>05</i><span><b>Tampa com lingueta</b>Mais dois contrapós que seguram a tampa fechada.</span></li>
+        </ul>
+      </div>
+    </div></div>
+    <p class="fonte">Faca R0 de estudo, não é faca de produção. A geometria das travas do fundo e o aproveitamento de chapa serão fechados com o fornecedor.</p>
+  </section>
+
+  <section id="eficiencia" class="tela n" data-tema="escuro" data-titulo="Menos cola, mais eficiência" data-cap="(03) Engenharia">
+    <div class="pk">
+      <span class="eyebrow anima"><b>Eficiência</b> · validada por simulação</span>
+      <h2 class="anima d1">Menos cola, <span class="t-ouro">mais eficiência.</span></h2>
+      <p class="lead anima d2" style="max-width:920px">A montagem da página anterior não é ilustração: é a faca real dobrada por simulação física, painel por painel, com o papel praticamente sem esticar.</p>
+      <div class="pk-num anima d3">
+        <div><b>1</b><span>ponto de cola: a aba lateral de 15 mm</span></div>
+        <div><b>0,4%</b><span>de deformação máxima do cartão na dobra simulada</span></div>
+        <div><b>~6 mm</b><span>de folga entre a parede e um panetone de 16 cm <span class="est">EST.</span></span></div>
+        <div><b>45°</b><span>de giro para empilhar: a tampa encaixa na base da próxima</span></div>
+      </div>
+    </div>
+    <p class="fonte">Simulação de dobra da 75 LAB sobre a faca R0 (malha do cartão quase inextensível, vincos livres). Folga calculada sobre o diâmetro estimado do panetone. Resistência ao empilhamento (BCT) e transporte a validar em protótipo.</p>
+  </section>
+
+  <section id="ar" class="tela s-pkar n" data-tema="escuro" data-titulo="A embalagem em AR" data-cap="(03) Engenharia">
+    <div class="pk" style="width:640px">
+      <span class="eyebrow anima"><b>Realidade aumentada</b></span>
+      <h2 class="anima d1">Coloque a caixa <span class="t-ouro">na sua mesa.</span></h2>
+      <p class="lead anima d2">A embalagem em tamanho real, girando devagar. No celular, aponte a câmera para o QR code e abra direto em AR, sem app.</p>
+      <div class="qr anima d3"><div class="q" data-cursor="Ler" data-url="https://projetos.75lab.com.br/panco-celebration-origami-75lab/#16"></div><p>iPhone abre no AR Quick Look; Android, no Scene Viewer. No computador, arraste para girar.</p></div>
+    </div>
+    <model-viewer class="sangra" data-src="assets/ar/panco-brownie.glb" data-ios="assets/ar/panco-brownie.usdz" alt="Embalagem Panco Brownie em 3D" ar ar-modes="webxr scene-viewer quick-look" ar-scale="fixed" camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="14deg" interaction-prompt="none" shadow-intensity="1" shadow-softness=".9" exposure=".95" camera-orbit="-30deg 72deg auto" environment-image="neutral" data-cursor="Girar"></model-viewer>
+  </section>
+
+  <!-- ===================================================== capítulo 04 -->
+  <section id="cap-plano" class="tela s-cap" data-tema="escuro" data-titulo="Capítulo 04 · Próximos passos" data-cap="(04) Próximos passos" data-capitulo="04">
+    <span class="num-cap sangra">04</span>
+    <div class="texto"><span class="eyebrow anima"><b>Capítulo 04</b> de 05</span><h2 class="anima d1">Próximos passos</h2><p class="lead anima d2">Do 3D aprovado à caixa na mão: o que validamos antes da produção.</p></div>
+    <ol class="dentro anima d3"><li><i>01</i>Do protótipo à produção</li></ol>
+    <div class="trilha-cap anima d4" data-atual="04"><span data-c="01">01<b>O desafio</b></span><span data-c="02">02<b>Design</b></span><span data-c="03">03<b>Engenharia</b></span><span data-c="04">04<b>Próximos passos</b></span><span data-c="05">05<b>Por que a 75 LAB</b></span></div>
+  </section>
+
+  <section id="proximos" class="tela n" data-tema="claro" data-titulo="Do protótipo à produção" data-cap="(04) Próximos passos">
+    <div class="pk">
+      <span class="eyebrow anima"><b style="color:var(--vermelho)">Roteiro</b> · da aprovação à produção</span>
+      <h2 class="anima d1">Cinco passos <span style="color:var(--vermelho)">até a gôndola.</span></h2>
+      <div class="pk-linha anima d2">
+        <div><span>01</span><b>Protótipo branco</b><p>Faca R0 em plotter de recorte para validar o vinco curvo e a colagem plana.</p></div>
+        <div><span>02</span><b>Medidas reais</b><p>Panetone e caixa atual no paquímetro; ajuste fino de folgas e da tampa.</p></div>
+        <div><span>03</span><b>Empilhamento</b><p>Teste de compressão (BCT) e de transporte na caixa de embarque.</p></div>
+        <div><span>04</span><b>Fundo 1-2-3</b><p>Travas finais com o fornecedor da faca e da coladeira.</p></div>
+        <div><span>05</span><b>Executivo e arte final</b><p>Faca de produção, prova de hot stamping e fechamento de arquivos.</p></div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- ===================================================== capítulo 05 -->
+  <section id="cap-75lab" class="tela s-cap" data-tema="escuro" data-titulo="Capítulo 05 · Por que a 75 LAB" data-cap="(05) Por que a 75 LAB" data-capitulo="05">
+    <span class="num-cap sangra">05</span>
+    <div class="texto"><span class="eyebrow anima"><b>Capítulo 05</b> de 05</span><h2 class="anima d1">Por que a 75 LAB</h2><p class="lead anima d2">Quem somos, as provas e o próximo passo.</p></div>
+    <ol class="dentro anima d3"><li><i>01</i>Propósito e imprensa</li><li><i>02</i>Diferencial</li><li><i>03</i>Vantagens competitivas</li><li><i>04</i>Nossos números</li><li><i>05</i>Clientes</li><li><i>06</i>Cases de ponto de venda</li><li><i>07</i>Depoimentos em vídeo</li></ol>
+    <div class="trilha-cap anima d4" data-atual="05"><span data-c="01">01<b>O desafio</b></span><span data-c="02">02<b>Design</b></span><span data-c="03">03<b>Engenharia</b></span><span data-c="04">04<b>Próximos passos</b></span><span data-c="05">05<b>Por que a 75 LAB</b></span></div>
+  </section>
+
+
+  <section id="proposito" class="tela s-prop" data-tema="lime" data-titulo="Propósito" data-cap="(05) Por que a 75 LAB">
+    <span class="eyebrow anima">Nosso propósito</span>
+    <h2 class="anima d1">Transformar intenção em realidade <span class="apagada">no ponto de venda.</span></h2>
+    <p class="lead anima d2">A 75 LAB nasceu da soma de dois lados que quase nunca se sentam à mesma mesa: o varejo e a indústria. Por mais de 15 anos vivemos a distância entre a intenção comercial de uma marca e o que de fato acontece na loja. Existimos para fechar essa distância.</p>
+    <div class="balcao anima d3">
+      <div class="lado-b"><span>Indústria</span><b>Lançamento, categoria, P&amp;L</b><small>o lado de quem vende para o varejo</small></div>
+      <div class="meio-b"><img src="../ype-mpv-2027-75lab/assets/75lab-black.png" alt="75 LAB"><i>← valor →</i></div>
+      <div class="lado-b"><span>Varejo</span><b>Layout, execução, aprovação</b><small>o lado de quem opera a loja</small></div>
+    </div>
+    <div class="imprensa anima d2">
+      <span class="eyebrow">Na imprensa · o que os sócios defendem em público</span>
+      <a class="mat" href="https://propmark.com.br/artigos/criamos-o-que-gostariamos-de-ter-tido-como-clientes/" target="_blank" rel="noopener" data-cursor="Ler">
+        <span class="print"><i class="barra-m"><b></b><b></b><b></b>propmark.com.br</i><img src="../ype-mpv-2027-75lab/assets/imprensa/propmark.webp" alt="Artigo de Daniel Coimbra na Propmark"></span>
+        <span class="txt"><q>Criamos o que gostaríamos de ter tido como clientes.</q><em>“A grande agência tradicional aprendeu trade marketing. Nós vivemos isso.”</em><cite>Daniel Coimbra, cofundador da 75 LAB · Propmark</cite><span class="ler so-tela"><svg class="ic"><use href="#i-clique"/></svg>Clique para ler a matéria ↗</span><span class="url so-pdf">propmark.com.br/artigos/criamos-o-que-gostariamos-de-ter-tido-como-clientes</span></span>
+      </a>
+      <a class="mat" href="https://gironews.com/opinioes/a-loja-me-ensinou-o-que-nenhuma-apresentacao-ensinava/" target="_blank" rel="noopener" data-cursor="Ler">
+        <span class="print"><i class="barra-m"><b></b><b></b><b></b>gironews.com</i><img src="../ype-mpv-2027-75lab/assets/imprensa/giro.webp?v=2" alt="Artigo de Caique Becker na Giro News"></span>
+        <span class="txt"><q>A loja me ensinou o que nenhuma apresentação ensinava.</q><em>“Execução não é uma consequência da estratégia. Execução é parte da estratégia.”</em><cite>Caique Becker, cofundador da 75 LAB · Giro News, 26/06/2026</cite><span class="ler so-tela"><svg class="ic"><use href="#i-clique"/></svg>Clique para ler a matéria ↗</span><span class="url so-pdf">gironews.com/opinioes/a-loja-me-ensinou-o-que-nenhuma-apresentacao-ensinava</span></span>
+      </a>
+    </div>
+    <span class="assin-prop anima d4">Ideia boa é a que acontece.</span>
+  </section>
+  <section id="diferencial" class="tela s-dif" data-tema="escuro" data-titulo="Diferencial" data-cap="(05) Por que a 75 LAB">
+    <h2 class="anima">Não somos uma agência tradicional. <span class="t-lime">Somos uma aceleradora de trade.</span></h2>
+    <div class="modelos anima d1">
+      <div class="mod trad"><span class="eyebrow">Modelo tradicional</span><div class="seq"><span>Briefing</span><span>Retrabalho</span><span>Atraso</span><span class="x">Verba evapora</span></div></div>
+      <div class="mod lab"><span class="eyebrow">Modelo 75 LAB</span><div class="seq"><span>Intenção</span><span>Imersão</span><span>Solução</span><span>Execução</span><span class="ok">Resultado</span></div></div>
+    </div>
+    <div class="pilares anima d2">
+      <div><i>01</i><b>Vivemos o trade, não só aprendemos</b><p>Os sócios vêm do varejo e da indústria: os dois lados do balcão estão na mesma mesa.</p></div>
+      <div><i>02</i><b>Solução certa, nunca de prateleira</b><p>Montamos a estrutura pela demanda de cada cliente, não um pacote pronto.</p></div>
+      <div><i>03</i><b>Para cada desafio, a equipe certa</b><p>Hub de especialistas e fornecedores, com governança ponta a ponta e sem markup oculto.</p></div>
+      <div><i>04</i><b>Prova acima de promessa</b><p>Medimos o que entregamos: peça a peça, loja a loja.</p></div>
+    </div>
+    <div class="provas anima d3">
+      <div><b class="num"><span data-conta="95">0</span>%</b><span>projetos aprovados</span></div>
+      <div><b class="num">−<span data-conta="25">0</span>%</b><span>de custo de produção com o fornecedor certo</span></div>
+      <div><b class="num"><span data-conta="15000">0</span>+</b><span>PDVs positivados</span></div>
+      <div><b class="num">+<span data-conta="15">0</span></b><span>anos no trade, dos dois lados do balcão</span></div>
+    </div>
+    <p class="fonte">Fonte: 75lab.com.br, números da 75 LAB.</p>
+  </section>
+  <section id="vantagens" class="tela s-vt n" data-tema="escuro" data-titulo="Vantagens competitivas" data-cap="(05) Por que a 75 LAB">
+    <div class="caixa"><h2 class="anima">Oito motivos para a 75 LAB <span class="t-lime">estar no seu corredor.</span></h2>
+      <div class="gr-vt"><div class="vt" style="--i:0"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M42 8l14 14-30 30H12V38z"/><path d="M36 14l14 14"/><path class="m-bate" d="M10 58c8-6 14 2 22-4s14 2 22-2"/></svg></div><b>Arte e engenharia na mesma casa</b><p>A peça sai da criação com executivo pronto para a fábrica.</p></div><div class="vt" style="--i:1"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="26" r="14"/><path d="M24 18v16M20 21h6a3 3 0 0 1 0 6h-4a3 3 0 0 0 0 6h6"/><path class="m-pino" d="M48 14v32M40 38l8 8 8-8"/></svg></div><b>Custo por peça otimizado</b><p>Chapa aproveitada, kit plano e material certo no lugar certo.</p></div><div class="vt" style="--i:2"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 22h40l-8-8M54 42H14l8 8"/><rect class="m-pisca" x="24" y="27" width="16" height="10" rx="2"/></svg></div><b>Três orçamentos, sem markup oculto</b><p>Todos os fornecedores cotam o mesmo executivo.</p></div><div class="vt" style="--i:3"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="18" y="4" width="28" height="56" rx="5"/><path d="M28 52h8"/><path class="m-scan" d="M22 30h20"/></svg></div><b>Realidade aumentada antes de produzir</b><p>O cliente vê a peça na loja antes de pagar a fábrica.</p></div><div class="vt" style="--i:4"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="18" height="18" rx="2"/><rect x="38" y="8" width="18" height="18" rx="2"/><rect x="8" y="38" width="18" height="18" rx="2"/><path d="M38 38h6v6h-6zM50 50h6v6h-6zM44 44h6v6"/><path class="m-scan" d="M4 32h56"/></svg></div><b>Auditoria com QR em cada peça</b><p>Foto, loja e data de cada instalação, sem planilha.</p></div><div class="vt" style="--i:5"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 56h48"/><rect class="m-sobe" x="14" y="14" width="12" height="42" rx="2"/><rect class="m-sobe2" x="38" y="44" width="12" height="12" rx="2"/></svg></div><b>Sistema próprio de gestão</b><p>Prazo, versão e aprovação de cada peça num lugar só.</p></div><div class="vt" style="--i:6"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><g class="m-gira"><path d="M50 26a19 19 0 0 0-34-6"/><path d="M14 38a19 19 0 0 0 34 6"/><path d="M16 10v10h10"/><path d="M48 54V44H38"/></g></svg></div><b>Peça que dura e se repõe</b><p>Componente com código: troca só o que quebrou.</p></div><div class="vt" style="--i:7"><div class="vt-ic"><svg class="ic " viewBox="0 0 64 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="30" width="48" height="24" rx="3"/><path d="M16 30V18h32v12"/><rect class="m-pisca" x="22" y="22" width="20" height="5"/><path d="M20 42h24"/></svg></div><b>Dos dois lados do balcão</b><p>Sócios que vieram do varejo e da indústria.</p></div></div></div></section>
+  <section class="tela s-num" data-tema="claro" data-titulo="Nossos números" data-cap="(05) Por que a 75 LAB">
+    <span class="destaque-cap anima">Números da 75 LAB · 12 meses medidos no nosso sistema</span>
+    <h2 class="anima">A 75 LAB em números: <span class="onda t-teal">a operação que já rodamos hoje.</span></h2>
+    <div class="grade anima d1">
+      <div class="destaque"><svg class="ic vivo"><use href="#i-check"/></svg><b class="num" data-conta="1811">0</b><span>entregas concluídas em 12 meses, entre jobs e etapas</span></div>
+      <div><svg class="ic"><use href="#i-caixa"/></svg><b class="num" data-conta="513">0</b><span>jobs concluídos de ponta a ponta no mesmo período</span></div>
+      <div><svg class="ic"><use href="#i-loja"/></svg><b class="num" data-conta="94">0</b><span>clientes com demanda aberta nos últimos 12 meses</span></div>
+      <div class="destaque"><svg class="ic vivo"><use href="#i-rede"/></svg><b class="num" data-conta="122">0</b><span>jobs ativos ao mesmo tempo no pico, em 26/10/2026</span></div>
+      <div><svg class="ic"><use href="#i-pessoas"/></svg><b class="num" data-conta="52">0</b><span>clientes atendidos em paralelo nesse mesmo pico</span></div>
+      <div><svg class="ic"><use href="#i-relogio"/></svg><b class="num"><span data-conta="8">0</span><small>dias úteis</small></b><span>prazo mediano do pedido à entrega em baixa complexidade</span></div>
+      <div><svg class="ic"><use href="#i-calendario"/></svg><b class="num"><span data-conta="41">0</span><small>dias úteis</small></b><span>prazo mediano em alta complexidade: stands, enxovais e obras</span></div>
+      <div><svg class="ic"><use href="#i-grafico"/></svg><b class="num"><span data-conta="1070">0</span><small>h/mês</small></b><span>de trabalho apontadas tarefa a tarefa, de julho a setembro</span></div>
+    </div>
+    <p class="fonte">Dados da própria 75 LAB, não de cliente. Fonte: Ariuno, sistema de gestão da 75 LAB · 28/10/2025 a 27/10/2026 · horas apontadas de jul a set/2026. Baixa complexidade: jobs com até 8 h de trabalho; alta: acima de 16 h.</p>
+  </section>
+  <section class="tela s-cli2" data-tema="claro2" data-titulo="Clientes" data-cap="(05) Por que a 75 LAB">
+    <h2 class="anima">Já estamos nos corredores <span class="onda t-teal">de vocês.</span></h2>
+    <p class="lead anima d1">Supermercado, atacarejo e loja de categoria: as marcas que atendemos negociam com os mesmos compradores e disputam as mesmas pontas.</p>
+    <div class="grupo anima d2"><div class="cab-g"><svg class="ic"><use href="#i-caixa"/></svg><b>Canal alimentar</b><span>supermercado, atacado e conveniência</span></div>
+      <div class="logos"><div><img src="../ype-mpv-2027-75lab/assets/clientes/whiskas.png" alt="Whiskas"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/pedigree.png" alt="Pedigree"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/seara.png" alt="Seara"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/lactalis.png" alt="Lactalis"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/parmalat.png" alt="Parmalat"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/unilever.png" alt="Unilever"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/3coracoes.png" alt="3 Corações"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/madalena.png" alt="Madalena"></div></div></div>
+    <div class="grupo anima d3"><div class="cab-g"><svg class="ic"><use href="#i-loja"/></svg><b>Varejo especializado</b><span>loja de categoria e rede</span></div>
+      <div class="logos"><div><img src="../ype-mpv-2027-75lab/assets/clientes/boticario.png" alt="O Boticário"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/petz.png" alt="Petz"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/brastemp.png" alt="Brastemp"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/consul.png" alt="Consul"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/drogaria-sao-paulo.png" alt="Drogaria São Paulo"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/dpsp.png" alt="Grupo DPSP"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/loungerie.png" alt="Loungerie"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/evino.png" alt="Evino"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/grand-cru.png" alt="Grand Cru"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/eudora.png" alt="Eudora"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/quem-disse-berenice.png" alt="Quem disse, Berenice?"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/premierpet.png" alt="PremieRpet"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/kelcat.png" alt="Kelcat"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/keldog.png" alt="Keldog"></div><div><img src="../ype-mpv-2027-75lab/assets/clientes/pipicat.png" alt="Pipicat"></div></div></div>
+  </section>
+  <section id="cases-pdv" class="tela s-cp n" data-tema="claro" data-titulo="Cases de ponto de venda" data-cap="(05) Por que a 75 LAB">
+    <div class="caixa"><h2 class="anima">Grandes marcas já estão <span class="onda t-teal">na loja com a gente.</span></h2>
+      <div class="gr-cp"><figure class="cp amplia" style="--i:0" data-amplia="../ype-mpv-2027-75lab/assets/cases/cuetara.jpg" data-legenda="Cuétara: display sazonal" data-cursor="Ampliar"><img src="../ype-mpv-2027-75lab/assets/cases/cuetara.jpg" alt="Cuétara, display sazonal" loading="lazy"><figcaption><b>Cuétara</b>Display sazonal</figcaption></figure><figure class="cp amplia" style="--i:1" data-amplia="../ype-mpv-2027-75lab/assets/cases/bembrasil.jpg" data-legenda="Bem Brasil: ponta de gôndola" data-cursor="Ampliar"><img src="../ype-mpv-2027-75lab/assets/cases/bembrasil.jpg" alt="Bem Brasil, ponta de gôndola" loading="lazy"><figcaption><b>Bem Brasil</b>Ponta de gôndola</figcaption></figure><figure class="cp amplia" style="--i:2" data-amplia="../ype-mpv-2027-75lab/assets/cases/polenghi.jpg" data-legenda="Polenghi: enxoval de pdv" data-cursor="Ampliar"><img src="../ype-mpv-2027-75lab/assets/cases/polenghi.jpg" alt="Polenghi, enxoval de pdv" loading="lazy"><figcaption><b>Polenghi</b>Enxoval de PDV</figcaption></figure><figure class="cp amplia" style="--i:3" data-amplia="../ype-mpv-2027-75lab/assets/cases/lactalis.jpg" data-legenda="Lactalis: displays especiais" data-cursor="Ampliar"><img src="../ype-mpv-2027-75lab/assets/cases/lactalis.jpg" alt="Lactalis, displays especiais" loading="lazy"><figcaption><b>Lactalis</b>Displays especiais</figcaption></figure><figure class="cp amplia" style="--i:4" data-amplia="../ype-mpv-2027-75lab/assets/cases/kelco.jpg" data-legenda="Kelco: displays especiais" data-cursor="Ampliar"><img src="../ype-mpv-2027-75lab/assets/cases/kelco.jpg" alt="Kelco, displays especiais" loading="lazy"><figcaption><b>Kelco</b>Displays especiais</figcaption></figure><figure class="cp amplia" style="--i:5" data-amplia="../ype-mpv-2027-75lab/assets/cases/seara.jpg" data-legenda="Seara: ponta de gôndola" data-cursor="Ampliar"><img src="../ype-mpv-2027-75lab/assets/cases/seara.jpg" alt="Seara, ponta de gôndola" loading="lazy"><figcaption><b>Seara</b>Ponta de gôndola</figcaption></figure></div>
+    </div></section>
+  <section id="depoimento" class="tela s-dep" data-tema="lime" data-titulo="Depoimento e vídeos de projetos" data-cap="(05) Por que a 75 LAB">
+    <span class="eyebrow anima">Quem já viveu um cronograma com a gente · stand Alltak Decor</span>
+    <blockquote class="anima d1"><span class="aspas">“</span>Desde a primeira reunião, me surpreenderam com essa parte de planejamento.</blockquote>
+    <p class="segunda anima d2">“Um programa viável de execução. Datas de aprovações, datas de execução, finalização para a entrega do stand.”</p>
+    <div class="quem anima d2"><b>Marcelo Abreu</b><span>Alltak</span></div>
+    <div class="videos anima d3">
+      <span class="eyebrow">Projetos da 75 LAB em vídeo</span>
+      <span class="cta so-tela"><svg class="ic"><use href="#i-clique"/></svg>Clique num vídeo para assistir no celular ao lado</span>
+      <div class="fila" id="filaVid">
+        <button class="vid on" data-src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/alltak-marcelo.mp4" data-poster="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/alltak-marcelo.webp" data-dur="1min19" data-cursor="Assistir"><span class="capa"><img src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/alltak-marcelo.webp" alt="" loading="lazy"><i></i><em>1min19</em></span><b>Depoimento · stand Alltak Decor</b></button>
+        <button class="vid" data-src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/boticario.mp4" data-poster="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/boticario.webp" data-dur="53s" data-cursor="Assistir"><span class="capa"><img src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/boticario.webp" alt="" loading="lazy"><i></i><em>53s</em></span><b>O Boticário · display flex</b></button>
+        <button class="vid" data-src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/evino.mp4" data-poster="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/evino.webp" data-dur="1min25" data-cursor="Assistir"><span class="capa"><img src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/evino.webp" alt="" loading="lazy"><i></i><em>1min25</em></span><b>Evino · corta-gotas</b></button>
+        <button class="vid" data-src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/reel4.mp4" data-poster="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/reel4.webp" data-dur="41s" data-cursor="Assistir"><span class="capa"><img src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/reel4.webp" alt="" loading="lazy"><i></i><em>41s</em></span><b>Alltak em Fortaleza · Marcelo Souss</b></button>
+        <button class="vid" data-src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/reel6.mp4" data-poster="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/reel6.webp" data-dur="1min35" data-cursor="Assistir"><span class="capa"><img src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/reel6.webp" alt="" loading="lazy"><i></i><em>1min35</em></span><b>Bastidores · display Kelco</b></button>
+      </div>
+    </div>
+    <div class="celular anima zoom d2">
+      <video id="vidDep" src="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/alltak-marcelo.mp4" poster="https://projetos.75lab.com.br/institucional-75lab/https://projetos.75lab.com.br/institucional-75lab/assets/video/alltak-marcelo.webp" preload="none" playsinline></video>
+      <button class="play" id="playDep" data-cursor="Assistir" aria-label="Assistir ao vídeo"><i></i><span id="durDep">Assistir · 1min19</span></button>
+      <div class="barrav"><i id="progDep"></i></div>
+    </div>
+    <p class="fonte">Vídeos de projetos da 75 LAB: Instagram @setecincolab, site 75lab.com.br e acervo de cases.</p>
+  </section>
+
+  <section class="tela s-fim" data-tema="lime" data-titulo="Fale com a gente" data-cap="(05) Por que a 75 LAB">
+    <h2 class="anima">Ideia boa é a que <span class="apagada">acontece</span> na loja.</h2>
+    <div class="contatos">
+      <div class="ct anima d1"><span class="eyebrow">Comercial e administrativo</span><h3>Daniel Coimbra</h3><p>Diretor Administrativo e Comercial</p>
+        <a href="mailto:daniel.coimbra@75lab.com.br" data-cursor="Escrever"><svg class="ic"><use href="#i-mail"/></svg>daniel.coimbra@75lab.com.br</a><a href="tel:+5511991270939" data-cursor="Ligar"><svg class="ic"><use href="#i-fone"/></svg>11 99127-0939</a></div>
+      <div class="ct anima d2"><span class="eyebrow">Operação e trade</span><h3>Caique Becker</h3><p>Diretor de Operação e Trade Marketing</p>
+        <a href="mailto:caique.becker@75lab.com.br" data-cursor="Escrever"><svg class="ic"><use href="#i-mail"/></svg>caique.becker@75lab.com.br</a><a href="https://wa.me/5511986765634" target="_blank" rel="noopener" data-cursor="Abrir"><svg class="ic"><use href="#i-chat"/></svg>11 98676-5634</a></div>
+      <div class="ct anima d3"><span class="eyebrow">Criação</span><h3>Mauricio Oliveira</h3><p>Diretor de Criação</p>
+        <a href="mailto:mauricio@75lab.com.br" data-cursor="Escrever"><svg class="ic"><use href="#i-mail"/></svg>mauricio@75lab.com.br</a><a href="tel:+5519991790456" data-cursor="Ligar"><svg class="ic"><use href="#i-fone"/></svg>19 99179-0456</a></div>
+    </div>
+    <div class="acoes anima d4">
+      <a class="botao cheio seta" href="https://wa.me/5511986765634?text=Ol%C3%A1%2C%20vi%20a%20apresenta%C3%A7%C3%A3o%20da%2075%20LAB%20embalagem%20de%20panettone%20da%20Panco" target="_blank" rel="noopener" data-cursor="Abrir">Fale conosco no WhatsApp</a>
+      <button class="botao seta" data-ir="capa" data-cursor="Voltar">Voltar ao início</button>
+    </div>
+    <div class="inst anima d5">
+      <div><img src="../ype-mpv-2027-75lab/assets/75lab-black.png" alt="75 LAB"><small>75 LAB Estratégia, Design e Produção Ltda · CNPJ 55.470.982/0001-77 · CENU, Torre Norte, Av. das Nações Unidas, 12.901, Brooklin, São Paulo, SP · contato@75lab.com.br · 75lab.com.br</small></div>
+      <div class="bid">Embalagem Panco Celebration Origami · novembro de 2026</div>
+    </div>
+  </section>
+
+  <header id="topo">
+    <div class="marcas">
+      <img class="alp" src="assets/img/logo-panco.png" alt="Panco" style="height:44px">
+      <span class="x">×</span>
+      <img class="lab m-escuro" src="../ype-mpv-2027-75lab/assets/75lab-lime.png" alt="75 LAB"><img class="lab m-claro" src="../ype-mpv-2027-75lab/assets/75lab-black.png" alt="75 LAB">
+    </div>
+    <div class="dir"><span class="cap" id="capTxt"></span><button id="btnSumario" data-sumario data-cursor="Abrir"><span><i></i><i></i><i></i></span>Sumário</button></div>
+  </header>
+  <footer id="rodape">
+    <span class="assin">75 LAB · Panco Celebration Origami</span>
+    <div class="nav"><button id="ant" aria-label="Tela anterior" data-cursor="Voltar">←</button><span id="cont">01</span><button id="prox" aria-label="Próxima tela" data-cursor="Seguir">→</button></div>
+  </footer>
+  <div id="prog"><i></i></div>
+  <div id="wipe" class="wipeDuo"><img src="../ype-mpv-2027-75lab/assets/75lab-black.png" alt="75 LAB"><i>×</i><img class="b" src="assets/img/logo-panco.png" alt="Panco"></div>
+  <nav id="sumario" aria-label="Sumário"><button class="botao mini fechar" data-cursor="Fechar">Fechar ✕</button><h2>Sumário · <span>Panco × 75 LAB</span></h2><ol id="sumLista"></ol></nav>
+  <div class="grao"></div>
+</div></div>
+
+<div id="caixa" role="dialog" aria-label="Imagem ampliada"><button class="fechar" data-cursor="Fechar">Fechar ✕</button><img id="cxImg" alt=""><p id="cxTxt"></p></div>
+<div id="cursor"></div><div id="anel"><span id="anelTxt"></span></div>
+<div id="gire"><img src="../ype-mpv-2027-75lab/assets/75lab-lime.png" alt="75 LAB"><div class="tel"></div><h3>Gire o celular</h3><p>A apresentação foi desenhada na horizontal. Deitado, o celular mostra a tela inteira.</p><button class="botao mini" id="verAssim">Ver assim mesmo</button></div>
+
+<script src="../ype-mpv-2027-75lab/assets/deck.js?v=20261116192227"></script>
+<script src="assets/vendor/qrcode.min.js"></script>
+<script type="module" src="assets/panco-deck.js?v=20261116192227"></script>
+</body>
+</html>
