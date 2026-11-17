@@ -23,10 +23,14 @@
   function chapterOf(i){var r=chapters[0];chapters.forEach(function(c){if(c.start<=i)r=c});return r}
 
   function fit(){
-    if(mobile()){stage.style.transform='';return}
+    if(mobile()){stage.style.transform='';stage.style.width=stage.style.height='';return}
+    /* o conteúdo escala pela dimensão que limita; o palco se estica na outra para ocupar a tela inteira */
     var k=Math.min(innerWidth/1920,innerHeight/1080);
+    stage.style.width=Math.ceil(innerWidth/k)+'px';
+    stage.style.height=Math.ceil(innerHeight/k)+'px';
     stage.style.transform='translate(-50%,-50%) scale('+k+')';
-    document.documentElement.style.setProperty('--s',Math.max(.3,Math.min(1.3,k)).toFixed(3));
+    var W=Math.ceil(innerWidth/k),H=Math.ceil(innerHeight/k);stage.style.setProperty('--ex',(W-1920)+'px');stage.style.setProperty('--ey',(H-1080)+'px');
+    document.documentElement.style.setProperty('--s',Math.max(.45,Math.min(1.3,k*1.15)).toFixed(3));
   }
 
   function countUp(root){
