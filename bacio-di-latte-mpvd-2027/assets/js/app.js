@@ -26,7 +26,7 @@
     if(mobile()){stage.style.transform='';return}
     var k=Math.min(innerWidth/1920,innerHeight/1080);
     stage.style.transform='translate(-50%,-50%) scale('+k+')';
-    document.documentElement.style.setProperty('--s',Math.max(.55,Math.min(1.3,k)).toFixed(3));
+    document.documentElement.style.setProperty('--s',Math.max(.3,Math.min(1.3,k)).toFixed(3));
   }
 
   function countUp(root){
