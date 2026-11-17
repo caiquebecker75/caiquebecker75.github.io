@@ -3,7 +3,7 @@
   var slides=[].slice.call(document.querySelectorAll('.slide'));
   var n=slides.length, cur=-1, busy=false;
   var stage=document.getElementById('stage');
-  var mobile=function(){return window.matchMedia('(max-width:900px)').matches};
+  var mobile=function(){return window.matchMedia('(max-width:900px) and (pointer:coarse) and (orientation:portrait)').matches};
   var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
 
   /* palavras animadas: [data-words] vira spans */

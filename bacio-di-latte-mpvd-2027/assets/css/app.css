@@ -318,7 +318,7 @@ body.c-link #cur-r{width:60px;height:60px}
 @media (pointer:coarse){#cur,#cur-r{display:none}}
 
 /* ---------- celular ---------- */
-@media (max-width:900px){
+@media (max-width:900px) and (pointer:coarse) and (orientation:portrait){
   html,body{overflow:auto;height:auto}
   #stage{position:relative;left:auto;top:auto;width:100%;height:auto;transform:none!important}
   .slide{position:relative;inset:auto;opacity:1;visibility:visible;transform:none;filter:none;min-height:100vh;padding:96px 22px 64px;gap:26px;border-bottom:1px solid var(--line)}
@@ -375,4 +375,4 @@ body.c-link #cur-r{width:60px;height:60px}
 .pil span{font-size:20px;color:var(--txt-2)}
 .mini{display:grid;grid-template-columns:150px 1fr;gap:16px;align-items:center}
 .mini .ph{height:100px;border-radius:10px}
-@media (max-width:900px){.gal{grid-template-columns:repeat(2,1fr)}.gal .ph{height:auto}.mini{grid-template-columns:1fr}}
+@media (max-width:900px) and (pointer:coarse) and (orientation:portrait){.gal{grid-template-columns:repeat(2,1fr)}.gal .ph{height:auto}.mini{grid-template-columns:1fr}}
