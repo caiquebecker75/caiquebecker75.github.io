@@ -383,3 +383,10 @@ body.c-link #cur-r{width:calc(60px*var(--s,1));height:calc(60px*var(--s,1))}
 #ftr::before{content:"";position:absolute;inset:-60% 0 0 0;z-index:-1;pointer-events:none;opacity:0;transition:opacity .6s;background:linear-gradient(rgba(36,20,13,0),rgba(36,20,13,.7))}
 body[data-theme="dark"] #hdr::before,body[data-theme="dark"] #ftr::before{opacity:1}
 .cover-bg{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 35%);mask-image:linear-gradient(90deg,transparent 0,#000 35%)}
+
+/* palco elástico: o espaço além de 16:9 vira respiro equilibrado */
+#stage{--ex:0px;--ey:0px}
+.slide{padding:calc(150px + var(--ey)*.5) calc(150px + var(--ex)*.18) calc(120px + var(--ey)*.5)}
+.src{left:calc(150px + var(--ex)*.18);right:calc(150px + var(--ex)*.18);bottom:calc(70px + var(--ey)*.5)}
+.trailer-line{left:calc(150px + var(--ex)*.18);right:calc(150px + var(--ex)*.18)}
+@media (max-width:900px) and (pointer:coarse) and (orientation:portrait){.slide{padding:96px 22px 64px}}
