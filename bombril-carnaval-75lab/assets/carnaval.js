@@ -4,6 +4,12 @@
   ['cap-01','capa'].forEach(function(id){var t=document.getElementById(id);if(!t)return;var r=function(a,b){return a+Math.random()*(b-a);};
     for(var i=0;i<(id==='capa'?22:34);i++){var b=document.createElement('span');b.className='brilhinho';b.style.left=r(2,98)+'%';b.style.top=r(4,96)+'%';
       b.style.setProperty('--s',Math.round(r(26,84))+'px');b.style.setProperty('--d',r(2.4,5.2).toFixed(2)+'s');b.style.setProperty('--t',(-r(0,5)).toFixed(2)+'s');t.appendChild(b);}});
+  /* abas de todas as telas: o deck base só liga a primeira tela de cada tipo */
+  document.querySelectorAll('.tela').forEach(function(t){var bts=t.querySelectorAll('[data-aba]');if(!bts.length)return;
+    bts.forEach(function(b,k){b.addEventListener('click',function(){
+      bts.forEach(function(x,j){x.classList.toggle('on',j===k);});
+      t.querySelectorAll('[data-painel]').forEach(function(p,j){p.classList.toggle('on',j===k);});
+      t.querySelectorAll('[data-p2]').forEach(function(p){p.classList.toggle('on',+p.dataset.p2===k);});});});});
   (function(){var ab=null;function fecha(){if(!ab)return;ab.hidden=true;document.documentElement.classList.remove('exec-on');var b=ab._bt;ab=null;if(b)b.focus();}
     document.querySelectorAll('.bt-exec').forEach(function(b){var o=document.getElementById('exec-'+b.dataset.exec);if(!o)return;
       b.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();ab=o;o._bt=b;o.hidden=false;o.scrollTop=0;document.documentElement.classList.add('exec-on');o.querySelector('.exec-x').focus();});});
