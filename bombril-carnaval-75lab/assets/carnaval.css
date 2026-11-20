@@ -167,3 +167,28 @@ html,body{background:var(--ink)}
 #wrap[data-fundo=lime-lant]::before{content:'';position:absolute;inset:0;background:rgba(255,208,0,.5)}
 #wrap[data-fundo=claro]{background:#FFF6D6}#wrap[data-fundo=claro2]{background:#FFEDB0}
 #wrap[data-fundo=escuro],#wrap[data-fundo=foto]{background:#1A0305}
+/* mini executivo: folha técnica sobre o deck */
+html.exec-on,html.exec-on body{overflow:hidden}
+.exec-ov{position:fixed;inset:0;z-index:9000;background:rgba(26,3,5,.82);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:max(16px,3vh) max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.exec-folha{max-width:1180px;margin:0 auto;background:#fbfaf7;color:#1A0305;font-family:'Space Grotesk',system-ui,sans-serif;padding:clamp(18px,3vw,44px);border-top:10px solid #E30613;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.exec-folha header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;border-bottom:2px solid #1A0305;padding-bottom:16px;margin-bottom:18px}
+.exec-cod{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#E30613}
+.exec-folha h3{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(30px,4vw,48px);line-height:1;margin:6px 0 8px}
+.exec-folha header p{margin:0;max-width:62ch;font-size:15px;line-height:1.45;color:#52100F}
+.exec-x{flex:none;width:46px;height:46px;border:2px solid #1A0305;background:#FFD000;color:#1A0305;font-size:30px;line-height:1;cursor:pointer}
+.exec-x:hover{background:#E30613;color:#fff;border-color:#E30613}
+.gerais{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;margin:0 0 20px;background:#1A0305;border:2px solid #1A0305}
+.gerais div{background:#FFD000;padding:10px 12px}.gerais dt{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em}.gerais dd{margin:4px 0 0;font-weight:700;font-size:17px}
+.vistas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:8px}
+.vista{margin:0;background:#fff;border:1px solid #d8d2c8;padding:10px}.vista svg{width:100%;height:auto;max-height:520px;display:block}
+.vista figcaption{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#52100F;margin-top:6px}
+.vista .geo polygon{stroke:#3a2a2a;stroke-width:.6;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.vista .cota line{stroke:#E30613;stroke-width:1.2;vector-effect:non-scaling-stroke}.vista .cota text{fill:#E30613;font-family:'Space Mono',monospace;font-weight:700}
+.vista .nota{fill:#52100F;font-family:'Space Mono',monospace}
+.exec-folha h4{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:24px;margin:24px 0 10px;color:#E30613}
+.lista{width:100%;border-collapse:collapse;font-size:14px;display:block;overflow-x:auto}
+.lista th{text-align:left;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:#1A0305;color:#FFD000;padding:8px 10px;white-space:nowrap}
+.lista td{padding:9px 10px;border-bottom:1px solid #e3ddd2;vertical-align:top;line-height:1.35}.lista td:first-child{font-family:'Space Mono',monospace;color:#E30613}
+.lista td:nth-child(3){white-space:nowrap;font-weight:700}
+.rac{margin:0;padding-left:20px;line-height:1.5;font-size:15px;max-width:90ch}.rac li{margin-bottom:6px}
+.exec-folha footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:26px;padding-top:12px;border-top:2px solid #1A0305;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
