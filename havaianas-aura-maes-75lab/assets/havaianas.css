@@ -1,0 +1,240 @@
+/* BOM003 · Havaianas Aura Dia das Mães 2027 · camada de tema sobre deck.css + bombril.css + v2.css (palco 1600x900)
+   HAV009 · Havaianas Aura Dia das Mães: azul do KV, creme, vermelho das caixas e dourado do laço. */
+:root{
+  --ink:#12232B;--ink-2:#1C3440;--ink-3:#26444F;--ink-4:#33586A;
+  --paper:#F4EBDD;--paper-2:#EADCC6;--paper-3:#DCC7A6;
+  --lime:#E9CB8B;--lime-2:#D4AF63;--teal:#C8102E;--teal-2:#E07F80;--alerta:#C8102E;
+  --linha-c:rgba(26,3,5,.18);--linha-e:rgba(255,246,214,.18);
+  --palco:#E9E1D3;color-scheme:dark
+}
+html,body{background:var(--ink)}
+.tela[data-tema=escuro]{background:radial-gradient(1200px 700px at 78% 30%,#2F5361 0%,#1C3440 55%,#12232B 100%)}
+.tela[data-tema=claro]{background:var(--paper)}
+.tela[data-tema=claro]::before{content:'';position:absolute;inset:0;background:;opacity:.16;pointer-events:none;z-index:0}
+/* palcos das imagens: veludo vermelho, para o amarelo das peças saltar */
+.foto-core figure,.palco-can,.v2-trio figure,.cn-fig{background:radial-gradient(circle at 50% 42%,#F6F1E8 0%,var(--palco) 62%,#D2C6B2 100%)!important}
+.foto-core figure::after,.palco-can::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 120px rgba(0,0,0,.35);pointer-events:none}
+.palco-can video,.foto-core video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--palco)}
+.foto-core img{padding:14px}
+/* capa: vermelho Havaianas, lantejoula amarela e a ilha */
+.s-capa{background:radial-gradient(1300px 800px at 74% 46%,#8FB1BF 0%,#6E93A2 48%,#3F6676 100%)!important}
+.s-capa .foto{left:39%!important;background:url(img/kv-azul.webp) 50% 50%/contain no-repeat!important;transform:scale(1.03)}
+.s-capa.fim .foto{background-image:url(img/kv-rosa.webp)!important;left:46%!important}
+.s-capa .veu{background:linear-gradient(90deg,rgba(26,3,5,.72) 0%,rgba(26,3,5,.35) 36%,transparent 60%),linear-gradient(0deg,rgba(26,3,5,.55),transparent 28%)!important}
+.s-capa h1{font-size:112px}
+.s-capa .faixa-lant{position:absolute;left:0;right:0;top:0;height:26px;background:;animation:corre-l 60s linear infinite}
+@keyframes corre-l{to{background-position:-2200px 0}}
+/* brilho: varredura de luz no destaque dos títulos */
+.brilha{background:linear-gradient(100deg,var(--lime) 0%,var(--lime) 38%,#FFF8EA 50%,var(--lime) 62%,var(--lime) 100%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent!important;animation:brilho 3.6s ease-in-out infinite}
+@keyframes brilho{0%,18%{background-position:120% 0}70%,100%{background-position:-60% 0}}
+.t-lime{color:var(--lime)}[data-tema=claro] .t-lime,[data-tema=claro] .t-teal{color:var(--teal)}
+/* capítulos: página inteira em lantejoula amarela */
+.s-cap[data-tema=lime]{background:var(--lime);animation:pan-l 90s linear infinite;color:var(--ink)}
+@keyframes pan-l{to{background-position:-1680px 840px}}
+.s-cap[data-tema=lime]::before{display:none}
+.s-cap[data-tema=lime]>*{z-index:1}
+.s-cap[data-tema=lime] .num-cap{color:#F4EBDD;opacity:.95;right:120px;top:470px;font-size:300px;text-shadow:6px 6px 0 rgba(26,3,5,.18)}
+.s-cap[data-tema=lime] h2{color:#F4EBDD;text-shadow:3px 3px 0 rgba(18,35,43,.25)}
+.s-cap[data-tema=lime] .eyebrow b{color:var(--teal)}
+.s-cap[data-tema=lime] .dentro li{border-top-color:rgba(26,3,5,.3);background:rgba(244,235,221,.82)}
+.s-cap[data-tema=lime] .dentro li i{color:var(--teal)}
+.s-cap[data-tema=lime] .dentro li:hover{background:var(--teal);color:#fff}.s-cap[data-tema=lime] .dentro li:hover i{color:#fff}
+.s-cap[data-tema=lime] .trilha-cap{grid-template-columns:repeat(4,1fr)!important}
+.s-cap[data-tema=lime] .trilha-cap span{border-top-color:rgba(26,3,5,.25);opacity:.7}
+.s-cap[data-tema=lime] .trilha-cap span.on{border-color:var(--teal);color:var(--teal);opacity:1}
+.s-cap[data-tema=lime] .trilha-cap span.feito{border-color:var(--ink)}
+/* KV */
+.cn-kv{display:grid;grid-template-columns:1fr 520px;gap:40px;flex:1;min-height:0;align-items:center}
+.cn-kv figure{position:relative;box-shadow:0 30px 80px rgba(0,0,0,.5);outline:6px solid var(--lime);outline-offset:-6px;transform:rotate(-1.2deg)}
+.cn-kv figure img{display:block;width:100%}
+.cn-kv figure::after{content:'';position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.34) 50%,transparent 60%);background-size:300% 100%;animation:brilho 4.5s ease-in-out infinite;mix-blend-mode:screen;pointer-events:none}
+.cn-kv h2{font-size:58px;line-height:1}
+.cn-pontos{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:18px}
+.cn-pontos li{border-left:5px solid var(--lime);padding:2px 0 2px 16px;font-size:16px;line-height:1.42}
+.cn-pontos li b{display:block;font-family:var(--titulo);text-transform:uppercase;font-size:23px;color:var(--lime);letter-spacing:.01em}
+[data-tema=claro] .cn-pontos li{border-color:var(--teal)}[data-tema=claro] .cn-pontos li b{color:var(--teal)}
+/* linguagem: os quatro elementos do KV */
+.cn-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;flex:1;min-height:0;margin-top:14px}
+.cn-4>div{display:flex;flex-direction:column;gap:10px;min-height:0}
+.cn-fig{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;padding:22px}
+.cn-fig img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 14px 24px rgba(0,0,0,.4));transition:transform .5s}
+.cn-4>div:hover .cn-fig img{transform:scale(1.06) rotate(-2deg)}
+.cn-fig.lant{background:!important;animation:pan-l 70s linear infinite}
+.cn-4 h3{font-size:26px}.cn-4 p{font-size:14.5px;line-height:1.42;opacity:.88}
+/* estratégia: kit nacional x praças foco */
+.cn-kits{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:16px}
+.cn-kits .v2-card h3{font-size:28px}.cn-kits .v2-card .eti{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:700;display:block;margin-bottom:8px}
+.cn-kits .v2-card.escuro .eti{color:var(--lime)}
+.cn-kits .v2-card.ouro{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.cn-kits .v2-card.ouro li::before{background:var(--teal)}
+/* regional */
+.cn-reg{display:grid;grid-template-columns:430px 1fr;gap:34px;flex:1;min-height:0;align-items:stretch}
+.cn-reg .ilha{position:relative;min-height:0;background:radial-gradient(circle at 50% 45%,#F6F1E8 0%,var(--palco) 62%,#D2C6B2 100%);display:flex;align-items:center;justify-content:center;padding:18px}
+.cn-reg .ilha img{max-width:100%;max-height:100%;object-fit:contain}
+.cn-reg .ilha span{position:absolute;left:14px;top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lime);font-weight:700}
+.cn-pracas{display:grid;grid-template-columns:1fr 1fr;gap:14px;min-height:0}
+.cn-pracas>div{border:2px solid var(--linha-e);padding:18px 20px;display:flex;flex-direction:column;gap:6px;position:relative;overflow:hidden;transition:background .25s,transform .25s}
+.cn-pracas>div:hover{background:var(--lime);color:var(--ink);transform:translate(-3px,-3px)}
+.cn-pracas i{font-style:normal;font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--lime);font-weight:700}
+.cn-pracas>div:hover i{color:var(--teal)}
+.cn-pracas h3{font-size:34px;line-height:1}.cn-pracas p{font-size:14.5px;line-height:1.4;opacity:.9}
+.cn-3cam{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.cn-3cam div{border-top:4px solid var(--lime);padding-top:8px;font-size:13.5px;line-height:1.35}
+.cn-3cam b{display:block;font-family:var(--titulo);text-transform:uppercase;font-size:20px}
+.cn-3cam em{font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--lime)}
+/* confete */
+#confete{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:40;opacity:0;transition:opacity .8s}
+#stage.festa #confete{opacity:1}
+@media (prefers-reduced-motion:reduce){.brilha,.s-cap[data-tema=lime],.cn-fig.lant,.s-capa .faixa-lant,.cn-kv figure::after{animation:none}#confete{display:none}}
+.pdf #confete{display:none}
+
+/* ajustes de leitura */
+.v2-card{color:var(--ink)}.v2-card.escuro{color:var(--paper)}
+.cn-kits .v2-card{padding:30px 32px}.cn-kits .v2-card h3{font-size:36px}.cn-kits .v2-card li{font-size:18px;line-height:1.38}
+.cn-kits{margin-top:24px}.v2-leg{font-size:14.5px}
+.v2-nums>div{color:var(--ink)}.v2-nums>div.lime{background:var(--teal);color:#fff}
+.v2-trio figure img{max-height:520px}
+.v2-trio p{font-size:15px}.v2-trio b{color:var(--lime)}[data-tema=claro] .v2-trio b{color:var(--teal)}
+.txt-core h2{font-size:56px}.txt-core .lead{font-size:17px}
+.foto-core p{font-size:16px}
+[data-tema=claro] .ficha-core{border-top-color:var(--linha-c)}
+
+#ilha-partes .v2-nums{grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}#ilha-partes .v2-nums>div{padding:30px 28px 26px}#ilha-partes .v2-nums b{font-size:104px}#ilha-partes .v2-nums span{font-size:14px}#ilha-partes .v2-nums i{font-size:16px}
+
+.onda{position:relative;white-space:nowrap}
+.onda::after{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='12' viewBox='0 0 40 12'><path d='M0 6 Q10 0 20 6 T40 6' fill='none' stroke='%23E30613' stroke-width='3'/></svg>")!important}
+/* pontos de brilho acendendo na lantejoula (só na abertura "O brilho") */
+.brilhinho{position:absolute;z-index:1;width:var(--s);height:var(--s);margin:calc(var(--s) / -2) 0 0 calc(var(--s) / -2);pointer-events:none;opacity:0;animation:acende var(--d) ease-in-out var(--t) infinite;background:radial-gradient(circle,#fff 0 7%,rgba(255,255,255,.75) 9%,rgba(255,250,210,.28) 24%,transparent 46%)}
+.brilhinho::before,.brilhinho::after{content:'';position:absolute;left:50%;top:50%;width:150%;height:2.5px;margin:-1.25px 0 0 -75%;background:linear-gradient(90deg,transparent,#fff 46%,#fff 54%,transparent)}
+.brilhinho::after{transform:rotate(90deg)}
+@keyframes acende{0%,62%,100%{opacity:0;transform:scale(.25) rotate(0deg)}74%{opacity:1;transform:scale(1) rotate(18deg)}86%{opacity:.5;transform:scale(.6) rotate(30deg)}}
+@media (prefers-reduced-motion:reduce){.brilhinho{animation:none;opacity:.7}}
+
+/* capa do KV: logo, frase e confetes sobre lantejoula (sem peça nenhuma: a ilha fica para o fim) */
+.s-capa.capa-kv{background:var(--lime)!important;animation:pan-l 90s linear infinite;color:var(--ink)}
+.s-capa.capa-kv::before{content:'';position:absolute;inset:0;background:radial-gradient(900px 560px at 50% 44%,rgba(255,224,90,.0) 0%,rgba(255,208,0,.35) 60%,rgba(214,150,0,.55) 100%)}
+.kv-cam{position:absolute;left:0;right:0;top:34px;height:650px;background:50% 50%/contain no-repeat}
+.kv-cam.conf{background-image:url(img/capa-confetes.webp);animation:flutua 7s ease-in-out infinite}
+.kv-cam.logo{background-image:url(img/capa-logo.webp);animation:pulsa-l 4.5s ease-in-out infinite;filter:drop-shadow(0 22px 30px rgba(20,40,50,.35))}
+.kv-cam.frase{background-image:url(img/capa-frase.webp);animation:flutua 5.5s ease-in-out -2s infinite;filter:drop-shadow(0 12px 16px rgba(20,40,50,.3))}
+@keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes pulsa-l{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+.s-capa.capa-kv .texto{left:72px;top:auto;bottom:150px;width:1456px;display:flex;align-items:center;gap:28px;justify-content:center}
+.s-capa.capa-kv .texto .eyebrow{margin:0}.s-capa.capa-kv .texto .acoes{margin:0}
+.s-capa.capa-kv .lead{margin:0;opacity:1;color:var(--ink);font-weight:700}
+.s-capa.capa-kv .eyebrow{color:var(--ink)}.s-capa.capa-kv .eyebrow b{color:var(--teal)}
+.s-capa.capa-kv .rot{color:var(--ink);opacity:.75}
+.s-capa.capa-kv .botao.cheio{background:var(--teal);color:#fff;border-color:var(--teal)}
+.s-capa.capa-kv .marquee{background:var(--teal);color:#fff}
+.so-leitor{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.kv-cam,.s-capa.capa-kv{animation:none!important}}
+
+/* botão do mini executivo (conteúdo entra depois da aprovação da apresentação) */
+.bt-exec{display:flex;align-items:center;gap:12px;align-self:flex-start;margin-top:14px;padding:10px 16px 10px 12px;border:2px solid var(--lime);color:var(--lime);text-align:left;transition:background .2s,color .2s,transform .2s}
+.bt-exec svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:3;flex:none}
+.bt-exec b{display:block;font-family:var(--titulo);text-transform:uppercase;font-size:20px;letter-spacing:.02em;line-height:1}
+.bt-exec i{display:block;font-style:normal;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin-top:3px}
+.bt-exec:hover{background:var(--lime);color:var(--ink);transform:translate(-2px,-2px)}
+[data-tema=claro] .bt-exec{border-color:var(--teal);color:var(--teal)}[data-tema=claro] .bt-exec:hover{background:var(--teal);color:#fff}
+.bt-exec.aviso i{opacity:1;font-weight:700}
+
+/* palco das peças: cinza claro neutro, igual ao fundo das imagens de figurino */
+:root{--palco:#E4E4E6}
+.foto-core figure,.palco-can,.v2-trio figure,.cn-reg .ilha{background:var(--palco)!important}
+.foto-core figure::after,.palco-can::after{box-shadow:none}
+.palco-can video,.foto-core video{background:var(--palco)}
+.cn-reg .ilha span{color:var(--teal)}
+
+/* figurinos: a imagem encosta na base do quadro, para o corte das pernas coincidir com a borda */
+.v2-trio figure{align-items:flex-end!important}.v2-trio figure img{max-height:100%!important;display:block}
+/* figurinos: imagem de perto, preenchendo o quadro inteiro; ampliar mostra a imagem completa */
+.v2-trio figure{position:relative;align-items:stretch!important}
+.v2-trio figure img{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;object-fit:cover;object-position:50% 42%}
+/* figurinos: legendas com a mesma altura, para os quadros ficarem alinhados */
+.v2-trio>div>p{min-height:2.9em;line-height:1.4;margin:0}
+/* vídeos: as bordas se desfazem no fundo, para não aparecer diferença de tom entre o vídeo e o quadro */
+.palco-can video,.foto-core video{background:transparent!important;-webkit-mask-image:linear-gradient(90deg,transparent,#000 3.5%,#000 96.5%,transparent),linear-gradient(0deg,transparent,#000 3.5%,#000 96.5%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 3.5%,#000 96.5%,transparent),linear-gradient(0deg,transparent,#000 3.5%,#000 96.5%,transparent);mask-composite:intersect}
+
+.s-cap[data-tema=lime] .dentro li{padding:9px 6px;font-size:17px}
+/* elementos do KV sobre fundo preto */
+.cn-fig{background:#0b0b0d!important}
+.cn-fig.lant{background:!important}
+.cn-4>div{justify-content:flex-start}.cn-4 .cn-fig{flex:none;height:440px}
+/* laterais da janela acompanham o fundo da tela ativa (em telas mais largas que 16:9) */
+#wrap{transition:background-color .45s}
+#wrap[data-fundo=lime]{background:#E9CB8B}
+#wrap[data-fundo=lime-lant]{background:#E9CB8B;position:absolute;inset:0;background:rgba(255,208,0,.5)}
+#wrap[data-fundo=claro]{background:#F4EBDD}#wrap[data-fundo=claro2]{background:#EADCC6}
+#wrap[data-fundo=escuro],#wrap[data-fundo=foto]{background:#12232B}
+/* mini executivo: folha técnica sobre o deck */
+html.exec-on,html.exec-on body{overflow:hidden}
+.exec-ov{position:fixed;inset:0;z-index:9000;background:rgba(26,3,5,.82);overflow-y:auto;-webkit-overflow-scrolling:touch;padding:max(16px,3vh) max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.exec-folha{max-width:1180px;margin:0 auto;background:#fbfaf7;color:#12232B;font-family:'Space Grotesk',system-ui,sans-serif;padding:clamp(18px,3vw,44px);border-top:10px solid #C8102E;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.exec-folha header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;border-bottom:2px solid #12232B;padding-bottom:16px;margin-bottom:18px}
+.exec-cod{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#C8102E}
+.exec-folha h3{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(30px,4vw,48px);line-height:1;margin:6px 0 8px}
+.exec-folha header p{margin:0;max-width:62ch;font-size:15px;line-height:1.45;color:#33586A}
+.exec-x{flex:none;width:46px;height:46px;border:2px solid #12232B;background:#E9CB8B;color:#12232B;font-size:30px;line-height:1;cursor:pointer}
+.exec-x:hover{background:#C8102E;color:#fff;border-color:#C8102E}
+.gerais{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;margin:0 0 20px;background:#12232B;border:2px solid #12232B}
+.gerais div{background:#E9CB8B;padding:10px 12px}.gerais dt{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em}.gerais dd{margin:4px 0 0;font-weight:700;font-size:17px}
+.vistas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-bottom:8px}
+.vista{margin:0;background:#fff;border:1px solid #d8d2c8;padding:10px}.vista svg{width:100%;height:auto;max-height:520px;display:block}
+.vista figcaption{font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#33586A;margin-top:6px}
+.vista .geo polygon{stroke:#3a2a2a;stroke-width:.6;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.vista .cota line{stroke:#C8102E;stroke-width:1.2;vector-effect:non-scaling-stroke}.vista .cota text{fill:#C8102E;font-family:'Space Mono',monospace;font-weight:700}
+.vista .nota{fill:#33586A;font-family:'Space Mono',monospace}
+.exec-folha h4{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:24px;margin:24px 0 10px;color:#C8102E}
+.lista{width:100%;border-collapse:collapse;font-size:14px;display:block;overflow-x:auto}
+.lista th{text-align:left;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em;background:#12232B;color:#E9CB8B;padding:8px 10px;white-space:nowrap}
+.lista td{padding:9px 10px;border-bottom:1px solid #e3ddd2;vertical-align:top;line-height:1.35}.lista td:first-child{font-family:'Space Mono',monospace;color:#C8102E}
+.lista td:nth-child(3){white-space:nowrap;font-weight:700}
+.rac{margin:0;padding-left:20px;line-height:1.5;font-size:15px;max-width:90ch}.rac li{margin-bottom:6px}
+.exec-folha footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;margin-top:26px;padding-top:12px;border-top:2px solid #12232B;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:.06em}
+
+/* ===== HAV009 · camada Havaianas Aura Dia das Mães ===== */
+.s-cap[data-tema=lime]{background:radial-gradient(1200px 800px at 70% 40%,#8FB1BF 0%,#6E93A2 55%,#557C8C 100%)!important;color:#12232B}
+.s-cap.rosa[data-tema=lime]{background:radial-gradient(1200px 800px at 70% 40%,#F0A3A2 0%,#E07F80 55%,#C9696B 100%)!important}
+.tela[data-tema=claro]::before{display:none}
+.t-rosa{color:#E07F80}.t-az{color:#6E93A2}.t-verm{color:#C8102E}
+.hv-kv3{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;height:100%}
+.hv-kv3 figure{margin:0;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.28)}
+.hv-kv3 figure img{display:block;width:100%;height:auto}
+.hv-vs{display:grid;grid-template-columns:1fr 70px 1fr;gap:18px;align-items:center;margin-top:26px}
+.hv-vs figure{margin:0;border-radius:8px;overflow:hidden;box-shadow:0 24px 50px rgba(0,0,0,.25);background:#fff}
+.hv-vs figure img{display:block;width:100%;height:440px;object-fit:cover}
+.hv-vs figcaption{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:12px 14px;background:var(--ink-2);color:var(--paper)}
+.hv-vs .seta{font-size:64px;text-align:center;color:var(--lime)}
+[data-tema=claro] .hv-vs .seta{color:var(--teal)}
+.hv-mel{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:30px}
+.hv-mel>div{background:rgba(255,255,255,.06);border:1px solid var(--linha-e);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:12px}
+[data-tema=claro] .hv-mel>div{background:#fff;border-color:var(--linha-c)}
+.hv-mel .im{height:210px;border-radius:6px;background:#E9E1D3 50% 50%/cover no-repeat}
+.hv-mel h3{font-family:'Big Shoulders Display',sans-serif;font-weight:900;text-transform:uppercase;font-size:30px;margin:0;line-height:1}
+.hv-mel p{margin:0;font-size:17px;line-height:1.45}
+.hv-mel i{font-style:normal;font-family:'Space Mono',monospace;font-size:13px;color:var(--teal)}
+.hv-hier{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center;margin-top:20px}
+.hv-hier .kv{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.hv-hier .kv img{display:block;width:100%}
+.hv-hier .kv b{position:absolute;width:44px;height:44px;border-radius:50%;background:#C8102E;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:18px;box-shadow:0 6px 14px rgba(0,0,0,.35);transform:translate(-50%,-50%)}
+.hv-hier ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:18px}
+.hv-hier li{display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:start;font-size:19px;line-height:1.4}
+.hv-hier li i{font-style:normal;width:44px;height:44px;border-radius:50%;background:#C8102E;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:18px}
+.hv-hier li b{display:block;font-family:'Big Shoulders Display',sans-serif;font-size:26px;text-transform:uppercase;line-height:1.05;margin-bottom:2px}
+.hv-cores{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:24px}
+.hv-cores>div{border-radius:12px;overflow:hidden;box-shadow:0 26px 54px rgba(0,0,0,.28);display:flex;flex-direction:column}
+.hv-cores img{display:block;width:100%;height:330px;object-fit:cover}
+.hv-cores .tx{padding:20px 24px;flex:1}
+.hv-cores .az .tx{background:#6E93A2;color:#12232B}.hv-cores .rs .tx{background:#E07F80;color:#2A1414}
+.hv-cores h3{margin:0 0 8px;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:34px;text-transform:uppercase}
+.hv-cores ul{margin:0;padding-left:18px;font-size:17px;line-height:1.5}
+.hv-sis{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:30px}
+.hv-sis>div{border-top:3px solid var(--lime);padding-top:14px}
+[data-tema=claro] .hv-sis>div{border-color:var(--teal)}
+.hv-sis b{display:block;font-family:'Big Shoulders Display',sans-serif;font-weight:900;font-size:28px;text-transform:uppercase;margin-bottom:6px}
+.hv-sis p{margin:0;font-size:16px;line-height:1.45}
+.hv-sis i{display:block;font-style:normal;font-family:'Space Mono',monospace;font-size:13px;opacity:.7;margin-bottom:6px}
+.hv-pas{counter-reset:p;list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.hv-pas li{counter-increment:p;border-top:3px solid var(--lime);padding-top:12px;font-size:18px;line-height:1.4}
+.hv-pas li::before{content:counter(p,decimal-leading-zero);display:block;font-family:'Space Mono',monospace;color:var(--lime);margin-bottom:6px}
+.etq-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:#C8102E;color:#fff;margin-left:8px;vertical-align:middle}
