@@ -292,3 +292,9 @@ html.exec-on,html.exec-on body{overflow:hidden}
 .bn-fotos figure{background:radial-gradient(circle at 50% 42%,#F6F1E8 0%,#E9E1D3 62%,#D2C6B2 100%)}
 .bn-fotos figure figcaption{position:absolute;left:12px;bottom:10px;z-index:2;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;background:var(--ink-2);color:var(--paper);padding:4px 8px}
 .bn-fotos.uma{grid-template-columns:1fr}
+/* fechamento: fundo rosa inteiro, sem a divisão escura, KV rosa como cartão à direita */
+#fim.s-capa{background:radial-gradient(1300px 800px at 70% 45%,#F0A3A2 0%,#E07F80 55%,#C9696B 100%)!important}
+#fim .veu{display:none!important}
+#fim .foto{left:44%!important;right:3%!important;top:9%!important;bottom:17%!important;background:url(img/kv-rosa.webp) 50% 50%/contain no-repeat!important;transform:none!important;filter:drop-shadow(0 26px 40px rgba(90,20,25,.35))}
+#fim .texto{max-width:560px}#fim h1{color:#FFF6EC}#fim .brilha{background:none;-webkit-text-fill-color:#7A1F2A;color:#7A1F2A!important;animation:none}
+#fim .lead{color:#FFF6EC}#fim .rot{display:none!important}
