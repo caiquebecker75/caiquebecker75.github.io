@@ -238,3 +238,11 @@ html.exec-on,html.exec-on body{overflow:hidden}
 .hv-pas li{counter-increment:p;border-top:3px solid var(--lime);padding-top:12px;font-size:18px;line-height:1.4}
 .hv-pas li::before{content:counter(p,decimal-leading-zero);display:block;font-family:'Space Mono',monospace;color:var(--lime);margin-bottom:6px}
 .etq-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;background:#C8102E;color:#fff;margin-left:8px;vertical-align:middle}
+/* capa: textura do KV no fundo todo, produto recortado à direita, texto sem cruzar a imagem */
+#capa.s-capa{background:#6E93A2 url(img/textura-kv.webp) 50% 50%/cover!important}
+#capa .foto{left:43%!important;right:3%!important;top:9%!important;bottom:17%!important;background:url(img/capa-kv-recebido.webp) 50% 50%/contain no-repeat!important;transform:none!important}
+#capa .veu{display:none!important}
+#capa .texto{max-width:560px}
+#capa .texto .lead{max-width:470px;color:#F4EBDD}
+#capa h1{text-shadow:0 4px 18px rgba(18,35,43,.25)}
+#capa .rot{display:none!important}
