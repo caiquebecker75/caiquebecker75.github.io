@@ -320,3 +320,4 @@ html.exec-on,html.exec-on body{overflow:hidden}
 .bn-cores button[data-vcor=rs].on{background:#E07F80;border-color:#E07F80;color:#2A1414}
 .bn-p .bn-fotos[data-cor]{display:none}
 .bn-p[data-ver=az] .bn-fotos[data-cor=az],.bn-p[data-ver=rs] .bn-fotos[data-cor=rs]{display:grid}
+#fim .foto{left:34%!important;right:0!important;top:5%!important;bottom:11%!important}#fim .texto{max-width:500px}#fim h1{font-size:clamp(60px,7.2vw,118px)}
