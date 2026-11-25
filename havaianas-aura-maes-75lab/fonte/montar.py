@@ -48,7 +48,7 @@ T.append('''<section id="capa" class="tela s-capa ativa" data-tema="foto" data-t
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
 # ------------------------------------------------------------ 01 · a ideia
-T.append(cap('01', 'A ideia', 'Antes das peças, o raciocínio: de onde partimos, o que mudamos no KV e por que existem dois caminhos.', ['O KV que recebemos', 'A ideia: a Aura vira o presente', 'O que melhoramos no KV', 'A hierarquia da informação', 'Dois caminhos: azul e rosa', 'Como defender', 'O sistema das peças']))
+T.append(cap('01', 'A ideia', 'Antes das peças, o raciocínio: de onde partimos, o que mudamos no KV e por que existem dois caminhos.', ['O KV que recebemos', 'A ideia e os ajustes no KV', 'A hierarquia da informação', 'Dois caminhos: azul e rosa', 'Como defender', 'O sistema das peças']))
 T.append('''<section id="kv-recebido" class="tela v2-split n" data-tema="escuro" data-titulo="O KV que recebemos" data-cap="(01) A ideia">
   <div class="caixa"><div class="cn-kv">
     <figure class="anima amplia" data-amplia="assets/img/kv-recebido.webp" data-legenda="KV de lançamento Havaianas Aura, recebido do cliente" data-cursor="Ampliar"><img src="assets/img/kv-recebido.webp" alt="KV de lançamento Havaianas Aura recebido do cliente"></figure>
@@ -66,21 +66,14 @@ T.append('''<section id="kv-ideia" class="tela v2-split n" data-tema="claro" dat
     <figure class="anima amplia" data-amplia="assets/img/kv-azul.webp" data-legenda="KV 75 LAB · Dia das Mães, tem Havaianas pra presente" data-cursor="Ampliar"><img src="assets/img/kv-azul.webp" alt="KV Dia das Mães, tem Havaianas pra presente"></figure>
     <div><span class="eyebrow anima"><b>A ideia</b> Dia das Mães</span>
       <h2 class="anima">Dia das Mães, tem Havaianas <span class="t-verm">pra presente.</span></h2>
-      <p class="lead anima d1">A Aura vira o presente. Os cards do KV, que já emolduravam o produto, passam a ser a moldura do presente, e toda peça ganha o que um presente tem: caixa vermelha, fita e laço dourado.</p>
+      <p class="lead anima d1">A Aura vira o presente: os cards do KV viram a moldura do presente, com caixa vermelha, fita e laço dourado. Para isso, quatro ajustes no KV deles:</p>
       <ul class="cn-pontos anima d2">
-        <li><b>Resolve a dúvida do shopper</b>“O que dar para a minha mãe?” A frase responde e já diz onde comprar.</li>
-        <li><b>Leva à compra</b>Caixas, luvas, sacolas e a Gift Station fecham o ciclo: a loja embala o presente na hora.</li>
+        <li><b>A borda</b>O KV recortado na faca art déco dos cards vira o contorno das testeiras, do adesivo de vidro e das laterais.</li>
+        <li><b>A frase</b>Sai o inglês, entra “Dia das Mães, tem Havaianas pra presente”: data, marca e solução numa leitura só.</li>
+        <li><b>O selo</b>A moldurinha do logo amarra frase e marca e funciona sozinha nas peças pequenas.</li>
+        <li><b>A assinatura</b>“Novas Havaianas Aura” desce para o rodapé, sem disputar com a data.</li>
       </ul></div>
   </div></div></section>''')
-T.append('''<section id="melhorias" class="tela v2-split n" data-tema="escuro" data-titulo="O que melhoramos no KV" data-cap="(01) A ideia">
-  <div class="caixa"><span class="eyebrow anima">Do KV recebido ao KV da data</span>
-    <h2 class="anima">Quatro ajustes, <span class="t-lime">a mesma Aura.</span></h2>
-    <div class="hv-mel anima d1">
-      <div><div class="im" style="background-image:url(assets/img/mel-borda.webp)"></div><i>01 · A borda</i><h3>Moldura recortada</h3><p>Recortamos o KV com a mesma faca art déco dos cards. A moldura deixa de ser só desenho e vira o contorno físico das testeiras, do adesivo de vidro e das laterais.</p></div>
-      <div><div class="im" style="background-image:url(assets/img/mel-frase.webp)"></div><i>02 · A frase</i><h3>Em português, da data</h3><p>Saiu “brazilian radiance, brilliantly framed” e entrou “Dia das Mães, tem Havaianas pra presente”: a data, a marca e a solução numa leitura só.</p></div>
-      <div><div class="im" style="background-image:url(assets/img/mel-frames.webp)"></div><i>03 · O selo e os frames</i><h3>Marca como selo</h3><p>A moldurinha em volta do logo amarra frase e marca, como um selo de presente, e funciona sozinha nas peças pequenas. Os cards viram frames com o par fixado.</p></div>
-      <div><div class="im" style="background-image:url(assets/img/mel-assina.webp)"></div><i>04 · A assinatura</i><h3>Lançamento no rodapé</h3><p>“Novas Havaianas Aura” desce para o rodapé: o lançamento continua presente, sem disputar com a data.</p></div>
-    </div></div></section>''')
 T.append('''<section id="hierarquia" class="tela v2-split n" data-tema="claro" data-titulo="A hierarquia" data-cap="(01) A ideia">
   <div class="caixa"><span class="eyebrow anima">Ordem de leitura</span>
     <h2 class="anima">Uma ordem de leitura <span class="t-verm">para todas as peças.</span></h2>
@@ -182,7 +175,7 @@ T.append('''<section id="fim" class="tela s-capa fim" data-tema="foto" data-titu
       <div class="acoes anima d3"><button class="botao cheio" data-ir="capa" data-cursor="Voltar">Voltar ao início</button><button class="botao seta" data-ir="caminhos" data-cursor="Ver">Rever os caminhos</button></div></div>
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
-ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'melhorias', 'hierarquia', 'caminhos', 'defesa', 'sistema', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
+ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'caminhos', 'defesa', 'sistema', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
 ID = lambda t: re.search(r'<section id="([^"]+)"', t).group(1)
 assert sorted(ID(t) for t in T) == sorted(ORDEM), [ID(t) for t in T]
 T.sort(key=lambda t: ORDEM.index(ID(t)))
