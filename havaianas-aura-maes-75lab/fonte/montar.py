@@ -131,7 +131,7 @@ T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar
      ('Rosa', 'ponta-rs-1', 'A ponta no caminho rosa.'), ('Rosa · 3/4', 'ponta-rs-2', 'Rosa em 3/4.')],
     [('Largura', '120 cm'), ('Laterais', '3 camadas, arte da ilha'), ('Testeira', 'topo da arte da ilha'), ('Produto', 'pares presos na base de trás')]))
 T.append(core('leves', '(03) B2B alimentar', 'Peças leves', 'B2B alimentar · kit de gôndola', 'O selo funciona <span class="t-lime">em qualquer tamanho.</span>', 'Stopper, wobbler, clip strip com os pares e placa de carrinho: o kit leve leva a marca e a data para toda loja.',
-    [('Azul · gôndola', 'leves-az-1', 'O kit aplicado numa gôndola vazia: clip strip, wobbler e stopper.'), ('Azul · detalhe', 'leves-az-2', 'Clip strip com a cartela e o stopper.'), ('Azul · carrinho', 'carrinho-az', 'Placa de carrinho 30 x 30 cm.'),
+    [('Azul · gôndola', 'leves-az-1', 'O kit aplicado numa gôndola vazia: clip strip, wobbler e stopper.'), ('Azul · detalhe', 'leves-az-2', 'Clip strip com a cartela, wobbler e o stopper com a arte.'), ('Azul · carrinho', 'carrinho-az', 'Placa de carrinho 30 x 30 cm.'),
      ('Rosa · gôndola', 'leves-rs-1', 'O kit no caminho rosa.'), ('Rosa · detalhe', 'leves-rs-2', 'Clip strip e stopper em rosa.'), ('Rosa · carrinho', 'carrinho-rs', 'Placa de carrinho em rosa.')],
     [('Stopper', '30 x 90 cm'), ('Wobbler', '15 x 15 cm'), ('Clip strip', 'cartela de 16 cm, 5 pares'), ('Carrinho', 'placa 30 x 30 cm')]))
 # ------------------------------------------------------------ 04 · próximos passos
