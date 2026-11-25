@@ -130,10 +130,39 @@ T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar
     [('Azul', 'ponta-az-1', 'Frontal: testeira com o selo e os Charms.'), ('Azul · esquerda', 'ponta-az-2', 'A lateral cobre a gancheira.'), ('Azul · direita', 'ponta-az-3', 'Os Glossy na lateral.'),
      ('Rosa', 'ponta-rs-1', 'A ponta no caminho rosa.'), ('Rosa · 3/4', 'ponta-rs-2', 'Rosa em 3/4.')],
     [('Largura', '120 cm'), ('Laterais', '3 camadas, arte da ilha'), ('Testeira', 'topo da arte da ilha'), ('Produto', 'pares presos na base de trás')]))
-T.append(core('leves', '(03) B2B alimentar', 'Peças leves', 'B2B alimentar · kit de gôndola', 'O selo funciona <span class="t-lime">em qualquer tamanho.</span>', 'Stopper, wobbler, clip strip com os pares e placa de carrinho: o kit leve leva a marca e a data para toda loja.',
-    [('Azul · gôndola', 'leves-az-1', 'O kit aplicado numa gôndola vazia: clip strip, wobbler e stopper.'), ('Azul · detalhe', 'leves-az-2', 'Clip strip com a cartela, wobbler e o stopper com a arte.'), ('Azul · carrinho', 'carrinho-az', 'Placa de carrinho 30 x 30 cm.'),
-     ('Rosa · gôndola', 'leves-rs-1', 'O kit no caminho rosa.'), ('Rosa · detalhe', 'leves-rs-2', 'Clip strip e stopper em rosa.'), ('Rosa · carrinho', 'carrinho-rs', 'Placa de carrinho em rosa.')],
-    [('Stopper', '30 x 90 cm'), ('Wobbler', '15 x 15 cm'), ('Clip strip', 'cartela de 16 cm, 5 pares'), ('Carrinho', 'placa 30 x 30 cm')]))
+def bn_fig(src, leg):
+    return '<figure class="amplia" data-amplia="assets/img/%s.webp" data-legenda="%s" data-cursor="Ampliar"><img src="assets/img/%s.webp" alt="%s" loading="lazy"><figcaption>%s</figcaption></figure>' % (src, leg, src, leg, leg.split(' · ')[-1])
+LEVES = [  # (nome, material, [(imagem, legenda)], [(dt, dd)])
+    ('Testeira de gôndola', '100 x 30 cm', [('testeira-solo', 'Testeira · a peça'), ('testeira-aplicada', 'Testeira · aplicada')],
+     [('Onde', 'No topo do módulo da Havaianas, com os lançamentos expostos logo abaixo'), ('Material', 'PS 2 mm, impressão 4/0, faca no contorno da moldura'), ('Medida', '100 x 30 cm')]),
+    ('Stopper', '30 x 90 cm', [('stopper-close', 'Stopper · a peça'), ('leves-az-2', 'Stopper · aplicado')],
+     [('Onde', 'Perpendicular à gôndola, preso no trilho de preço pelo lado reto'), ('Material', 'PS 2 mm, impressão 4/4, faca no contorno'), ('Medida', '30 x 90 cm')]),
+    ('Wobbler', '15 x 15 cm', [('wobbler-close', 'Wobbler · a peça'), ('leves-az-1', 'Wobbler · aplicado')],
+     [('Onde', 'Na frente da prateleira, na altura dos olhos'), ('Material', 'PS 1 mm, impressão 4/0, haste de acrílico'), ('Medida', '15 x 15 cm')]),
+    ('Clip strip', 'cartela + 5 pares', [('clip-close', 'Clip strip · a peça'), ('leves-az-1', 'Clip strip · aplicado')],
+     [('Onde', 'Na emenda entre dois módulos, preso no trilho'), ('Material', 'Tira em PS 1 mm e cartela em PS 2 mm, 4/4'), ('Capacidade', '5 pares Aura')]),
+    ('Moldura de gôndola', '36 x 101 cm', [('moldura-solo', 'Moldura · azul e rosa'), ('moldura-aplicada', 'Moldura · aplicada')],
+     [('Onde', 'Emoldura uma coluna de pares no módulo da Havaianas'), ('Material', 'PS 2 mm, impressão 4/0, janela vazada'), ('Medida', '36 x 101 cm')]),
+    ('Tag', '18 x 10 cm', [('tag-solo', 'Tag · azul e rosa'), ('tag-aplicada', 'Tag · aplicada')],
+     [('Onde', 'No gancho, à frente do primeiro par'), ('Material', 'PS 1 mm, impressão 4/4, faca com gancho'), ('Medida', '18 x 10 cm')]),
+    ('Placa de carrinho', '30 x 30 cm', [('carrinho-az', 'Placa de carrinho · aplicada')],
+     [('Onde', 'Na frente do carrinho, fixada na grade'), ('Material', 'PS 2 mm, impressão 4/0, abraçadeiras'), ('Medida', '30 x 30 cm')]),
+    ('Kit rosa', 'caminho 2', [('stopper-close-rs', 'Kit rosa · stopper'), ('leves-rs-2', 'Kit rosa · aplicado')],
+     [('O quê', 'As mesmas peças com o card rosa'), ('Faca', 'Igual à do azul: só muda a arte'), ('Testeira', 'Versão rosa a definir; moldura e tag já têm rosa')]),
+]
+LEVES = [(n, m, [f for f in fs if IMG(f[0])], fc) for n, m, fs, fc in LEVES]
+LEVES = [l for l in LEVES if l[2]]
+bts = ''.join('<button data-aba class="%s" data-cursor="Ver"><i>%02d</i><b>%s</b><small>%s</small></button>' % ('on' if k == 0 else '', k + 1, n, m) for k, (n, m, fs, fc) in enumerate(LEVES))
+pns = ''.join('<div class="bn-p %s" data-painel><div class="bn-fotos %s cobre">%s</div><div class="bn-ficha"><h3>%s</h3><dl>%s</dl></div></div>' % (
+    'on' if k == 0 else '', 'duas' if len(fs) > 1 else 'uma', ''.join(bn_fig(a, b) for a, b in fs), n, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % x for x in fc)) for k, (n, m, fs, fc) in enumerate(LEVES))
+T.append('''<section id="leves" class="tela s-bniv n" data-tema="escuro" data-titulo="Peças leves" data-cap="(03) B2B alimentar">
+  <div class="caixa"><div class="bn-gr">
+    <div class="bn-esq"><span class="eyebrow anima"><b>B2B alimentar</b> · kit de gôndola</span>
+      <h2 class="anima d1">Peças <span class="t-lime">leves</span></h2>
+      <p class="anima d1">O selo funciona em qualquer tamanho: cada peça leva a marca e a data para toda loja. Em cada uma, a peça sozinha e a peça aplicada.</p>
+      <div class="bn-lista anima d2">%s</div></div>
+    <div class="bn-palco anima d2">%s</div>
+  </div></div></section>''' % (bts, pns))
 # ------------------------------------------------------------ 04 · próximos passos
 T.append(cap('04', 'Próximos passos', 'Da escolha do caminho à loja montada.', ['Escolha do caminho', 'Executivos e artes finais', 'Produção e implantação']))
 T.append('''<section id="proximos" class="tela v2-split n" data-tema="escuro" data-titulo="Próximos passos" data-cap="(04) Próximos passos">
@@ -179,7 +208,7 @@ HEAD = '''<title>Havaianas Aura Dia das Mães</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/deck.css"><link rel="stylesheet" href="assets/bombril.css"><link rel="stylesheet" href="assets/v2.css"><link rel="stylesheet" href="assets/havaianas.css?v=VERSAO">'''.replace('VERSAO', VER)
-BODY = ICONES + '\n<div id="wrap"><div id="stage" class="t-lime capa">\n' + '\n'.join(T) + '\n' + CHROME + '\n</div></div>\n' + POS + '\n<script src="assets/deck.js"></script>\n'
+BODY = ICONES + '\n<div id="wrap"><div id="stage" class="t-lime capa">\n' + '\n'.join(T) + '\n' + CHROME + '\n</div></div>\n' + POS + '\n<script src="assets/deck.js"></script>\n<script src="assets/havaianas.js?v=' + VER + '"></script>\n'
 full = '<!doctype html>\n<html lang="pt-BR">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<link rel="icon" href="assets/75lab-lime.png">\n' + HEAD + '\n</head>\n<body>\n' + BODY + '</body>\n</html>\n'
 for bad in ('Bombril', 'Carnaval', 'Limpol', 'lantejoula'): assert bad not in full, bad
 open(os.path.join(ROOT, 'index.html'), 'w', encoding='utf-8').write(full)
