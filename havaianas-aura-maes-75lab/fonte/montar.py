@@ -100,19 +100,35 @@ T.append('''<section id="kv-imagem" class="tela v2-split n" data-tema="escuro" d
       </ul></div>
   </div></div></section>''')
 # ------------------------------------------------------------ 02 · lojas próprias
-T.append(cap('02', 'Lojas próprias', 'Da vitrine ao caixa: o presente começa na rua e termina embalado na mão da cliente.', ['Mesa Big Hello', 'Vitrine', 'Gift Station', 'Embalagens']))
-T.append(core('mesa', '(02) Lojas próprias', 'Mesa Big Hello', 'Loja própria · LP01 · Big Hello', 'O presente <span class="t-lime">logo na entrada.</span>', 'Base azul sobre pés reguláveis, com dois tampos de madeira. A chamada sai da testeira em relevo, como letra caixa. Três frames com os Charms e seus precificadores, quatro Glossy em caixas abertas e o laço dourado fechando a base como um presente.',
+T.append(cap('02', 'Lojas próprias', 'Da vitrine ao caixa: o presente começa na rua e termina embalado na mão da cliente.', ['Mesa Big Hello', 'Big Hello nas mesas das lojas', 'Glorifier de prateleira', 'Vitrine', 'Gift Station modular', 'Embalagens']))
+T.append(core('mesa', '(02) Lojas próprias', 'Mesa Big Hello', 'Loja própria · LP01 · Big Hello · móvel novo', 'O presente <span class="t-lime">logo na entrada.</span>', 'Base azul sobre pés reguláveis, com dois tampos de madeira. A chamada sai da testeira em relevo, como letra caixa. Três frames com os Charms e seus precificadores, quatro Glossy em caixas abertas e o laço dourado fechando a base como um presente.',
     [('Frontal', 'mesa-r5-1', 'Frontal: chamada em relevo, frames dos Charms e as caixas abertas dos Glossy.'), ('3/4', 'mesa-r5-2', 'Os dois tampos de madeira e o laço dourado na base.'),
      ('Chamada em relevo', 'mesa-r5-relevo', 'Logo com 2 cm de relevo; moldura e textos com 1,2 cm.'), ('Caixas abertas', 'mesa-r5-caixas', 'Degrau de baixo: quatro Glossy em caixas abertas, com cetim, fita e laço.'),
      ('Caixas · 3/4', 'mesa-r5-caixas2', 'As caixas abertas em 3/4.'), ('Close da caixa', 'mesa-r5-caixa', 'O par deitado no cetim.'),
-     ('Precificadores', 'mesa-r5-preco', 'Plaquinha de acrílico em L à frente de cada frame.'), ('Pés reguláveis', 'mesa-r5-pes', 'A mesa fica 3 cm acima do piso, sobre sapatas niveladoras.')],
+     ('Caixa e envelope', 'mesa-r5-envelope', 'Nas laterais: caixa aberta inclinada e a caixa envelope com a fita passando pela alça.'), ('Precificadores', 'mesa-r5-preco', 'Plaquinha de acrílico em L à frente de cada frame.'), ('Pés reguláveis', 'mesa-r5-pes', 'A mesa fica 3 cm acima do piso, sobre sapatas niveladoras.')],
     [('Planta', '202 x 110 cm'), ('Base', 'azul, 2 tampos de madeira, pés reguláveis'), ('Chamada', 'relevo de 1,2 a 2 cm'), ('Produto', '3 Charms em frames, 4 Glossy em caixas')]))
+T.append(core('mesa-lojas', '(02) Lojas próprias', 'Big Hello nas mesas das lojas', 'Loja própria · Big Hello · mesas atuais', 'A mesma ideia, <span class="t-lime">na mesa que a loja já tem.</span>', 'Para as lojas que usam a mesa atual: uma peça em L de PS veste a mesa, com a chamada em letra caixa e a moldura invertida no avental. Uma carenagem única abraça os dois caixotes com os Glossy, e os Charms ficam nos frames.',
+    [('Sem apoios', 'loja-a-1', 'Mesa central com os dois caixotes no pé, a peça em L e os frames.'), ('Sem apoios · 3/4', 'loja-a-2', 'A mesa se estende para trás; a peça ocupa a frente.'),
+     ('Avental e caixotes', 'loja-a-avental', 'Moldura invertida no avental e a carenagem dos caixotes com o lockup.'), ('Tags de preço', 'loja-a-tags', 'Tag pequena em haste, presa por dentro do caixote, ao lado de cada cor.'),
+     ('Peça em L', 'loja-a-l', 'Fundo em duas camadas, logo e lettering em letra caixa fina.'),
+     ('Com apoios', 'loja-b-1', 'Versão com dois apoios laterais: caixa de presente aberta e caixa envelope.'), ('Com apoios · 3/4', 'loja-b-2', 'A versão com apoios em 3/4.'),
+     ('Apoio lateral', 'loja-b-apoio', 'Caixa aberta inclinada sobre calço de acrílico e envelope com a fita na alça.'), ('Pés', 'loja-b-pes', 'Pés de madeira inclinados, no estilo das mesas da loja.')],
+    [('Mesa', '122 x 150 x 78 cm (a confirmar)'), ('Caixotes', '2, na largura da mesa'), ('Peça em L', 'PS, chamada em letra caixa'), ('Produto', '4 Glossy nos caixotes, 3 Charms nos frames')]))
+T.append(core('prateleira', '(02) Lojas próprias', 'Glorifier de prateleira', 'Loja própria · prateleira da parede ripada', 'O espaço da Aura <span class="t-lime">na parede.</span>', 'A peça em L em versão reduzida, sobre a prateleira da parede ripada: três frames estreitos com um chinelo de cada cor, a frase no avental e uma tag de preço. Embaixo, as gancheiras com os três Charms.',
+    [('Frontal', 'prat-1', 'A peça sobre a prateleira, com as gancheiras embaixo.'), ('3/4', 'prat-2', 'A peça em 3/4.'),
+     ('Peça em L', 'prat-l', 'Frames de um chinelo, com a mesma moldura reduzida.'), ('Avental e frase', 'prat-frase', 'Moldura invertida com Novas Havaianas Aura em relevo fino.')],
+    [('Peça', '84 cm de largura, PS'), ('Frames', '3, um chinelo de cada cor'), ('Preço', '1 tag em L'), ('Gancheiras', '3 fileiras de Charms')]))
 T.append(core('vitrine', '(02) Lojas próprias', 'Vitrine', 'Loja própria · vitrine', 'A vitrine vira <span class="t-lime">uma caixa de presente.</span>', 'Adesivo de vidro com a moldura do KV de fora a fora e o fundo vazado, para a loja aparecer. Na frente, a mesa com as caixas abertas, os frames e os presentes cenográficos vermelhos dos dois lados.',
     [('Frontal', 'vit-az-1', 'A vitrine inteira: o adesivo recorta o vidro na forma da moldura.'), ('Mesa', 'vit-az-2', 'A mesa da vitrine: 4 caixas abertas, 3 frames e a faixa Novas Havaianas Aura.')],
     [('Base', 'vitrine padrão das lojas'), ('Adesivo', 'vinil no vidro, recorte da moldura'), ('Mesa', '146 cm, 4 caixas abertas, 3 frames'), ('Cenografia', 'presentes vermelhos com laço dourado')]))
-T.append(core('gift', '(02) Lojas próprias', 'Gift Station', 'Loja própria · LP13 · ativação', 'Onde o presente <span class="t-lime">é embalado.</span>', 'Gift Station em metalon vermelho com a testeira Espaço Presente na arte do KV. Caixas de presente compõem os lados, duas de um e três do outro, sem outra cenografia.',
-    [('Frontal', 'gift-az-1', 'Frontal: a testeira Espaço Presente.'), ('3/4', 'gift-az-2', 'As caixas de presente nos dois lados.'), ('Cartão', 'cartao-mockup', 'Cartão de Dia das Mães que acompanha o presente.')],
-    [('Estrutura', 'metalon vermelho'), ('Cartão', 'Dia das Mães, acompanha o presente'), ('Cenografia', '5 caixas de presente (2 + 3)'), ('Uso', 'a equipe embala na hora')]))
+T.append(core('gift', '(02) Lojas próprias', 'Gift Station modular', 'Loja própria · LP13 · ativação', 'Onde o presente <span class="t-lime">é embalado.</span>', 'Um sistema de peças soltas: os mesmos acessórios vivem na estrutura de metalon azul ou em cima do balcão da loja. Na estrutura, a testeira leva a mensagem em letra caixa; no balcão, ela vira uma base em L de PS.',
+    [('Estrutura', 'gs3-g-1', 'Versão completa: estrutura de metalon azul, testeira em letra caixa, gaveteiro e os acessórios.'), ('Estrutura · 3/4', 'gs3-g-2', 'A estrutura em 3/4.'),
+     ('Testeira', 'gs3-g-testeira', 'Selo, Espaço Presente e a frase em letra caixa.'), ('Bancada', 'gs3-g-bancada', 'Porta-sedas, bandejas de acrílico, torre de fitas e porta-caixas sobre o gaveteiro.'),
+     ('No balcão', 'gs3-b-1', 'Loja menor: sem a estrutura, os mesmos acessórios ambientam o balcão da loja.'), ('Balcão · 3/4', 'gs3-b-2', 'O balcão em 3/4.'),
+     ('Base em L', 'gs3-b-l', 'A testeira vira uma base em L de PS, com as bandejas na frente.'), ('Acessórios no balcão', 'gs3-b-mod', 'Torre de fitas, porta-caixas e porta-envelopes.'),
+     ('Line-up', 'gs3-lineup', 'Todas as peças do sistema, separadas.'), ('Acessórios', 'gs3-acessorios', 'Os acessórios soltos: porta-sedas, torre de fitas, base em L, bandejas, porta-caixas e porta-envelopes.'),
+     ('Cartão', 'cartao-mockup', 'Cartão de Dia das Mães que acompanha o presente.')],
+    [('Estrutura', 'metalon azul, 115 x 42 x 236 cm'), ('Balcão', 'base em L de PS, 100 x 61 cm'), ('Acessórios', '5 módulos soltos'), ('Cartão', 'Dia das Mães, acompanha o presente')]))
 T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Sacolas P, M e G com o card do KV; caixas só no vermelho, com luvas de borda creme; caixa envelope com a alça no topo. ',
     [('Sacolas', 'pack-az-2', 'Sacolas P, M e G com o card do KV.'), ('Caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.')],
     [('Caixas', 'vermelhas, com ou sem luva'), ('Envelope', '26 x 9 x 46 cm, alça no topo'), ('Sacolas', 'P, M e G'), ('Laço', 'fita dourada')]))
@@ -170,7 +186,7 @@ T.append('''<section id="fim" class="tela s-capa fim" data-tema="claro" data-tit
       <div class="acoes anima d3"><button class="botao cheio" data-ir="capa" data-cursor="Voltar">Voltar ao início</button><button class="botao seta" data-ir="kv-ideia" data-cursor="Ver">Rever a ideia</button></div></div>
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
-ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'kv-imagem', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
+ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'kv-imagem', 'cap-02', 'mesa', 'mesa-lojas', 'prateleira', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
 ID = lambda t: re.search(r'<section id="([^"]+)"', t).group(1)
 assert sorted(ID(t) for t in T) == sorted(ORDEM), [ID(t) for t in T]
 T.sort(key=lambda t: ORDEM.index(ID(t)))
