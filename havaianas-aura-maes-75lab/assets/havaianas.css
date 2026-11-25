@@ -18,7 +18,7 @@ html,body{background:var(--ink)}
 .foto-core img{padding:14px}
 /* capa: vermelho Havaianas, lantejoula amarela e a ilha */
 .s-capa{background:radial-gradient(1300px 800px at 74% 46%,#8FB1BF 0%,#6E93A2 48%,#3F6676 100%)!important}
-.s-capa .foto{left:39%!important;background:url(img/kv-azul.webp) 50% 50%/contain no-repeat!important;transform:scale(1.03)}
+.s-capa .foto{left:39%!important;background:url(img/kv-recebido.webp) 50% 50%/contain no-repeat!important;transform:scale(1.03)}
 .s-capa.fim .foto{background-image:url(img/kv-rosa.webp)!important;left:46%!important}
 .s-capa .veu{background:linear-gradient(90deg,rgba(26,3,5,.72) 0%,rgba(26,3,5,.35) 36%,transparent 60%),linear-gradient(0deg,rgba(26,3,5,.55),transparent 28%)!important}
 .s-capa h1{font-size:112px}

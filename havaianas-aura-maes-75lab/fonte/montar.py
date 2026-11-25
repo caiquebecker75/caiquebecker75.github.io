@@ -37,7 +37,7 @@ def giro(p, cor, poster):
 T = []
 MQ = ''.join('<span>%s</span>' % t for t in ['Dia das Mães, tem Havaianas pra presente', 'Novas Havaianas Aura', 'Loja própria', 'B2B alimentar', 'Caminho azul', 'Caminho rosa'] * 3)
 T.append('''<section id="capa" class="tela s-capa ativa" data-tema="foto" data-titulo="Capa" data-cap="">
-    <div class="foto sangra" role="img" aria-label="KV Dia das Mães, tem Havaianas pra presente"></div><div class="veu sangra"></div>
+    <div class="foto sangra" role="img" aria-label="KV de lançamento Havaianas Aura"></div><div class="veu sangra"></div>
     <div class="texto">
       <span class="eyebrow anima"><b>(HAV009)</b> BID Havaianas · Dia das Mães</span>
       <h1 class="anima d1">Aura<br>pra<br><span class="brilha">presente</span></h1>
@@ -134,7 +134,7 @@ T.append('''<section id="sistema" class="tela v2-split n" data-tema="escuro" dat
 T.append(cap('02', 'Lojas próprias', 'Da vitrine ao caixa: o presente começa na rua e termina embalado na mão da cliente.', ['Mesa Big Hello', 'Vitrine', 'Gift Station', 'Embalagens'], 'rosa'))
 T.append(core('mesa', '(02) Lojas próprias', 'Mesa Big Hello', 'Loja própria · LP01 · Big Hello', 'O presente <span class="t-lime">logo na entrada.</span>', 'Base azul com dois tampos de madeira, testeira em duas camadas com o selo, 3 frames com os Charms e 4 Glossy em caixas abertas. O laço dourado fecha a base como um presente.',
     [('Azul', 'mesa-az-1', 'Frontal: testeira com o selo, frames dos Charms e as caixas abertas dos Glossy.'), ('Azul · 3/4', 'mesa-az-2', 'Os dois tampos de madeira e o laço dourado na base.'),
-     ('Rosa', 'mesa-rs-1', 'O mesmo móvel no caminho rosa.'), ('Rosa · 3/4', 'mesa-rs-2', 'Rosa em 3/4.'), giro('mesa', 'az', 'mesa-az-1')],
+     ('Rosa', 'mesa-rs-1', 'O mesmo móvel no caminho rosa.'), ('Rosa · 3/4', 'mesa-rs-2', 'Rosa em 3/4.')],
     [('Planta', '202 x 110 cm'), ('Base', 'azul (ou rosa) com 2 tampos de madeira'), ('Produto', '3 Charms em frames, 4 Glossy em caixas'), ('Acabamento', 'laço dourado na base')]))
 T.append(core('vitrine', '(02) Lojas próprias', 'Vitrine', 'Loja própria · vitrine', 'A vitrine vira <span class="t-lime">uma caixa de presente.</span>', 'Adesivo de vidro com a moldura do KV de fora a fora e o fundo vazado, para a loja aparecer. Na frente, a mesa com as caixas abertas, os frames e os presentes cenográficos vermelhos dos dois lados.',
     [('Azul', 'vit-az-1', 'A vitrine inteira: o adesivo recorta o vidro na forma da moldura.'), ('Azul · mesa', 'vit-az-2', 'A mesa da vitrine: 4 caixas abertas, 3 frames e a faixa Novas Havaianas Aura.'),
@@ -142,21 +142,21 @@ T.append(core('vitrine', '(02) Lojas próprias', 'Vitrine', 'Loja própria · vi
     [('Base', 'vitrine padrão das lojas'), ('Adesivo', 'vinil no vidro, recorte da moldura'), ('Mesa', '146 cm, 4 caixas abertas, 3 frames'), ('Cenografia', 'presentes vermelhos com laço dourado')], tema='claro'))
 T.append(core('gift', '(02) Lojas próprias', 'Gift Station', 'Loja própria · LP13 · ativação', 'Onde o presente <span class="t-lime">é embalado.</span>', 'Gift Station em metalon vermelho com a testeira Espaço Presente na arte do KV. Caixas de presente compõem os lados, duas de um e três do outro, sem outra cenografia.',
     [('Azul', 'gift-az-1', 'Frontal: a testeira Espaço Presente.'), ('Azul · 3/4', 'gift-az-2', 'As caixas de presente nos dois lados.'),
-     ('Rosa', 'gift-rs-1', 'A Gift Station no caminho rosa.'), ('Rosa · 3/4', 'gift-rs-2', 'Rosa em 3/4.'), giro('gift', 'az', 'gift-az-2')],
+     ('Rosa', 'gift-rs-1', 'A Gift Station no caminho rosa.'), ('Rosa · 3/4', 'gift-rs-2', 'Rosa em 3/4.')],
     [('Estrutura', 'metalon vermelho'), ('Testeira', 'arte do KV, azul ou rosa'), ('Cenografia', '5 caixas de presente (2 + 3)'), ('Uso', 'a equipe embala na hora')]))
 T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Caixas só no vermelho; luvas com o card do KV de borda creme; caixa envelope com a alça no topo; sacolas P, M e G. No caminho rosa, o card vira rosa.',
     [('Azul · caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.'), ('Azul · sacolas', 'pack-az-2', 'Sacolas P, M e G com o card do KV.'),
-     ('Rosa · caixas', 'pack-rs-1', 'Luvas no caminho rosa.'), ('Rosa · sacolas', 'pack-rs-2', 'Sacolas no caminho rosa.'), giro('pack', 'az', 'pack-az-1')],
+     ('Rosa · caixas', 'pack-rs-1', 'Luvas no caminho rosa.'), ('Rosa · sacolas', 'pack-rs-2', 'Sacolas no caminho rosa.')],
     [('Caixas', 'vermelhas, com ou sem luva'), ('Envelope', '26 x 9 x 46 cm, alça no topo'), ('Sacolas', 'P, M e G'), ('Laço', 'fita dourada')], tema='claro'))
 # ------------------------------------------------------------ 03 · B2B
 T.append(cap('03', 'B2B alimentar', 'No supermercado a Aura disputa atenção: peças que param o carrinho e mostram o par de perto.', ['Ilha com cubos giratórios', 'Ponta de gôndola', 'Peças leves']))
 T.append(core('ilha', '(03) B2B alimentar', 'Ilha', 'B2B alimentar · BA08', 'Cubos que giram, <span class="t-lime">produto que se pega.</span>', 'Peça central com os cubos giratórios no recorte, laterais em três camadas com a foto, pares presos direto na peça e adesivo de chão redondo.',
     [('Azul', 'ilha-az-1', 'De frente: peça central com a testeira, lateral com a foto e os cubos.'), ('Azul · 3/4', 'ilha-az-2', 'As laterais em três camadas e o adesivo de chão.'), ('Cubos', 'ilha-az-3', 'Os três cubos giratórios com os cards dos pares.'),
-     ('Rosa', 'ilha-rs-1', 'A ilha no caminho rosa, com o laço bordô.'), ('Rosa · 3/4', 'ilha-rs-2', 'Rosa em 3/4.'), giro('ilha', 'az', 'ilha-az-2')],
+     ('Rosa', 'ilha-rs-1', 'A ilha no caminho rosa, com o laço bordô.'), ('Rosa · 3/4', 'ilha-rs-2', 'Rosa em 3/4.'), ('Giro 360°', 'ilha-giro', 'A ilha girando: peça central, laterais e adesivo de chão de todos os lados.'), ('Cubos girando', 'ilha-cubos-giro', 'Os três cubos giram no eixo preso na base e no braço de cima.')],
     [('Altura', '263,5 cm no topo da peça central'), ('Adesivo', 'chão, Ø 2,68 m'), ('Laterais', '3 camadas com a foto do KV'), ('Produto', 'pares presos na peça, cubos giratórios')]))
 T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar · BA07', 'O mesmo racional, <span class="t-lime">na ponta.</span>', 'Lateral em três camadas com a foto do KV e testeira com o topo da arte da ilha. Charms na frente e Glossy na lateral, presos direto na base de trás.',
     [('Azul', 'ponta-az-1', 'Frontal: testeira com o selo e os Charms.'), ('Azul · esquerda', 'ponta-az-2', 'A lateral cobre a gancheira.'), ('Azul · direita', 'ponta-az-3', 'Os Glossy na lateral.'),
-     ('Rosa', 'ponta-rs-1', 'A ponta no caminho rosa.'), ('Rosa · 3/4', 'ponta-rs-2', 'Rosa em 3/4.'), giro('ponta', 'az', 'ponta-az-2')],
+     ('Rosa', 'ponta-rs-1', 'A ponta no caminho rosa.'), ('Rosa · 3/4', 'ponta-rs-2', 'Rosa em 3/4.')],
     [('Largura', '120 cm'), ('Laterais', '3 camadas, arte da ilha'), ('Testeira', 'topo da arte da ilha'), ('Produto', 'pares presos na base de trás')], tema='claro'))
 T.append(core('leves', '(03) B2B alimentar', 'Peças leves', 'B2B alimentar · kit de gôndola', 'O selo funciona <span class="t-lime">em qualquer tamanho.</span>', 'Stopper, wobbler, clip strip com os pares e placa de carrinho: o kit leve leva a marca e a data para toda loja.',
     [('Azul · gôndola', 'leves-az-1', 'O kit aplicado numa gôndola vazia: clip strip, wobbler e stopper.'), ('Azul · detalhe', 'leves-az-2', 'Clip strip com a cartela e o stopper.'), ('Azul · carrinho', 'carrinho-az', 'Placa de carrinho 30 x 30 cm.'),
