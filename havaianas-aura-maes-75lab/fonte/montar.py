@@ -131,9 +131,8 @@ T.append(core('gift', '(02) Lojas próprias', 'Gift Station modular', 'Loja pró
      ('Cartão', 'cartao-mockup', 'Cartão de Dia das Mães que acompanha o presente.')],
     [('Estrutura', 'metalon azul, 115 x 42 x 236 cm'), ('Balcão', 'base em L de PS, 100 x 61 cm'), ('Acessórios', '5 módulos soltos'), ('Cartão', 'Dia das Mães, acompanha o presente')]))
 T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Dois caminhos para a sacola: impressa com a arte da campanha, ou a sacola vermelha vigente com uma solapa promocional de fechamento. Caixas só no vermelho, com luvas de borda creme; caixa envelope com a alça no topo.',
-    [('Sacola impressa', 'sac5-imp-1', 'Sacolas P, M e G impressas com a moldura e o lockup da campanha.'), ('Impressa · 3/4', 'sac5-imp-2', 'As três sacolas impressas em 3/4.'),
-     ('Solapa', 'sac5-sol-1', 'Sacola vermelha vigente com a solapa promocional: fecha a boca e leva a campanha.'), ('Solapa · 3/4', 'sac5-sol-2', 'A solapa em 3/4: tampa sobre a boca com rasgos para as alças.'),
-     ('Solapa · detalhe', 'sac5-sol-close', 'Aba frontal com a moldura invertida, em duas camadas: azul e creme.'),
+    [('Sacola impressa', 'sac5-imp-1', 'Sacolas P, M e G impressas com a moldura e o lockup da campanha.'),
+     ('Solapa', 'sac5-sol-1', 'Sacola vermelha vigente fechada com a solapa promocional: aba com a moldura invertida em duas camadas e rasgo para as alças.'),
      ('Caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.')],
     [('Caixas', 'vermelhas, com ou sem luva'), ('Envelope', '26 x 9 x 46 cm, alça no topo'), ('Sacolas', 'P, M e G, impressa ou com solapa'), ('Solapa', 'papel-cartão, 2 camadas, faca especial')]))
 # ------------------------------------------------------------ 03 · B2B
