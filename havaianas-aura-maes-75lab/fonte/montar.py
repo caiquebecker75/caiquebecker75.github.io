@@ -136,11 +136,11 @@ T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria
      ('Caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.')],
     [('Caixas', 'vermelhas, com ou sem luva'), ('Envelope', '26 x 9 x 46 cm, alça no topo'), ('Sacolas', 'P, M e G, impressa ou com solapa'), ('Solapa', 'papel-cartão, 2 camadas, faca especial')]))
 # ------------------------------------------------------------ 03 · B2B
-T.append(cap('03', 'B2B alimentar', 'No supermercado a Aura disputa atenção: peças que param o carrinho e mostram o par de perto.', ['Ilha com cubos giratórios', 'Ponta de gôndola', 'Peças leves']))
+T.append(cap('03', 'B2B alimentar', 'No supermercado a Aura disputa atenção: peças que param o carrinho e mostram o par de perto.', ['Ponta de gôndola', 'Ilha com cubos giratórios', 'Peças leves']))
 T.append(core('ilha', '(03) B2B alimentar', 'Ilha', 'B2B alimentar · BA08', 'Cubos que giram, <span class="t-lime">produto que se pega.</span>', 'Peça central com os cubos giratórios no recorte, laterais em três camadas com a foto, pares presos direto na peça e adesivo de chão redondo.',
-    [('Frontal', 'ilha-az-1', 'De frente: peça central com a testeira, lateral com a foto e os cubos.'), ('3/4', 'ilha-az-2', 'As laterais em três camadas e o adesivo de chão.'), ('Cubos', 'ilha-az-3', 'Os três cubos giratórios com os cards dos pares.'), ('Giro 360°', 'ilha-giro', 'A ilha girando: peça central, laterais e adesivo de chão de todos os lados.'), ('Cubos girando', 'ilha-cubos-giro', 'Os três cubos giram no eixo preso na base e no braço de cima.')],
+    [('Frontal', 'ilha-az-1', 'De frente: peça central com a testeira, lateral com a foto e os cubos.'), ('3/4', 'ilha-az-2', 'As laterais em três camadas e o adesivo de chão.'), ('Cubos', 'ilha-az-3', 'Os três cubos giratórios com os cards dos pares.')],
     [('Altura', '263,5 cm no topo da peça central'), ('Adesivo', 'chão, Ø 2,68 m'), ('Laterais', '3 camadas com a foto do KV'), ('Produto', 'pares presos na peça, cubos giratórios')]))
-T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar · BA07', 'O mesmo racional, <span class="t-lime">na ponta.</span>', 'Testeira com a chamada e a borda em relevo e laterais em camadas com a imagem da campanha. Charms na frente e Glossy na lateral, presos direto na base de trás.',
+T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar · BA07', 'O racional da campanha, <span class="t-lime">na ponta.</span>', 'Testeira com a chamada e a borda em relevo e laterais em camadas com a imagem da campanha. Charms na frente e Glossy na lateral, presos direto na base de trás.',
     [('Frontal', 'ponta5-1', 'Frontal: testeira com a chamada em relevo e os Charms.'), ('Esquerda', 'ponta5-2', 'A lateral cobre a gancheira.'), ('Direita', 'ponta5-3', 'A lateral direita com a imagem e os Glossy.')],
     [('Largura', '120 cm'), ('Laterais', 'em camadas, com a imagem da campanha'), ('Testeira', 'chamada e borda em relevo'), ('Produto', 'pares presos na base de trás')]))
 def bn_fig(src, leg):
@@ -189,7 +189,7 @@ T.append('''<section id="fim" class="tela s-capa fim" data-tema="claro" data-tit
       <div class="acoes anima d3"><button class="botao cheio" data-ir="capa" data-cursor="Voltar">Voltar ao início</button><button class="botao seta" data-ir="kv-ideia" data-cursor="Ver">Rever a ideia</button></div></div>
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
-ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'kv-imagem', 'cap-02', 'mesa', 'mesa-lojas', 'prateleira', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
+ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'kv-imagem', 'cap-02', 'mesa', 'mesa-lojas', 'prateleira', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ponta', 'ilha', 'leves', 'cap-04', 'proximos', 'fim']
 ID = lambda t: re.search(r'<section id="([^"]+)"', t).group(1)
 assert sorted(ID(t) for t in T) == sorted(ORDEM), [ID(t) for t in T]
 T.sort(key=lambda t: ORDEM.index(ID(t)))
