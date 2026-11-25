@@ -41,24 +41,24 @@ T.append('''<section id="capa" class="tela s-capa ativa" data-tema="foto" data-t
     <div class="texto">
       <span class="eyebrow anima"><b>(HAV009)</b> BID Havaianas · Dia das Mães</span>
       <h1 class="anima d1">Aura<br>pra<br><span class="brilha">presente</span></h1>
-      <p class="lead anima d2">O racional do KV e as peças de loja própria e B2B · apresentação interna 75 LAB</p>
+      <p class="lead anima d2">Dia das Mães · o KV e as peças de loja própria e B2B · 75 LAB</p>
       <div class="acoes anima d3"><button class="botao cheio seta" data-ir="cap-01" data-cursor="Ir">Começar</button></div>
     </div>
     <span class="rot sangra anima d4">75 LAB · Havaianas · Nov/26</span>
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
 # ------------------------------------------------------------ 01 · a ideia
-T.append(cap('01', 'A ideia', 'Antes das peças, o raciocínio: de onde partimos, o que mudamos no KV e por que existem dois caminhos.', ['O KV que recebemos', 'A ideia e os ajustes no KV', 'A hierarquia da informação', 'Dois caminhos: azul e rosa', 'Como defender', 'O sistema das peças']))
-T.append('''<section id="kv-recebido" class="tela v2-split n" data-tema="escuro" data-titulo="O KV que recebemos" data-cap="(01) A ideia">
+T.append(cap('01', 'A ideia', 'Antes das peças, a ideia: de onde partimos, como levamos o KV da Aura para o Dia das Mães e os dois caminhos de cor.', ['O ponto de partida', 'A ideia e os ajustes no KV', 'A hierarquia da informação', 'Dois caminhos: azul e rosa']))
+T.append('''<section id="kv-recebido" class="tela v2-split n" data-tema="escuro" data-titulo="O ponto de partida" data-cap="(01) A ideia">
   <div class="caixa"><div class="cn-kv">
-    <figure class="anima amplia" data-amplia="assets/img/kv-recebido.webp" data-legenda="KV de lançamento Havaianas Aura, recebido do cliente" data-cursor="Ampliar"><img src="assets/img/kv-recebido.webp" alt="KV de lançamento Havaianas Aura recebido do cliente"></figure>
-    <div><span class="eyebrow anima"><b>Ponto de partida</b> o KV do cliente</span>
-      <h2 class="anima">Recebemos um KV <span class="t-lime">de lançamento.</span></h2>
-      <p class="lead anima d1">A Havaianas mandou o KV global da Aura: os três Charms em cards art déco sobre o azul, o logo “new havaianas Aura” e a frase em inglês.</p>
+    <figure class="anima amplia" data-amplia="assets/img/kv-recebido.webp" data-legenda="KV de lançamento Havaianas Aura" data-cursor="Ampliar"><img src="assets/img/kv-recebido.webp" alt="KV de lançamento Havaianas Aura"></figure>
+    <div><span class="eyebrow anima"><b>Ponto de partida</b> o KV da Aura</span>
+      <h2 class="anima">Partimos do KV <span class="t-lime">de lançamento.</span></h2>
+      <p class="lead anima d1">O KV global da Aura: os três Charms em cards art déco sobre o azul, o logo “new havaianas Aura” e a frase em inglês.</p>
       <ul class="cn-pontos anima d2">
-        <li><b>O que já funcionava</b>O azul, os cards art déco que emolduram o produto e a fotografia dos pares. É a base de tudo, e mantivemos.</li>
-        <li><b>O que faltava para a data</b>Ele fala de lançamento, não de Dia das Mães. Não tinha presente, nem uma frase em português que o shopper lê em dois segundos.</li>
-        <li><b>O nosso trabalho</b>Levar esse KV para a data sem perder a cara da Aura: mesma família visual, mensagem nova.</li>
+        <li><b>O que já funcionava</b>O azul, os cards art déco que emolduram o produto e a fotografia dos pares. É a base de tudo, e foi mantida.</li>
+        <li><b>O que a data pede</b>O KV fala de lançamento. Para o Dia das Mães, ele precisa falar de presente, com uma frase em português que o shopper lê em dois segundos.</li>
+        <li><b>A nossa proposta</b>Levar esse KV para a data sem perder a cara da Aura: mesma família visual, mensagem nova.</li>
       </ul></div>
   </div></div></section>''')
 T.append('''<section id="kv-ideia" class="tela v2-split n" data-tema="claro" data-titulo="A ideia" data-cap="(01) A ideia">
@@ -66,7 +66,7 @@ T.append('''<section id="kv-ideia" class="tela v2-split n" data-tema="claro" dat
     <figure class="anima amplia" data-amplia="assets/img/kv-azul.webp" data-legenda="KV 75 LAB · Dia das Mães, tem Havaianas pra presente" data-cursor="Ampliar"><img src="assets/img/kv-azul.webp" alt="KV Dia das Mães, tem Havaianas pra presente"></figure>
     <div><span class="eyebrow anima"><b>A ideia</b> Dia das Mães</span>
       <h2 class="anima">Dia das Mães, tem Havaianas <span class="t-verm">pra presente.</span></h2>
-      <p class="lead anima d1">A Aura vira o presente: os cards do KV viram a moldura do presente, com caixa vermelha, fita e laço dourado. Para isso, quatro ajustes no KV deles:</p>
+      <p class="lead anima d1">A Aura vira o presente: os cards do KV viram a moldura do presente, com caixa vermelha, fita e laço dourado. Para isso, quatro ajustes no KV da Aura:</p>
       <ul class="cn-pontos anima d2">
         <li><b>A borda</b>O KV recortado na faca art déco dos cards vira o contorno das testeiras, do adesivo de vidro e das laterais.</li>
         <li><b>A frase</b>Sai o inglês, entra “Dia das Mães, tem Havaianas pra presente”: data, marca e solução numa leitura só.</li>
@@ -88,41 +88,20 @@ T.append('''<section id="hierarquia" class="tela v2-split n" data-tema="claro" d
     </div>
     <p class="v2-leg anima d2">De cima para baixo: marca, data, produto, lançamento. Seguimos essa ordem em toda face visível, da testeira da ilha ao wobbler de 15 cm.</p>
   </div></section>''')
-T.append('''<section id="caminhos" class="tela v2-split n" data-tema="escuro" data-titulo="Dois caminhos" data-cap="(01) A ideia">
-  <div class="caixa"><span class="eyebrow anima">Dois caminhos, um sistema</span>
-    <h2 class="anima">Muda a cor mestre. <span class="t-lime">O sistema fica.</span></h2>
-    <div class="hv-cores anima d1">
-      <div class="az"><img src="assets/img/kv-azul.webp" alt="Caminho azul"><div class="tx"><h3>Azul · o KV universal</h3><ul>
-        <li>É o azul do KV global da Aura: o cliente já aprovou essa cor, não precisamos defender uma nova.</li>
-        <li>É um racional que serve o ano inteiro: troca a frase e o produto, e moldura, selo, frames e assinatura ficam.</li>
-        <li>A caixa vermelha e o laço dourado saltam sobre o azul, e a loja se destaca num shopping todo rosa em maio.</li></ul></div></div>
-      <div class="rs"><img src="assets/img/kv-rosa.webp" alt="Caminho rosa"><div class="tx"><h3>Rosa · o universo das mães</h3><ul>
-        <li>Fala de Dia das Mães na hora: afeto, carinho, presente.</li>
-        <li>Conversa com o rosa e o nude da fotografia do produto.</li>
-        <li>Mesmo sistema: textos em branco, a moldurinha do logo acompanha e, na ilha, o laço vira bordô, a cor da borda do selo.</li></ul></div></div>
-    </div></div></section>''')
-T.append('''<section id="defesa" class="tela v2-split n" data-tema="claro" data-titulo="Como defender" data-cap="(01) A ideia">
-  <div class="caixa"><span class="eyebrow anima">Para o time levar à apresentação</span>
-    <h2 class="anima">Como defender <span class="t-verm">os dois caminhos.</span></h2>
-    <ul class="cn-pontos anima d1" style="max-width:1180px;margin-top:26px">
-      <li><b>Começar pelo azul</b>É o KV deles, levado para a data. Mostra fidelidade à marca e um racional que se repete em qualquer campanha do ano: o time usa a mesma lógica em todos os desdobramentos.</li>
-      <li><b>Depois, o rosa</b>Os mesmos elementos levados para o lado do afeto. Prova que o sistema funciona em qualquer cor.</li>
-      <li><b>O cliente escolhe participando</b>Não é “o nosso contra o deles”: são dois caminhos válidos sobre a mesma ideia. Não chamar o azul de frio ou estranho, porque ele veio do cliente.</li>
-      <li><b>A ideia é a mesma nos dois</b>“Dia das Mães, tem Havaianas pra presente”, a moldura, o selo, os frames, a caixa vermelha e o laço dourado. Só a cor de fundo muda.</li>
-    </ul></div></section>''')
-T.append('''<section id="sistema" class="tela v2-split n" data-tema="escuro" data-titulo="O sistema das peças" data-cap="(01) A ideia">
-  <div class="caixa"><span class="eyebrow anima">Cinco elementos que se repetem em tudo</span>
-    <h2 class="anima">O KV vira <span class="t-lime">objeto.</span></h2>
-    <div class="hv-sis anima d1">
-      <div><i>01</i><b>Moldura</b><p>A faca art déco do KV vira testeira, adesivo de vidro e lateral.</p></div>
-      <div><i>02</i><b>Duas camadas</b><p>Cor mestre na frente, creme atrás: profundidade real, não desenhada.</p></div>
-      <div><i>03</i><b>Presente</b><p>Caixa vermelha, fita e laço dourado em todas as peças.</p></div>
-      <div><i>04</i><b>Frames</b><p>Os cards do KV viram porta-pares em pé, com o par fixado.</p></div>
-      <div><i>05</i><b>Madeira</b><p>Tampos de madeira quebram a cor e aquecem a cena.</p></div>
+T.append('''<section id="caminhos" class="tela v2-split n" data-tema="claro" data-titulo="Dois caminhos" data-cap="(01) A ideia">
+  <div class="caixa"><span class="eyebrow anima">Dois caminhos · azul e rosa</span>
+    <h2 class="anima">O mesmo sistema, <span class="t-rosa">em rosa.</span></h2>
+    <div class="hv-hier anima d1">
+      <div class="kv"><img src="assets/img/kv-rosa.webp" alt="KV caminho rosa"></div>
+      <ol>
+        <li><i>A</i><span><b>Por que dois caminhos</b>O azul é fiel ao KV global da Aura e garante a marca. O rosa leva o mesmo sistema para o universo da data. Todas as peças foram feitas nas duas cores.</span></li>
+        <li><i>B</i><span><b>O rosa conecta com as mães</b>Afeto, carinho e presente: sentimos que é o caminho que mais fala com o Dia das Mães.</span></li>
+        <li><i>C</i><span><b>Conversa com o produto</b>Combina com o rosa e o nude dos pares e da fotografia.</span></li>
+        <li><i>D</i><span><b>Só muda a cor mestre</b>Textos em branco, a moldurinha do logo acompanha e, na ilha, o laço vira bordô.</span></li>
+      </ol>
     </div>
-    <div class="v2-trio anima d2" style="grid-template-columns:repeat(3,1fr);margin-top:26px">
-      <div>%s<p><b>Frame rosa</b></p></div><div>%s<p><b>Frame creme</b></p></div><div>%s<p><b>Frame azul</b></p></div></div>
-  </div></section>''' % (fig('frame-pink', 'Frame rosa'), fig('frame-yellow', 'Frame creme'), fig('frame-blue', 'Frame azul')))
+    <p class="v2-leg anima d2">Nas páginas das peças, cada uma aparece nas duas versões, em abas: azul e rosa.</p>
+  </div></section>''')
 # ------------------------------------------------------------ 02 · lojas próprias
 T.append(cap('02', 'Lojas próprias', 'Da vitrine ao caixa: o presente começa na rua e termina embalado na mão da cliente.', ['Mesa Big Hello', 'Vitrine', 'Gift Station', 'Embalagens'], 'rosa'))
 T.append(core('mesa', '(02) Lojas próprias', 'Mesa Big Hello', 'Loja própria · LP01 · Big Hello', 'O presente <span class="t-lime">logo na entrada.</span>', 'Base azul com dois tampos de madeira, testeira em duas camadas com o selo, 3 frames com os Charms e 4 Glossy em caixas abertas. O laço dourado fecha a base como um presente.',
@@ -156,26 +135,26 @@ T.append(core('leves', '(03) B2B alimentar', 'Peças leves', 'B2B alimentar · k
      ('Rosa · gôndola', 'leves-rs-1', 'O kit no caminho rosa.'), ('Rosa · detalhe', 'leves-rs-2', 'Clip strip e stopper em rosa.'), ('Rosa · carrinho', 'carrinho-rs', 'Placa de carrinho em rosa.')],
     [('Stopper', '30 x 90 cm'), ('Wobbler', '15 x 15 cm'), ('Clip strip', 'cartela de 16 cm, 5 pares'), ('Carrinho', 'placa 30 x 30 cm')]))
 # ------------------------------------------------------------ 04 · próximos passos
-T.append(cap('04', 'Próximos passos', 'O que falta até a entrega no COUPA, em 27/11.', ['Executivos por peça', 'Renders finais', 'Entrega']))
+T.append(cap('04', 'Próximos passos', 'Da escolha do caminho à loja montada.', ['Escolha do caminho', 'Executivos e artes finais', 'Produção e implantação']))
 T.append('''<section id="proximos" class="tela v2-split n" data-tema="escuro" data-titulo="Próximos passos" data-cap="(04) Próximos passos">
-  <div class="caixa"><span class="eyebrow anima">Até 27/11</span>
-    <h2 class="anima">Da aprovação <span class="t-lime">à entrega.</span></h2>
+  <div class="caixa"><span class="eyebrow anima">Próximos passos</span>
+    <h2 class="anima">Da aprovação <span class="t-lime">à loja.</span></h2>
     <ol class="hv-pas anima d1">
-      <li>O time escolhe como apresentar os dois caminhos ao cliente.</li>
-      <li>Renders finais e giros em qualidade web das peças aprovadas, azul e rosa.</li>
-      <li>Executivo de cada peça, separado para o time: medidas, materiais e quantidades.</li>
-      <li>Artes que faltam: testeira, moldura de gôndola e tag do B2B.</li>
-      <li>Caderno de cotação, envio ao Caique e upload no COUPA.</li>
+      <li>Escolha do caminho de cor: azul, rosa ou os dois por canal.</li>
+      <li>Ajustes finos das peças e renders finais.</li>
+      <li>Executivo de cada peça: medidas, materiais e quantidades.</li>
+      <li>Artes finais de todas as faces e embalagens.</li>
+      <li>Cotação, produção e implantação nas lojas.</li>
     </ol></div></section>''')
 T.append('''<section id="fim" class="tela s-capa fim" data-tema="foto" data-titulo="Fechamento" data-cap="">
     <div class="foto sangra" role="img" aria-label="KV rosa"></div><div class="veu sangra"></div>
     <div class="texto"><span class="eyebrow anima"><b>(Fechamento)</b> Dia das Mães</span>
       <h1 class="anima d1">Tem<br>Havaianas<br><span class="brilha">pra presente</span></h1>
-      <p class="lead anima d2">Um sistema, duas cores · as peças prontas para a cotação</p>
+      <p class="lead anima d2">Um sistema, duas cores · da vitrine ao carrinho</p>
       <div class="acoes anima d3"><button class="botao cheio" data-ir="capa" data-cursor="Voltar">Voltar ao início</button><button class="botao seta" data-ir="caminhos" data-cursor="Ver">Rever os caminhos</button></div></div>
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
-ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'caminhos', 'defesa', 'sistema', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
+ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'caminhos', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
 ID = lambda t: re.search(r'<section id="([^"]+)"', t).group(1)
 assert sorted(ID(t) for t in T) == sorted(ORDEM), [ID(t) for t in T]
 T.sort(key=lambda t: ORDEM.index(ID(t)))
@@ -195,7 +174,7 @@ POS = '''<div id="caixa" role="dialog" aria-label="Imagem ampliada"><button clas
 import time
 VER = time.strftime('%Y%m%d%H%M')
 HEAD = '''<title>Havaianas Aura Dia das Mães</title>
-<meta name="description" content="Apresentação interna 75 LAB: racional do KV e peças do BID Havaianas Aura Dia das Mães.">
+<meta name="description" content="75 LAB · Havaianas Aura Dia das Mães: o KV e as peças de loja própria e B2B.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
