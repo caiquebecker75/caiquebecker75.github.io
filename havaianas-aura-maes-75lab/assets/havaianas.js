@@ -6,3 +6,6 @@ document.querySelectorAll('section.tela').forEach(function(t){
     b.forEach(function(y,j){y.classList.toggle('on',j===k)});p.forEach(function(y,j){y.classList.toggle('on',j===k);
       y.querySelectorAll('video').forEach(function(v){j===k?v.play():v.pause()})})})});
 });
+
+document.querySelectorAll('.bn-p').forEach(function(p){p.querySelectorAll('[data-vcor]').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();
+  p.dataset.ver=b.dataset.vcor;p.querySelectorAll('[data-vcor]').forEach(function(x){x.classList.toggle('on',x===b)})})})});

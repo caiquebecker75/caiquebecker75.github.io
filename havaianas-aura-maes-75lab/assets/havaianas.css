@@ -298,3 +298,25 @@ html.exec-on,html.exec-on body{overflow:hidden}
 #fim .foto{left:44%!important;right:3%!important;top:9%!important;bottom:17%!important;background:url(img/kv-rosa.webp) 50% 50%/contain no-repeat!important;transform:none!important;filter:drop-shadow(0 26px 40px rgba(90,20,25,.35))}
 #fim .texto{max-width:560px}#fim h1{color:#FFF6EC}#fim .brilha{background:none;-webkit-text-fill-color:#7A1F2A;color:#7A1F2A!important;animation:none}
 #fim .lead{color:#FFF6EC}#fim .rot{display:none!important}
+/* fotos das peças sem moldura clara em volta: a imagem ocupa o quadro inteiro */
+.foto-core figure{background:transparent!important;box-shadow:none!important;border:0!important}
+.foto-core figure::after{display:none!important}
+.foto-core img{padding:0!important;object-fit:cover!important;width:100%;height:100%}
+.bn-fotos figure{background:transparent!important}
+/* fechamento: fundo no rosa-claro da borda do KV, o cartão some no fundo (sem divisão) */
+#fim.s-capa{background:#FCF0F3!important}
+#fim .foto{filter:none!important}
+#fim h1{color:#7A1F2A!important;text-shadow:none!important}
+#fim .brilha{-webkit-text-fill-color:#E07F80!important;color:#E07F80!important}
+#fim .lead,#fim .eyebrow{color:#5A2A30!important}
+#fim .botao{color:#7A1F2A;border-color:#7A1F2A}
+#fim .botao.cheio{background:#E07F80;color:#fff;border-color:#E07F80}
+
+/* azul ou rosa em cada peça leve */
+.bn-p{grid-template-rows:auto minmax(0,1fr) auto!important}
+.bn-cores{display:flex;gap:8px}
+.bn-cores button{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:7px 16px;border:1px solid var(--linha-e);background:none;color:var(--paper);cursor:pointer}
+.bn-cores button[data-vcor=az].on{background:#6E93A2;border-color:#6E93A2;color:#12232B}
+.bn-cores button[data-vcor=rs].on{background:#E07F80;border-color:#E07F80;color:#2A1414}
+.bn-p .bn-fotos[data-cor]{display:none}
+.bn-p[data-ver=az] .bn-fotos[data-cor=az],.bn-p[data-ver=rs] .bn-fotos[data-cor=rs]{display:grid}

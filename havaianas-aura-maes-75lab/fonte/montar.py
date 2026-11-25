@@ -116,9 +116,9 @@ T.append(core('gift', '(02) Lojas próprias', 'Gift Station', 'Loja própria · 
     [('Azul', 'gift-az-1', 'Frontal: a testeira Espaço Presente.'), ('Azul · 3/4', 'gift-az-2', 'As caixas de presente nos dois lados.'),
      ('Rosa', 'gift-rs-1', 'A Gift Station no caminho rosa.'), ('Rosa · 3/4', 'gift-rs-2', 'Rosa em 3/4.')],
     [('Estrutura', 'metalon vermelho'), ('Testeira', 'arte do KV, azul ou rosa'), ('Cenografia', '5 caixas de presente (2 + 3)'), ('Uso', 'a equipe embala na hora')]))
-T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Caixas só no vermelho; luvas com o card do KV de borda creme; caixa envelope com a alça no topo; sacolas P, M e G. No caminho rosa, o card vira rosa.',
-    [('Azul · caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.'), ('Azul · sacolas', 'pack-az-2', 'Sacolas P, M e G com o card do KV.'),
-     ('Rosa · caixas', 'pack-rs-1', 'Luvas no caminho rosa.'), ('Rosa · sacolas', 'pack-rs-2', 'Sacolas no caminho rosa.')],
+T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Sacolas P, M e G com o card do KV; caixas só no vermelho, com luvas de borda creme; caixa envelope com a alça no topo. No caminho rosa, o card vira rosa.',
+    [('Azul · sacolas', 'pack-az-2', 'Sacolas P, M e G com o card do KV.'), ('Azul · caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.'),
+     ('Rosa · sacolas', 'pack-rs-2', 'Sacolas no caminho rosa.'), ('Rosa · caixas', 'pack-rs-1', 'Luvas no caminho rosa.')],
     [('Caixas', 'vermelhas, com ou sem luva'), ('Envelope', '26 x 9 x 46 cm, alça no topo'), ('Sacolas', 'P, M e G'), ('Laço', 'fita dourada')]))
 # ------------------------------------------------------------ 03 · B2B
 T.append(cap('03', 'B2B alimentar', 'No supermercado a Aura disputa atenção: peças que param o carrinho e mostram o par de perto.', ['Ilha com cubos giratórios', 'Ponta de gôndola', 'Peças leves']))
@@ -132,34 +132,27 @@ T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar
     [('Largura', '120 cm'), ('Laterais', '3 camadas, arte da ilha'), ('Testeira', 'topo da arte da ilha'), ('Produto', 'pares presos na base de trás')]))
 def bn_fig(src, leg):
     return '<figure class="amplia" data-amplia="assets/img/%s.webp" data-legenda="%s" data-cursor="Ampliar"><img src="assets/img/%s.webp" alt="%s" loading="lazy"><figcaption>%s</figcaption></figure>' % (src, leg, src, leg, leg.split(' · ')[-1])
-LEVES = [  # (nome, material, [(imagem, legenda)], [(dt, dd)])
-    ('Testeira de gôndola', '100 x 30 cm', [('testeira-solo', 'Testeira · a peça'), ('testeira-aplicada', 'Testeira · aplicada')],
-     [('Onde', 'No topo do módulo da Havaianas, com os lançamentos expostos logo abaixo'), ('Material', 'PS 2 mm, impressão 4/0, faca no contorno da moldura'), ('Medida', '100 x 30 cm')]),
-    ('Stopper', '30 x 90 cm', [('stopper-close', 'Stopper · a peça'), ('leves-az-2', 'Stopper · aplicado')],
-     [('Onde', 'Perpendicular à gôndola, preso no trilho de preço pelo lado reto'), ('Material', 'PS 2 mm, impressão 4/4, faca no contorno'), ('Medida', '30 x 90 cm')]),
-    ('Wobbler', '15 x 15 cm', [('wobbler-close', 'Wobbler · a peça'), ('leves-az-1', 'Wobbler · aplicado')],
-     [('Onde', 'Na frente da prateleira, na altura dos olhos'), ('Material', 'PS 1 mm, impressão 4/0, haste de acrílico'), ('Medida', '15 x 15 cm')]),
-    ('Clip strip', 'cartela + 5 pares', [('clip-close', 'Clip strip · a peça'), ('leves-az-1', 'Clip strip · aplicado')],
-     [('Onde', 'Na emenda entre dois módulos, preso no trilho'), ('Material', 'Tira em PS 1 mm e cartela em PS 2 mm, 4/4'), ('Capacidade', '5 pares Aura')]),
-    ('Moldura de gôndola', '36 x 101 cm', [('moldura-solo', 'Moldura · azul e rosa'), ('moldura-aplicada', 'Moldura · aplicada')],
-     [('Onde', 'Emoldura uma coluna de pares no módulo da Havaianas'), ('Material', 'PS 2 mm, impressão 4/0, janela vazada'), ('Medida', '36 x 101 cm')]),
-    ('Tag', '18 x 10 cm', [('tag-solo', 'Tag · azul e rosa'), ('tag-aplicada', 'Tag · aplicada')],
-     [('Onde', 'No gancho, à frente do primeiro par'), ('Material', 'PS 1 mm, impressão 4/4, faca com gancho'), ('Medida', '18 x 10 cm')]),
-    ('Placa de carrinho', '30 x 30 cm', [('carrinho-az', 'Placa de carrinho · aplicada')],
-     [('Onde', 'Na frente do carrinho, fixada na grade'), ('Material', 'PS 2 mm, impressão 4/0, abraçadeiras'), ('Medida', '30 x 30 cm')]),
-    ('Kit rosa', 'caminho 2', [('stopper-close-rs', 'Kit rosa · stopper'), ('leves-rs-2', 'Kit rosa · aplicado')],
-     [('O quê', 'As mesmas peças com o card rosa'), ('Faca', 'Igual à do azul: só muda a arte'), ('Testeira', 'Versão rosa a definir; moldura e tag já têm rosa')]),
+LEVES = [  # (nome, medida, chave das imagens, [(dt, dd)])
+    ('Testeira de gôndola', '100 x 30 cm', 'testeira', [('Onde', 'No topo do módulo da Havaianas, com os lançamentos expostos logo abaixo'), ('Material', 'PS 2 mm, impressão 4/0, faca no contorno da moldura'), ('Medida', '100 x 30 cm')]),
+    ('Stopper', '30 x 90 cm', 'stopper', [('Onde', 'Perpendicular à gôndola, preso no trilho de preço pelo lado reto'), ('Material', 'PS 2 mm, impressão 4/4, faca no contorno'), ('Medida', '30 x 90 cm')]),
+    ('Wobbler', '15 x 15 cm', 'wobbler', [('Onde', 'Na frente da prateleira, na altura dos olhos'), ('Material', 'PS 1 mm, impressão 4/0, haste de acrílico'), ('Medida', '15 x 15 cm')]),
+    ('Clip strip', 'cartela + 5 pares', 'clip', [('Onde', 'Na emenda entre dois módulos, preso no trilho'), ('Material', 'Tira em PS 1 mm e cartela em PS 2 mm, 4/4'), ('Capacidade', '5 pares Aura')]),
+    ('Moldura de gôndola', '67 x 188 cm', 'moldura', [('Onde', 'Do topo à base do módulo, emoldurando os pares da Havaianas'), ('Material', 'PS 2 mm, impressão 4/0, janela vazada'), ('Medida', '67 x 188 cm')]),
+    ('Tag', '18 x 10 cm', 'tag', [('Onde', 'No gancho, à frente do primeiro par'), ('Material', 'PS 1 mm, impressão 4/4, faca com gancho'), ('Medida', '18 x 10 cm')]),
+    ('Placa de carrinho', '30 x 30 cm', 'carrinho', [('Onde', 'Na frente do carrinho, fixada na grade'), ('Material', 'PS 2 mm, impressão 4/0, abraçadeiras'), ('Medida', '30 x 30 cm')]),
 ]
-LEVES = [(n, m, [f for f in fs if IMG(f[0])], fc) for n, m, fs, fc in LEVES]
-LEVES = [l for l in LEVES if l[2]]
-bts = ''.join('<button data-aba class="%s" data-cursor="Ver"><i>%02d</i><b>%s</b><small>%s</small></button>' % ('on' if k == 0 else '', k + 1, n, m) for k, (n, m, fs, fc) in enumerate(LEVES))
-pns = ''.join('<div class="bn-p %s" data-painel><div class="bn-fotos %s cobre">%s</div><div class="bn-ficha"><h3>%s</h3><dl>%s</dl></div></div>' % (
-    'on' if k == 0 else '', 'duas' if len(fs) > 1 else 'uma', ''.join(bn_fig(a, b) for a, b in fs), n, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % x for x in fc)) for k, (n, m, fs, fc) in enumerate(LEVES))
+def fotos_cor(k, cor):
+    fs = [('carrinho-%s' % cor, 'Aplicada')] if k == 'carrinho' else [('leve-%s-solo-%s' % (k, cor), 'A peça'), ('leve-%s-aplic-%s' % (k, cor), 'Aplicada')]
+    fs = [f for f in fs if IMG(f[0])]
+    return '<div class="bn-fotos %s cobre" data-cor="%s">%s</div>' % ('duas' if len(fs) > 1 else 'uma', cor, ''.join(bn_fig(a, b) for a, b in fs)) if fs else ''
+bts = ''.join('<button data-aba class="%s" data-cursor="Ver"><i>%02d</i><b>%s</b><small>%s</small></button>' % ('on' if q == 0 else '', q + 1, n, m) for q, (n, m, k, fc) in enumerate(LEVES))
+pns = ''.join('<div class="bn-p %s" data-painel data-ver="az"><div class="bn-cores"><button data-vcor="az" class="on">Azul</button><button data-vcor="rs">Rosa</button></div>%s%s<div class="bn-ficha"><h3>%s</h3><dl>%s</dl></div></div>' % (
+    'on' if q == 0 else '', fotos_cor(k, 'az'), fotos_cor(k, 'rs'), n, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % x for x in fc)) for q, (n, m, k, fc) in enumerate(LEVES))
 T.append('''<section id="leves" class="tela s-bniv n" data-tema="escuro" data-titulo="Peças leves" data-cap="(03) B2B alimentar">
   <div class="caixa"><div class="bn-gr">
     <div class="bn-esq"><span class="eyebrow anima"><b>B2B alimentar</b> · kit de gôndola</span>
       <h2 class="anima d1">Peças <span class="t-lime">leves</span></h2>
-      <p class="anima d1">O selo funciona em qualquer tamanho: cada peça leva a marca e a data para toda loja. Em cada uma, a peça sozinha e a peça aplicada.</p>
+      <p class="anima d1">O selo funciona em qualquer tamanho: cada peça leva a marca e a data para toda loja. Em cada uma, a peça sozinha e a peça aplicada, em azul e em rosa.</p>
       <div class="bn-lista anima d2">%s</div></div>
     <div class="bn-palco anima d2">%s</div>
   </div></div></section>''' % (bts, pns))
@@ -175,7 +168,7 @@ T.append('''<section id="proximos" class="tela v2-split n" data-tema="escuro" da
       <li>Artes finais de todas as faces e embalagens.</li>
       <li>Cotação, produção e implantação nas lojas.</li>
     </ol></div></section>''')
-T.append('''<section id="fim" class="tela s-capa fim" data-tema="foto" data-titulo="Fechamento" data-cap="">
+T.append('''<section id="fim" class="tela s-capa fim" data-tema="claro" data-titulo="Fechamento" data-cap="">
     <div class="foto sangra" role="img" aria-label="KV rosa"></div><div class="veu sangra"></div>
     <div class="texto"><span class="eyebrow anima"><b>(Fechamento)</b> Dia das Mães</span>
       <h1 class="anima d1">Tem<br>Havaianas<br><span class="brilha">pra presente</span></h1>
