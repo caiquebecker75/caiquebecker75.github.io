@@ -321,3 +321,10 @@ html.exec-on,html.exec-on body{overflow:hidden}
 .bn-p .bn-fotos[data-cor]{display:none}
 .bn-p[data-ver=az] .bn-fotos[data-cor=az],.bn-p[data-ver=rs] .bn-fotos[data-cor=rs]{display:grid}
 #fim .foto{left:34%!important;right:0!important;top:5%!important;bottom:11%!important}#fim .texto{max-width:500px}#fim h1{font-size:clamp(60px,7.2vw,118px)}
+/* R05: só o caminho azul. Fechamento no creme da borda do KV azul */
+#fim.s-capa{background:#F8EFE2!important}
+#fim .foto{background-image:url(img/kv-azul.webp)!important}
+#fim h1{color:#12232B!important}#fim .brilha{-webkit-text-fill-color:#6E93A2!important;color:#6E93A2!important}
+#fim .lead,#fim .eyebrow{color:#33586A!important}
+#fim .botao{color:#12232B;border-color:#12232B}#fim .botao.cheio{background:#6E93A2;color:#fff;border-color:#6E93A2}
+.bn-p{grid-template-rows:minmax(0,1fr) auto!important}#fim .foto{left:38%!important}

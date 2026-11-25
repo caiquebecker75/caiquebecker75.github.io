@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """HAV009 · Havaianas Aura Dia das Mães · apresentação interna sobre o deck da agência (base: bombril-carnaval-75lab).
-Racional do KV primeiro, depois as peças uma a uma (azul e rosa, com giro 360°). Gera index.html."""
+Racional do KV primeiro, depois as peças uma a uma (só azul, com giro 360° na ilha). Gera index.html."""
 import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(HERE)
 REF = open(sys.argv[1], encoding='utf-8').read()
@@ -35,7 +35,7 @@ def core(id_, capn, tit, eyebrow, h2, lead, abas, ficha, tema='escuro'):
 def giro(p, cor, poster):
     return ('Girando', ('vid', '%s-giro-%s' % (p, cor), poster), 'A peça girando 360°, para ver todos os lados.')
 T = []
-MQ = ''.join('<span>%s</span>' % t for t in ['Dia das Mães, tem Havaianas pra presente', 'Novas Havaianas Aura', 'Loja própria', 'B2B alimentar', 'Caminho azul', 'Caminho rosa'] * 3)
+MQ = ''.join('<span>%s</span>' % t for t in ['Dia das Mães, tem Havaianas pra presente', 'Novas Havaianas Aura', 'Loja própria', 'B2B alimentar', 'Da vitrine ao carrinho'] * 3)
 T.append('''<section id="capa" class="tela s-capa ativa" data-tema="foto" data-titulo="Capa" data-cap="">
     <div class="foto sangra" role="img" aria-label="KV de lançamento Havaianas Aura"></div><div class="veu sangra"></div>
     <div class="texto">
@@ -48,7 +48,7 @@ T.append('''<section id="capa" class="tela s-capa ativa" data-tema="foto" data-t
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
 # ------------------------------------------------------------ 01 · a ideia
-T.append(cap('01', 'A ideia', 'Antes das peças, a ideia: de onde partimos, como levamos o KV da Aura para o Dia das Mães e os dois caminhos de cor.', ['O ponto de partida', 'A ideia e os ajustes no KV', 'A hierarquia da informação', 'Dois caminhos: azul e rosa']))
+T.append(cap('01', 'A ideia', 'Antes das peças, a ideia: de onde partimos, como levamos o KV da Aura para o Dia das Mães e a ordem de leitura das peças.', ['O ponto de partida', 'A ideia e os ajustes no KV', 'A hierarquia da informação', 'A variação com imagem']))
 T.append('''<section id="kv-recebido" class="tela v2-split n" data-tema="escuro" data-titulo="O ponto de partida" data-cap="(01) A ideia">
   <div class="caixa"><div class="cn-kv">
     <figure class="anima amplia" data-amplia="assets/img/kv-recebido.webp" data-legenda="KV de lançamento Havaianas Aura" data-cursor="Ampliar"><img src="assets/img/kv-recebido.webp" alt="KV de lançamento Havaianas Aura"></figure>
@@ -78,7 +78,7 @@ T.append('''<section id="hierarquia" class="tela v2-split n" data-tema="claro" d
   <div class="caixa"><span class="eyebrow anima">Ordem de leitura</span>
     <h2 class="anima">Uma ordem de leitura <span class="t-verm">para todas as peças.</span></h2>
     <div class="hv-hier anima d1">
-      <div class="kv"><img src="assets/img/kv-azul.webp" alt="KV com a ordem de leitura marcada"><b style="left:31%;top:20%">1</b><b style="left:66%;top:8%">2</b><b style="left:14%;top:58%">3</b><b style="left:31%;top:90%">4</b></div>
+      <div class="kv"><img src="assets/img/kv-azul.webp" alt="KV com a ordem de leitura marcada"><b style="left:31%;top:20%">1</b><b style="left:60%;top:9%">2</b><b style="left:14%;top:58%">3</b><b style="left:31%;top:90%">4</b></div>
       <ol>
         <li><i>1</i><span><b>Marca</b>Havaianas é sempre o maior elemento, dentro do selo.</span></li>
         <li><i>2</i><span><b>Data e chamada</b>“Dia das Mães, tem … pra presente” abraça a marca no selo.</span></li>
@@ -88,47 +88,41 @@ T.append('''<section id="hierarquia" class="tela v2-split n" data-tema="claro" d
     </div>
     <p class="v2-leg anima d2">De cima para baixo: marca, data, produto, lançamento. Seguimos essa ordem em toda face visível, da testeira da ilha ao wobbler de 15 cm.</p>
   </div></section>''')
-T.append('''<section id="caminhos" class="tela v2-split n" data-tema="claro" data-titulo="Dois caminhos" data-cap="(01) A ideia">
-  <div class="caixa"><span class="eyebrow anima">Dois caminhos · azul e rosa</span>
-    <h2 class="anima">O mesmo sistema, <span class="t-rosa">em rosa.</span></h2>
-    <div class="hv-hier anima d1">
-      <div class="kv"><img src="assets/img/kv-rosa.webp" alt="KV caminho rosa"></div>
-      <ol>
-        <li><i>A</i><span><b>Por que dois caminhos</b>O azul é fiel ao KV global da Aura e garante a marca. O rosa leva o mesmo sistema para o universo da data. Todas as peças foram feitas nas duas cores.</span></li>
-        <li><i>B</i><span><b>O rosa conecta com as mães</b>Afeto, carinho e presente: sentimos que é o caminho que mais fala com o Dia das Mães.</span></li>
-        <li><i>C</i><span><b>Conversa com o produto</b>Combina com o rosa e o nude dos pares e da fotografia.</span></li>
-        <li><i>D</i><span><b>Só muda a cor mestre</b>Textos em branco, a moldurinha do logo acompanha e, na ilha, o laço vira bordô.</span></li>
-      </ol>
-    </div>
-    <p class="v2-leg anima d2">Nas páginas das peças, cada uma aparece nas duas versões, em abas: azul e rosa.</p>
-  </div></section>''')
+T.append('''<section id="kv-imagem" class="tela v2-split n" data-tema="escuro" data-titulo="KV com imagem" data-cap="(01) A ideia">
+  <div class="caixa"><div class="cn-kv">
+    <figure class="anima amplia" data-amplia="assets/img/kv-imagem.webp" data-legenda="KV Dia das Mães · variação com imagem" data-cursor="Ampliar"><img src="assets/img/kv-imagem.webp" alt="KV Dia das Mães, variação com imagem"></figure>
+    <div><span class="eyebrow anima"><b>Variação</b> KV com imagem</span>
+      <h2 class="anima">O mesmo KV, <span class="t-lime">com o produto no pé.</span></h2>
+      <p class="lead anima d1">Quando a peça tem área para foto, a moldura abre uma janela à esquerda com a Aura em uso. O selo, os frames e a assinatura continuam no mesmo lugar e na mesma ordem.</p>
+      <ul class="cn-pontos anima d2">
+        <li><b>Onde usar</b>Peças com espaço lateral: laterais da ilha e da ponta de gôndola, vitrine e mídia.</li>
+        <li><b>O que não muda</b>A ordem de leitura: marca, data, produto e lançamento.</li>
+      </ul></div>
+  </div></div></section>''')
 # ------------------------------------------------------------ 02 · lojas próprias
-T.append(cap('02', 'Lojas próprias', 'Da vitrine ao caixa: o presente começa na rua e termina embalado na mão da cliente.', ['Mesa Big Hello', 'Vitrine', 'Gift Station', 'Embalagens'], 'rosa'))
-T.append(core('mesa', '(02) Lojas próprias', 'Mesa Big Hello', 'Loja própria · LP01 · Big Hello', 'O presente <span class="t-lime">logo na entrada.</span>', 'Base azul com dois tampos de madeira, testeira em duas camadas com o selo, 3 frames com os Charms e 4 Glossy em caixas abertas. O laço dourado fecha a base como um presente.',
-    [('Azul', 'mesa-az-1', 'Frontal: testeira com o selo, frames dos Charms e as caixas abertas dos Glossy.'), ('Azul · 3/4', 'mesa-az-2', 'Os dois tampos de madeira e o laço dourado na base.'),
-     ('Rosa', 'mesa-rs-1', 'O mesmo móvel no caminho rosa.'), ('Rosa · 3/4', 'mesa-rs-2', 'Rosa em 3/4.')],
-    [('Planta', '202 x 110 cm'), ('Base', 'azul (ou rosa) com 2 tampos de madeira'), ('Produto', '3 Charms em frames, 4 Glossy em caixas'), ('Acabamento', 'laço dourado na base')]))
+T.append(cap('02', 'Lojas próprias', 'Da vitrine ao caixa: o presente começa na rua e termina embalado na mão da cliente.', ['Mesa Big Hello', 'Vitrine', 'Gift Station', 'Embalagens']))
+T.append(core('mesa', '(02) Lojas próprias', 'Mesa Big Hello', 'Loja própria · LP01 · Big Hello', 'O presente <span class="t-lime">logo na entrada.</span>', 'Base azul sobre pés reguláveis, com dois tampos de madeira. A chamada sai da testeira em relevo, como letra caixa. Três frames com os Charms e seus precificadores, quatro Glossy em caixas abertas e o laço dourado fechando a base como um presente.',
+    [('Frontal', 'mesa-r5-1', 'Frontal: chamada em relevo, frames dos Charms e as caixas abertas dos Glossy.'), ('3/4', 'mesa-r5-2', 'Os dois tampos de madeira e o laço dourado na base.'),
+     ('Chamada em relevo', 'mesa-r5-relevo', 'Logo com 2 cm de relevo; moldura e textos com 1,2 cm.'), ('Caixas abertas', 'mesa-r5-caixas', 'Degrau de baixo: quatro Glossy em caixas abertas, com cetim, fita e laço.'),
+     ('Caixas · 3/4', 'mesa-r5-caixas2', 'As caixas abertas em 3/4.'), ('Close da caixa', 'mesa-r5-caixa', 'O par deitado no cetim.'),
+     ('Precificadores', 'mesa-r5-preco', 'Plaquinha de acrílico em L à frente de cada frame.'), ('Pés reguláveis', 'mesa-r5-pes', 'A mesa fica 3 cm acima do piso, sobre sapatas niveladoras.')],
+    [('Planta', '202 x 110 cm'), ('Base', 'azul, 2 tampos de madeira, pés reguláveis'), ('Chamada', 'relevo de 1,2 a 2 cm'), ('Produto', '3 Charms em frames, 4 Glossy em caixas')]))
 T.append(core('vitrine', '(02) Lojas próprias', 'Vitrine', 'Loja própria · vitrine', 'A vitrine vira <span class="t-lime">uma caixa de presente.</span>', 'Adesivo de vidro com a moldura do KV de fora a fora e o fundo vazado, para a loja aparecer. Na frente, a mesa com as caixas abertas, os frames e os presentes cenográficos vermelhos dos dois lados.',
-    [('Azul', 'vit-az-1', 'A vitrine inteira: o adesivo recorta o vidro na forma da moldura.'), ('Azul · mesa', 'vit-az-2', 'A mesa da vitrine: 4 caixas abertas, 3 frames e a faixa Novas Havaianas Aura.'),
-     ('Rosa', 'vit-rs-1', 'A mesma vitrine no caminho rosa.'), ('Rosa · mesa', 'vit-rs-2', 'Mesa da vitrine em rosa.')],
+    [('Frontal', 'vit-az-1', 'A vitrine inteira: o adesivo recorta o vidro na forma da moldura.'), ('Mesa', 'vit-az-2', 'A mesa da vitrine: 4 caixas abertas, 3 frames e a faixa Novas Havaianas Aura.')],
     [('Base', 'vitrine padrão das lojas'), ('Adesivo', 'vinil no vidro, recorte da moldura'), ('Mesa', '146 cm, 4 caixas abertas, 3 frames'), ('Cenografia', 'presentes vermelhos com laço dourado')]))
 T.append(core('gift', '(02) Lojas próprias', 'Gift Station', 'Loja própria · LP13 · ativação', 'Onde o presente <span class="t-lime">é embalado.</span>', 'Gift Station em metalon vermelho com a testeira Espaço Presente na arte do KV. Caixas de presente compõem os lados, duas de um e três do outro, sem outra cenografia.',
-    [('Azul', 'gift-az-1', 'Frontal: a testeira Espaço Presente.'), ('Azul · 3/4', 'gift-az-2', 'As caixas de presente nos dois lados.'),
-     ('Rosa', 'gift-rs-1', 'A Gift Station no caminho rosa.'), ('Rosa · 3/4', 'gift-rs-2', 'Rosa em 3/4.')],
-    [('Estrutura', 'metalon vermelho'), ('Testeira', 'arte do KV, azul ou rosa'), ('Cenografia', '5 caixas de presente (2 + 3)'), ('Uso', 'a equipe embala na hora')]))
-T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Sacolas P, M e G com o card do KV; caixas só no vermelho, com luvas de borda creme; caixa envelope com a alça no topo. No caminho rosa, o card vira rosa.',
-    [('Azul · sacolas', 'pack-az-2', 'Sacolas P, M e G com o card do KV.'), ('Azul · caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.'),
-     ('Rosa · sacolas', 'pack-rs-2', 'Sacolas no caminho rosa.'), ('Rosa · caixas', 'pack-rs-1', 'Luvas no caminho rosa.')],
+    [('Frontal', 'gift-az-1', 'Frontal: a testeira Espaço Presente.'), ('3/4', 'gift-az-2', 'As caixas de presente nos dois lados.'), ('Cartão', 'cartao-mockup', 'Cartão de Dia das Mães que acompanha o presente.')],
+    [('Estrutura', 'metalon vermelho'), ('Cartão', 'Dia das Mães, acompanha o presente'), ('Cenografia', '5 caixas de presente (2 + 3)'), ('Uso', 'a equipe embala na hora')]))
+T.append(core('embalagens', '(02) Lojas próprias', 'Embalagens', 'Loja própria · embalagens', 'O KV vai <span class="t-lime">para casa.</span>', 'Sacolas P, M e G com o card do KV; caixas só no vermelho, com luvas de borda creme; caixa envelope com a alça no topo. ',
+    [('Sacolas', 'pack-az-2', 'Sacolas P, M e G com o card do KV.'), ('Caixas', 'pack-az-1', 'Caixas vermelhas com as luvas e a caixa envelope com alça.')],
     [('Caixas', 'vermelhas, com ou sem luva'), ('Envelope', '26 x 9 x 46 cm, alça no topo'), ('Sacolas', 'P, M e G'), ('Laço', 'fita dourada')]))
 # ------------------------------------------------------------ 03 · B2B
 T.append(cap('03', 'B2B alimentar', 'No supermercado a Aura disputa atenção: peças que param o carrinho e mostram o par de perto.', ['Ilha com cubos giratórios', 'Ponta de gôndola', 'Peças leves']))
 T.append(core('ilha', '(03) B2B alimentar', 'Ilha', 'B2B alimentar · BA08', 'Cubos que giram, <span class="t-lime">produto que se pega.</span>', 'Peça central com os cubos giratórios no recorte, laterais em três camadas com a foto, pares presos direto na peça e adesivo de chão redondo.',
-    [('Azul', 'ilha-az-1', 'De frente: peça central com a testeira, lateral com a foto e os cubos.'), ('Azul · 3/4', 'ilha-az-2', 'As laterais em três camadas e o adesivo de chão.'), ('Cubos', 'ilha-az-3', 'Os três cubos giratórios com os cards dos pares.'),
-     ('Rosa', 'ilha-rs-1', 'A ilha no caminho rosa, com o laço bordô.'), ('Rosa · 3/4', 'ilha-rs-2', 'Rosa em 3/4.'), ('Giro 360°', 'ilha-giro', 'A ilha girando: peça central, laterais e adesivo de chão de todos os lados.'), ('Cubos girando', 'ilha-cubos-giro', 'Os três cubos giram no eixo preso na base e no braço de cima.')],
+    [('Frontal', 'ilha-az-1', 'De frente: peça central com a testeira, lateral com a foto e os cubos.'), ('3/4', 'ilha-az-2', 'As laterais em três camadas e o adesivo de chão.'), ('Cubos', 'ilha-az-3', 'Os três cubos giratórios com os cards dos pares.'), ('Giro 360°', 'ilha-giro', 'A ilha girando: peça central, laterais e adesivo de chão de todos os lados.'), ('Cubos girando', 'ilha-cubos-giro', 'Os três cubos giram no eixo preso na base e no braço de cima.')],
     [('Altura', '263,5 cm no topo da peça central'), ('Adesivo', 'chão, Ø 2,68 m'), ('Laterais', '3 camadas com a foto do KV'), ('Produto', 'pares presos na peça, cubos giratórios')]))
 T.append(core('ponta', '(03) B2B alimentar', 'Ponta de gôndola', 'B2B alimentar · BA07', 'O mesmo racional, <span class="t-lime">na ponta.</span>', 'Lateral em três camadas com a foto do KV e testeira com o topo da arte da ilha. Charms na frente e Glossy na lateral, presos direto na base de trás.',
-    [('Azul', 'ponta-az-1', 'Frontal: testeira com o selo e os Charms.'), ('Azul · esquerda', 'ponta-az-2', 'A lateral cobre a gancheira.'), ('Azul · direita', 'ponta-az-3', 'Os Glossy na lateral.'),
-     ('Rosa', 'ponta-rs-1', 'A ponta no caminho rosa.'), ('Rosa · 3/4', 'ponta-rs-2', 'Rosa em 3/4.')],
+    [('Frontal', 'ponta-az-1', 'Frontal: testeira com o selo e os Charms.'), ('Esquerda', 'ponta-az-2', 'A lateral cobre a gancheira.'), ('Direita', 'ponta-az-3', 'Os Glossy na lateral.')],
     [('Largura', '120 cm'), ('Laterais', '3 camadas, arte da ilha'), ('Testeira', 'topo da arte da ilha'), ('Produto', 'pares presos na base de trás')]))
 def bn_fig(src, leg):
     return '<figure class="amplia" data-amplia="assets/img/%s.webp" data-legenda="%s" data-cursor="Ampliar"><img src="assets/img/%s.webp" alt="%s" loading="lazy"><figcaption>%s</figcaption></figure>' % (src, leg, src, leg, leg.split(' · ')[-1])
@@ -146,37 +140,37 @@ def fotos_cor(k, cor):
     fs = [f for f in fs if IMG(f[0])]
     return '<div class="bn-fotos %s cobre" data-cor="%s">%s</div>' % ('duas' if len(fs) > 1 else 'uma', cor, ''.join(bn_fig(a, b) for a, b in fs)) if fs else ''
 bts = ''.join('<button data-aba class="%s" data-cursor="Ver"><i>%02d</i><b>%s</b><small>%s</small></button>' % ('on' if q == 0 else '', q + 1, n, m) for q, (n, m, k, fc) in enumerate(LEVES))
-pns = ''.join('<div class="bn-p %s" data-painel data-ver="az"><div class="bn-cores"><button data-vcor="az" class="on">Azul</button><button data-vcor="rs">Rosa</button></div>%s%s<div class="bn-ficha"><h3>%s</h3><dl>%s</dl></div></div>' % (
-    'on' if q == 0 else '', fotos_cor(k, 'az'), fotos_cor(k, 'rs'), n, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % x for x in fc)) for q, (n, m, k, fc) in enumerate(LEVES))
+pns = ''.join('<div class="bn-p %s" data-painel data-ver="az">%s<div class="bn-ficha"><h3>%s</h3><dl>%s</dl></div></div>' % (
+    'on' if q == 0 else '', fotos_cor(k, 'az'), n, ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % x for x in fc)) for q, (n, m, k, fc) in enumerate(LEVES))
 T.append('''<section id="leves" class="tela s-bniv n" data-tema="escuro" data-titulo="Peças leves" data-cap="(03) B2B alimentar">
   <div class="caixa"><div class="bn-gr">
     <div class="bn-esq"><span class="eyebrow anima"><b>B2B alimentar</b> · kit de gôndola</span>
       <h2 class="anima d1">Peças <span class="t-lime">leves</span></h2>
-      <p class="anima d1">O selo funciona em qualquer tamanho: cada peça leva a marca e a data para toda loja. Em cada uma, a peça sozinha e a peça aplicada, em azul e em rosa.</p>
+      <p class="anima d1">O selo funciona em qualquer tamanho: cada peça leva a marca e a data para toda loja. Em cada uma, a peça sozinha e a peça aplicada.</p>
       <div class="bn-lista anima d2">%s</div></div>
     <div class="bn-palco anima d2">%s</div>
   </div></div></section>''' % (bts, pns))
 # ------------------------------------------------------------ 04 · próximos passos
-T.append(cap('04', 'Próximos passos', 'Da escolha do caminho à loja montada.', ['Escolha do caminho', 'Executivos e artes finais', 'Produção e implantação']))
+T.append(cap('04', 'Próximos passos', 'Da aprovação à loja montada.', ['Aprovação', 'Executivos e artes finais', 'Produção e implantação']))
 T.append('''<section id="proximos" class="tela v2-split n" data-tema="escuro" data-titulo="Próximos passos" data-cap="(04) Próximos passos">
   <div class="caixa"><span class="eyebrow anima">Próximos passos</span>
     <h2 class="anima">Da aprovação <span class="t-lime">à loja.</span></h2>
     <ol class="hv-pas anima d1">
-      <li>Escolha do caminho de cor: azul, rosa ou os dois por canal.</li>
+      <li>Aprovação das peças e do KV.</li>
       <li>Ajustes finos das peças e renders finais.</li>
       <li>Executivo de cada peça: medidas, materiais e quantidades.</li>
       <li>Artes finais de todas as faces e embalagens.</li>
       <li>Cotação, produção e implantação nas lojas.</li>
     </ol></div></section>''')
 T.append('''<section id="fim" class="tela s-capa fim" data-tema="claro" data-titulo="Fechamento" data-cap="">
-    <div class="foto sangra" role="img" aria-label="KV rosa"></div><div class="veu sangra"></div>
+    <div class="foto sangra" role="img" aria-label="KV Dia das Mães"></div><div class="veu sangra"></div>
     <div class="texto"><span class="eyebrow anima"><b>(Fechamento)</b> Dia das Mães</span>
       <h1 class="anima d1">Tem<br>Havaianas<br><span class="brilha">pra presente</span></h1>
-      <p class="lead anima d2">Um sistema, duas cores · da vitrine ao carrinho</p>
-      <div class="acoes anima d3"><button class="botao cheio" data-ir="capa" data-cursor="Voltar">Voltar ao início</button><button class="botao seta" data-ir="caminhos" data-cursor="Ver">Rever os caminhos</button></div></div>
+      <p class="lead anima d2">Um sistema · da vitrine ao carrinho</p>
+      <div class="acoes anima d3"><button class="botao cheio" data-ir="capa" data-cursor="Voltar">Voltar ao início</button><button class="botao seta" data-ir="kv-ideia" data-cursor="Ver">Rever a ideia</button></div></div>
     <div class="marquee sangra"><div>%s</div></div>
   </section>''' % MQ)
-ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'caminhos', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
+ORDEM = ['capa', 'cap-01', 'kv-recebido', 'kv-ideia', 'hierarquia', 'kv-imagem', 'cap-02', 'mesa', 'vitrine', 'gift', 'embalagens', 'cap-03', 'ilha', 'ponta', 'leves', 'cap-04', 'proximos', 'fim']
 ID = lambda t: re.search(r'<section id="([^"]+)"', t).group(1)
 assert sorted(ID(t) for t in T) == sorted(ORDEM), [ID(t) for t in T]
 T.sort(key=lambda t: ORDEM.index(ID(t)))
