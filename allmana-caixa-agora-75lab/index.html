@@ -24,8 +24,8 @@ body{font-family:Lexend,system-ui,sans-serif;color:var(--tinta);-webkit-font-smo
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* palco 1600x900 escalado para a janela */
-#wrap{position:fixed;inset:0;display:grid;place-items:center}
-#palco{position:relative;width:1600px;height:900px;transform-origin:center center;overflow:hidden;background:var(--preto)}
+#wrap{position:fixed;inset:0;overflow:hidden}
+#palco{position:absolute;left:50%;top:50%;width:1600px;height:900px;transform-origin:center center;transform:translate(-50%,-50%);overflow:hidden;background:var(--preto)}
 .tela{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s var(--ease),visibility 0s linear .7s}
 .tela.ativa{opacity:1;visibility:visible;transition:opacity .7s var(--ease),visibility 0s}
 
@@ -73,7 +73,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .s-modelo .ficha b{font-weight:600;color:#111}
 
 /* barra de controle */
-.controle{position:absolute;left:72px;right:72px;bottom:52px;height:72px;display:flex;align-items:center;gap:18px;
+.controle{position:absolute;left:72px;right:240px;bottom:52px;height:72px;display:flex;align-items:center;gap:18px;
   padding:0 14px 0 12px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 10px 30px rgba(0,0,0,.08)}
 .play{flex:none;width:50px;height:50px;border-radius:50%;background:var(--preto);color:var(--branco);display:grid;place-items:center;transition:transform .2s var(--ease)}
 .play:hover{transform:scale(1.06)}
@@ -103,6 +103,10 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .claro #nav{color:#111}
 .claro #nav button{background:rgba(0,0,0,.08)}
 .claro #nav button:hover{background:rgba(0,0,0,.16)}
+/* navegação na faixa preta (tela 16:10 ou retrato) */
+.claro #nav.fora{color:#fff}
+.claro #nav.fora button{background:rgba(255,255,255,.14)}
+.claro #nav.fora button:hover{background:rgba(255,255,255,.28)}
 
 /* entrada dos textos */
 .anima{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
@@ -204,9 +208,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   const telas = [...document.querySelectorAll('.tela')];
   let atual = 0;
 
+  const navEl = document.getElementById('nav');
   function escala() {
     const s = Math.min(innerWidth / 1600, innerHeight / 900);
-    palco.style.transform = `scale(${s})`;
+    palco.style.transform = `translate(-50%,-50%) scale(${s})`;
+    // setas sempre dentro do palco; se sobra faixa preta embaixo, vão para a faixa
+    const ox = (innerWidth - 1600 * s) / 2, oy = (innerHeight - 900 * s) / 2;
+    const fora = oy >= 64;
+    navEl.classList.toggle('fora', fora);
+    navEl.style.right = (ox + 22) + 'px';
+    navEl.style.bottom = (fora ? Math.max(12, Math.min(22, (oy - 40) / 2)) : oy + 22) + 'px';
   }
   addEventListener('resize', escala); escala();
 
