@@ -36,7 +36,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .marca75 img{display:block}
 .marca75 p{font-weight:400;line-height:1.18;letter-spacing:-.01em}
 
-.s-capa .asterisco{height:640px;width:auto;right:215px;top:-262px;rotate:-90deg}
+.s-capa .asterisco{width:682px;height:682px;left:815px;top:-413px;rotate:-90deg;animation:giro 60s linear infinite}
+@keyframes giro{from{rotate:-90deg}to{rotate:270deg}}
+.estatico .s-capa .asterisco{animation:none}
 .s-capa .marca75{position:absolute;left:96px;top:52%;translate:0 -50%}
 .s-capa .marca75 img{height:230px}
 .s-capa .marca75 p{font-size:22px}
@@ -112,7 +114,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .anima{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .ativa .anima{opacity:1;transform:none}
 .ativa .d1{transition-delay:.12s}.ativa .d2{transition-delay:.24s}.ativa .d3{transition-delay:.36s}
-@media (prefers-reduced-motion:reduce){.tela,.anima{transition:none}}
+@media (prefers-reduced-motion:reduce){.tela,.anima{transition:none}.s-capa .asterisco{animation:none}}
 .estatico .tela,.estatico .anima{transition:none!important}
 </style>
 </head>
@@ -122,7 +124,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   <!-- ============ CAPA ============ -->
   <section class="tela s-capa ativa" data-titulo="Capa">
     <div class="cartao">
-      <img class="asterisco" src="assets/asterisco-agora.svg" alt="" aria-hidden="true">
+      <img class="asterisco" src="assets/asterisco-roxo-inteiro.svg" alt="" aria-hidden="true">
       <div class="marca75 anima">
         <img src="assets/75lab-logo-preto.svg" alt="75 LAB">
         <p>ideia boa é<br>a que acontece</p>
