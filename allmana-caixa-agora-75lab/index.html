@@ -76,23 +76,25 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .s-modelo .chip{background:var(--preto);color:var(--branco)}
 
 /* barra de controle */
-.controle{position:absolute;left:72px;right:240px;bottom:52px;height:72px;display:flex;align-items:center;gap:18px;
-  padding:0 14px 0 12px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.play{flex:none;width:50px;height:50px;border-radius:50%;background:var(--preto);color:var(--branco);display:grid;place-items:center;transition:transform .2s var(--ease)}
+/* compacta, no canto inferior esquerdo: faixa que a caixa e a garrafa nunca ocupam no vídeo */
+.controle{position:absolute;left:72px;bottom:16px;height:40px;display:flex;align-items:center;gap:10px;
+  padding:0 14px 0 5px;border-radius:999px;background:rgba(255,255,255,.5);backdrop-filter:blur(12px) saturate(1.2);-webkit-backdrop-filter:blur(12px) saturate(1.2);box-shadow:0 6px 18px rgba(0,0,0,.08);
+  transform-origin:left bottom;transform:scale(var(--ui,1))}
+.play{flex:none;width:30px;height:30px;border-radius:50%;background:var(--preto);color:var(--branco);display:grid;place-items:center;transition:transform .2s var(--ease)}
 .play:hover{transform:scale(1.06)}
-.play svg{width:20px;height:20px}
+.play svg{width:13px;height:13px}
 .play .i-play{display:none}
 .pausado .play .i-play{display:block}
 .pausado .play .i-pause{display:none}
-.caps{flex:1;display:flex;gap:10px;height:100%;align-items:center}
-.cap{position:relative;flex:var(--peso,1);height:50px;border-radius:14px;text-align:left;padding:0 14px;display:flex;flex-direction:column;justify-content:center;gap:7px;transition:background .25s}
+.caps{width:620px;display:flex;gap:2px;height:100%;align-items:center}
+.cap{position:relative;flex:var(--peso,1) 1 auto;height:30px;border-radius:10px;text-align:left;padding:0 8px;display:flex;flex-direction:column;justify-content:center;gap:4px;transition:background .25s}
 .cap:hover{background:rgba(0,0,0,.05)}
-.cap em{font-style:normal;font-size:15px;font-weight:500;color:#444;white-space:nowrap;transition:color .25s}
+.cap em{font-style:normal;font-size:13px;font-weight:500;color:#444;white-space:nowrap;transition:color .25s}
 .cap.atual em{color:#000;font-weight:600}
-.cap .trilho{height:3px;border-radius:3px;background:rgba(0,0,0,.14);overflow:hidden}
+.cap .trilho{height:2px;border-radius:2px;background:rgba(0,0,0,.14);overflow:hidden}
 .cap .trilho b{display:block;height:100%;width:0;background:var(--preto)}
 .cap.atual .trilho b{background:var(--verde)}
-.tempo{flex:none;font-size:14px;font-variant-numeric:tabular-nums;color:#444;width:84px;text-align:right}
+.tempo{flex:none;font-size:12px;font-variant-numeric:tabular-nums;color:#444;width:68px;text-align:right}
 .estado{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);width:96px;height:96px;border-radius:50%;background:rgba(11,11,11,.55);color:#fff;display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .3s var(--ease);pointer-events:none}
 .estado svg{width:34px;height:34px}
 .pausado .estado{opacity:1;transform:translate(-50%,-50%) scale(1)}
@@ -215,6 +217,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   function escala() {
     const s = Math.min(innerWidth / 1600, innerHeight / 900);
     palco.style.transform = `translate(-50%,-50%) scale(${s})`;
+    // barra de vídeo compacta: em telas pequenas (celular) compensa a escala para continuar clicável
+    palco.style.setProperty('--ui', Math.min(1.85, Math.max(1, 0.6 / s)).toFixed(3));
     // setas sempre dentro do palco; se sobra faixa preta embaixo, vão para a faixa
     const ox = (innerWidth - 1600 * s) / 2, oy = (innerHeight - 900 * s) / 2;
     const fora = oy >= 64;
