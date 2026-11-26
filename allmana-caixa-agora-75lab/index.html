@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Caixa Ágora × 75 LAB</title>
+<meta name="description" content="Apresentação 3D da 75 LAB para a Allmana: caixa empastada com fechamento magnético para o presente de fim de ano da Ágora. Dois modelos de arte.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Caixa Ágora × 75 LAB">
+<meta property="og:description" content="Presente de fim de ano · caixa empastada com fechamento magnético · 2 modelos">
+<meta property="og:image" content="assets/og.jpg">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --verde:#00D355; --roxo:#5C21E9; --preto:#0B0B0B; --branco:#FFFFFF;
+  --agora:#00464A; --estudio:#CFCBC4; --tinta:#111;
+  --ease:cubic-bezier(.65,0,.35,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--preto);overflow:hidden}
+body{font-family:Lexend,system-ui,sans-serif;color:var(--tinta);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* palco 1600x900 escalado para a janela */
+#wrap{position:fixed;inset:0;display:grid;place-items:center}
+#palco{position:relative;width:1600px;height:900px;transform-origin:center center;overflow:hidden;background:var(--preto)}
+.tela{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s var(--ease),visibility 0s linear .7s}
+.tela.ativa{opacity:1;visibility:visible;transition:opacity .7s var(--ease),visibility 0s}
+
+/* ---------- capa e encerramento: cartão verde no fundo preto ---------- */
+.cartao{position:absolute;inset:22px;border-radius:30px;background:var(--verde);overflow:hidden}
+.asterisco{position:absolute;display:block;pointer-events:none}
+.marca75{display:flex;align-items:center;gap:30px}
+.marca75 img{display:block}
+.marca75 p{font-weight:400;line-height:1.18;letter-spacing:-.01em}
+
+.s-capa .asterisco{height:640px;width:auto;right:215px;top:-262px;rotate:-90deg}
+.s-capa .marca75{position:absolute;left:96px;top:52%;translate:0 -50%}
+.s-capa .marca75 img{height:230px}
+.s-capa .marca75 p{font-size:22px}
+.s-capa .cliente{position:absolute;right:96px;top:52%;translate:0 -50%;text-align:right}
+.s-capa .cliente b{display:block;font-weight:800;font-size:64px;letter-spacing:.01em;line-height:1}
+.s-capa .cliente span{display:flex;align-items:center;justify-content:flex-end;gap:20px;margin-top:18px;font-weight:700;font-size:60px;line-height:1;letter-spacing:-.01em}
+.s-capa .cliente span i{width:2px;height:54px;background:var(--tinta);opacity:.85}
+.s-capa .cliente small{display:block;margin-top:22px;font-size:26px;font-weight:400;letter-spacing:0}
+.s-capa .rodape{position:absolute;left:96px;right:96px;bottom:56px;display:flex;justify-content:space-between;align-items:flex-end;font-size:18px;font-weight:500}
+.s-capa .rodape small{font-size:18px;opacity:.75;font-weight:400}
+.btn-ir{display:inline-flex;align-items:center;gap:14px;background:var(--preto);color:var(--branco);padding:18px 30px;border-radius:999px;font-weight:600;font-size:19px;transition:transform .25s var(--ease),background .25s}
+.btn-ir:hover{transform:translateX(4px)}
+.btn-ir svg{width:22px;height:22px}
+
+.s-fim .asterisco{height:820px;width:auto;right:0;top:50%;translate:0 -50%}
+.s-fim .marca75{position:absolute;left:96px;top:50%;translate:0 -50%}
+.s-fim .marca75 img{height:300px}
+.s-fim .marca75 p{font-size:29px}
+.s-fim .contato{position:absolute;left:96px;bottom:60px;font-size:19px;font-weight:500;display:flex;gap:34px}
+.s-fim .contato span{opacity:.8;font-weight:400}
+
+/* ---------- telas de modelo: vídeo de ponta a ponta ---------- */
+.s-modelo{background:var(--estudio)}
+.s-modelo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:var(--estudio)}
+.s-modelo .topo{position:absolute;left:72px;top:62px;max-width:540px;pointer-events:none;transition:opacity .6s var(--ease)}
+.s-modelo.limpo .topo,.s-modelo.limpo .ficha{opacity:0}
+.chip{display:inline-flex;align-items:center;gap:10px;background:var(--verde);color:var(--tinta);font-weight:600;font-size:17px;letter-spacing:.04em;text-transform:uppercase;padding:9px 16px;border-radius:999px}
+.s-modelo h2{margin-top:20px;font-weight:700;font-size:58px;line-height:1.02;letter-spacing:-.02em}
+.s-modelo .sub{margin-top:14px;font-size:21px;font-weight:400;line-height:1.35;color:#2a2a2a}
+.s-modelo .assina{position:absolute;right:72px;top:64px;display:flex;align-items:center;gap:16px;font-size:16px;font-weight:500;color:#222;pointer-events:none}
+.s-modelo .assina img{height:40px}
+.s-modelo .assina i{width:1px;height:30px;background:#222;opacity:.4}
+.s-modelo .ficha{position:absolute;left:72px;bottom:150px;display:flex;flex-direction:column;gap:6px;font-size:15px;color:#333;pointer-events:none;transition:opacity .6s var(--ease)}
+.s-modelo .ficha b{font-weight:600;color:#111}
+
+/* barra de controle */
+.controle{position:absolute;left:72px;right:72px;bottom:52px;height:72px;display:flex;align-items:center;gap:18px;
+  padding:0 14px 0 12px;border-radius:999px;background:rgba(255,255,255,.62);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.play{flex:none;width:50px;height:50px;border-radius:50%;background:var(--preto);color:var(--branco);display:grid;place-items:center;transition:transform .2s var(--ease)}
+.play:hover{transform:scale(1.06)}
+.play svg{width:20px;height:20px}
+.play .i-play{display:none}
+.pausado .play .i-play{display:block}
+.pausado .play .i-pause{display:none}
+.caps{flex:1;display:flex;gap:10px;height:100%;align-items:center}
+.cap{position:relative;flex:var(--peso,1);height:50px;border-radius:14px;text-align:left;padding:0 14px;display:flex;flex-direction:column;justify-content:center;gap:7px;transition:background .25s}
+.cap:hover{background:rgba(0,0,0,.05)}
+.cap em{font-style:normal;font-size:15px;font-weight:500;color:#444;white-space:nowrap;transition:color .25s}
+.cap.atual em{color:#000;font-weight:600}
+.cap .trilho{height:3px;border-radius:3px;background:rgba(0,0,0,.14);overflow:hidden}
+.cap .trilho b{display:block;height:100%;width:0;background:var(--preto)}
+.cap.atual .trilho b{background:var(--verde)}
+.tempo{flex:none;font-size:14px;font-variant-numeric:tabular-nums;color:#444;width:84px;text-align:right}
+.estado{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(.9);width:96px;height:96px;border-radius:50%;background:rgba(11,11,11,.55);color:#fff;display:grid;place-items:center;opacity:0;transition:opacity .3s,transform .3s var(--ease);pointer-events:none}
+.estado svg{width:34px;height:34px}
+.pausado .estado{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* navegação */
+#nav{position:fixed;right:22px;bottom:22px;display:flex;align-items:center;gap:10px;z-index:5;font-size:13px;color:#fff;font-weight:500}
+#nav button{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;transition:background .2s}
+#nav button:hover{background:rgba(255,255,255,.28)}
+#nav svg{width:16px;height:16px}
+#nav .cont{min-width:52px;text-align:center;font-variant-numeric:tabular-nums;opacity:.85}
+.claro #nav{color:#111}
+.claro #nav button{background:rgba(0,0,0,.08)}
+.claro #nav button:hover{background:rgba(0,0,0,.16)}
+
+/* entrada dos textos */
+.anima{opacity:0;transform:translateY(16px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.ativa .anima{opacity:1;transform:none}
+.ativa .d1{transition-delay:.12s}.ativa .d2{transition-delay:.24s}.ativa .d3{transition-delay:.36s}
+@media (prefers-reduced-motion:reduce){.tela,.anima{transition:none}}
+.estatico .tela,.estatico .anima{transition:none!important}
+</style>
+</head>
+<body>
+<div id="wrap"><div id="palco">
+
+  <!-- ============ CAPA ============ -->
+  <section class="tela s-capa ativa" data-titulo="Capa">
+    <div class="cartao">
+      <img class="asterisco" src="assets/asterisco-agora.svg" alt="" aria-hidden="true">
+      <div class="marca75 anima">
+        <img src="assets/75lab-logo-preto.svg" alt="75 LAB">
+        <p>ideia boa é<br>a que acontece</p>
+      </div>
+      <div class="cliente anima d1">
+        <b>ALLMANA</b>
+        <span>Caixa <i></i> Ágora</span>
+        <small>Presente de fim de ano</small>
+      </div>
+      <div class="rodape anima d2">
+        <small>ALL039 · Apresentação 3D · novembro de 2026</small>
+        <button class="btn-ir" data-ir="1">Ver os modelos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODELO 1 ============ -->
+  <section class="tela s-modelo claro-tela" data-titulo="Modelo 1">
+    <video muted playsinline loop preload="auto" poster="assets/v1-poster.jpg"><source src="assets/v1.mp4" type="video/mp4"></video>
+    <div class="topo">
+      <span class="chip anima">Modelo 1</span>
+      <h2 class="anima d1">Ramos e estrelas</h2>
+      <p class="sub anima d2">Moldura de ramos natalinos e estrelas em linha verde sobre o verde Ágora.</p>
+    </div>
+    <div class="assina anima d1"><img src="assets/75lab-logo-preto.svg" alt="75 LAB"><i></i>Allmana · Caixa Ágora</div>
+    <div class="ficha anima d3">
+      <span><b>Caixa empastada</b> com fechamento magnético</span>
+      <span>35,9 × 13,1 × 9,3 cm · impressão 4x0 com laminação fosca</span>
+      <span>Base e interior em Color Plus preto</span>
+    </div>
+    <div class="estado" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></div>
+    <div class="controle"></div>
+  </section>
+
+  <!-- ============ MODELO 2 ============ -->
+  <section class="tela s-modelo claro-tela" data-titulo="Modelo 2">
+    <video muted playsinline loop preload="auto" poster="assets/v2-poster.jpg"><source src="assets/v2.mp4" type="video/mp4"></video>
+    <div class="topo">
+      <span class="chip anima">Modelo 2</span>
+      <h2 class="anima d1">Bolas douradas</h2>
+      <p class="sub anima d2">Três bolas de Natal douradas penduradas na moldura, com a marca Ágora na base.</p>
+    </div>
+    <div class="assina anima d1"><img src="assets/75lab-logo-preto.svg" alt="75 LAB"><i></i>Allmana · Caixa Ágora</div>
+    <div class="ficha anima d3">
+      <span><b>Caixa empastada</b> com fechamento magnético</span>
+      <span>35,9 × 13,1 × 9,3 cm · impressão 4x0 com laminação fosca</span>
+      <span>Base e interior em Color Plus preto</span>
+    </div>
+    <div class="estado" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg></div>
+    <div class="controle"></div>
+  </section>
+
+  <!-- ============ ENCERRAMENTO ============ -->
+  <section class="tela s-fim" data-titulo="Encerramento">
+    <div class="cartao">
+      <img class="asterisco" src="assets/asterisco-roxo.svg" alt="" aria-hidden="true">
+      <div class="marca75 anima">
+        <img src="assets/75lab-logo-preto.svg" alt="75 LAB">
+        <p>ideia boa é a<br>que acontece</p>
+      </div>
+      <div class="contato anima d2"><b>Obrigado!</b><span>75lab.com.br</span></div>
+    </div>
+  </section>
+
+</div></div>
+
+<nav id="nav" aria-label="Navegação">
+  <button id="ant" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="cont" id="cont">01/04</span>
+  <button id="prox" aria-label="Próxima"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 5l7 7-7 7"/></svg></button>
+</nav>
+
+<script>
+(() => {
+  // capítulos do vídeo (s) — saem do roteiro (caixa_anim.py): fechada, capa, abertura, mensagem, fechamento
+  const CAPS = [['Fechada', 0], ['Capa', 2.0], ['Abrindo', 9.4], ['Mensagem', 13.0], ['Fechando', 21.0]];
+  // trechos em close (top view da capa e da mensagem): título e ficha saem de cena para não cobrir a arte
+  const CLOSES = [[2.6, 8.7], [13.6, 20.4]];
+  const DUR = 24.2;
+  if (/[?&]pdf=1/.test(location.search)) document.documentElement.classList.add('estatico');
+  const palco = document.getElementById('palco');
+  const telas = [...document.querySelectorAll('.tela')];
+  let atual = 0;
+
+  function escala() {
+    const s = Math.min(innerWidth / 1600, innerHeight / 900);
+    palco.style.transform = `scale(${s})`;
+  }
+  addEventListener('resize', escala); escala();
+
+  const svgPlay = '<svg class="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>';
+  const svgPause = '<svg class="i-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
+  const fmt = t => { t = Math.max(0, t); return `0:${String(Math.floor(t)).padStart(2, '0')}`; };
+
+  const players = telas.filter(t => t.classList.contains('s-modelo')).map(tela => {
+    const v = tela.querySelector('video');
+    const ctl = tela.querySelector('.controle');
+    ctl.innerHTML = `<button class="play" aria-label="Pausar ou continuar">${svgPause}${svgPlay}</button><div class="caps"></div><span class="tempo">0:00 / 0:24</span>`;
+    const caps = ctl.querySelector('.caps');
+    const els = CAPS.map(([nome, t0], i) => {
+      const t1 = i + 1 < CAPS.length ? CAPS[i + 1][1] : DUR;
+      const b = document.createElement('button');
+      b.className = 'cap'; b.style.setProperty('--peso', (t1 - t0).toFixed(2));
+      b.innerHTML = `<em>${nome}</em><span class="trilho"><b></b></span>`;
+      b.addEventListener('click', e => { e.stopPropagation(); v.currentTime = t0 + 0.01; tocar(); });
+      caps.appendChild(b);
+      return { b, t0, t1, barra: b.querySelector('.trilho b') };
+    });
+    const tempo = ctl.querySelector('.tempo');
+    const tocar = () => { v.play().catch(() => {}); tela.classList.remove('pausado'); };
+    const pausar = () => { v.pause(); tela.classList.add('pausado'); };
+    const alterna = () => (v.paused ? tocar() : pausar());
+    ctl.querySelector('.play').addEventListener('click', e => { e.stopPropagation(); alterna(); });
+    v.addEventListener('click', alterna);
+    function pinta() {
+      const t = v.currentTime || 0;
+      els.forEach(c => {
+        const f = Math.max(0, Math.min(1, (t - c.t0) / (c.t1 - c.t0)));
+        c.barra.style.width = (f * 100) + '%';
+        c.b.classList.toggle('atual', t >= c.t0 && t < c.t1);
+      });
+      tempo.textContent = `${fmt(t)} / 0:24`;
+      tela.classList.toggle('limpo', CLOSES.some(([a, b]) => t > a && t < b));
+    }
+    (function loop() { if (tela.classList.contains('ativa')) pinta(); requestAnimationFrame(loop); })();
+    return { tela, v, tocar, pausar, alterna };
+  });
+
+  function ir(i) {
+    i = Math.max(0, Math.min(telas.length - 1, i));
+    if (i === atual) return;
+    telas[atual].classList.remove('ativa');
+    atual = i;
+    telas[atual].classList.add('ativa');
+    document.body.classList.toggle('claro', telas[atual].classList.contains('claro-tela'));
+    document.getElementById('cont').textContent = `${String(atual + 1).padStart(2, '0')}/${String(telas.length).padStart(2, '0')}`;
+    players.forEach(p => {
+      if (p.tela === telas[atual]) { p.v.currentTime = 0; p.tocar(); }
+      else { p.v.pause(); }
+    });
+    history.replaceState(null, '', '#' + (atual + 1));
+  }
+  document.getElementById('prox').onclick = () => ir(atual + 1);
+  document.getElementById('ant').onclick = () => ir(atual - 1);
+  document.querySelectorAll('[data-ir]').forEach(b => b.onclick = () => ir(+b.dataset.ir));
+  addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') ir(atual + 1);
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') ir(atual - 1);
+    else if (e.key === ' ') { const p = players.find(p => p.tela === telas[atual]); if (p) { e.preventDefault(); p.alterna(); } }
+  });
+  // toque: arrastar para o lado troca de tela
+  let x0 = null;
+  addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  addEventListener('touchend', e => {
+    if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 60) ir(atual + (dx < 0 ? 1 : -1));
+  });
+  const h = parseInt(location.hash.slice(1), 10);
+  if (h > 1) ir(h - 1);
+})();
+</script>
+</body>
+</html>
