@@ -15,7 +15,7 @@
 <style>
 :root{
   --verde:#00D355; --roxo:#5C21E9; --preto:#0B0B0B; --branco:#FFFFFF;
-  --agora:#00464A; --estudio:#CFCBC4; --tinta:#111;
+  --agora:#00464A; --estudio:#0AA57D; --tinta:#111;
   --ease:cubic-bezier(.65,0,.35,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -71,8 +71,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .s-modelo .assina{position:absolute;right:72px;top:64px;display:flex;align-items:center;gap:16px;font-size:16px;font-weight:500;color:#222;pointer-events:none}
 .s-modelo .assina img{height:40px}
 .s-modelo .assina i{width:1px;height:30px;background:#222;opacity:.4}
-.s-modelo .ficha{position:absolute;left:72px;bottom:150px;display:flex;flex-direction:column;gap:6px;font-size:15px;color:#333;pointer-events:none;transition:opacity .6s var(--ease)}
+.s-modelo .ficha{position:absolute;left:72px;bottom:150px;display:flex;flex-direction:column;gap:6px;font-size:15px;color:#111;pointer-events:none;transition:opacity .6s var(--ease)}
 .s-modelo .ficha b{font-weight:600;color:#111}
+.s-modelo .chip{background:var(--preto);color:var(--branco)}
 
 /* barra de controle */
 .controle{position:absolute;left:72px;right:240px;bottom:52px;height:72px;display:flex;align-items:center;gap:18px;
